@@ -115,7 +115,7 @@ const RegisterMenu = () => {
 
     try {
       // Use Next.js API route path (e.g., /api/admin/register)
-      const res = await fetch('/api/admin/register', {
+      const res = await fetch('/api/pet/register', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData),

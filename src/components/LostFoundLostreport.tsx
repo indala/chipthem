@@ -70,7 +70,7 @@ const LostFoundLostReport: React.FC = () => {
     });
 
     try {
-      const res = await fetch('/api/lostPet', {
+      const res = await fetch('/api/reportLost', {
         method: 'POST',
         body: data,
       });

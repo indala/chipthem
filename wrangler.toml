@@ -1,0 +1,12 @@
+# wrangler.toml
+name = "chipthem"
+main = ".open-next/worker.js"
+compatibility_date = "2025-11-01"
+compatibility_flags = ["nodejs_compat"]
+
+[assets]
+directory = ".open-next/assets"
+binding = "ASSETS"
+
+[observability.logs]
+enabled = true

@@ -68,7 +68,7 @@ const LostFoundFoundReport: React.FC = () => {
     });
 
     try {
-      const response = await fetch('/api/foundLostPet', {
+      const response = await fetch('/api/reportFound', {
         method: 'POST',
         // IMPORTANT: No 'Content-Type' header needed; browser sets it automatically for FormData
         body: data,
