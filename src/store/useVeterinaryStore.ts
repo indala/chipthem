@@ -1,35 +1,10 @@
 'use client';
 
 import { create } from 'zustand';
-
-interface Veterinary {
-  id: string;
-  clinic_name: string;
-  contact_person: string | null;
-  email: string;
-  phone: string | null;
-  alt_phone: string | null;
-  website: string | null;
-  license_number: string | null;
-  years_in_practice: number | null;
-  specializations: string[] | null;
-  additional_services: string[] | null;
-  microchip_services: boolean | null;
-  has_microchip_scanners: boolean | null;
-  scanner_types: string[] | null;
-  street_address: string | null;
-  city: string | null;
-  state_province: string | null;
-  postal_code: string | null;
-  country: string | null;
-  operating_hours: string | null;
-  provides_24h_emergency: boolean | null;
-  is_verified: boolean | null;
-  status: string | null;
-}
+import { VeterinaryClinic } from '@/types/veterinaries';
 
 interface VeterinaryState {
-  veterinary: Veterinary | null;
+  veterinary: VeterinaryClinic | null;
   isLoading: boolean;
   error: string | null;
   fetchVeterinaryData: () => Promise<void>;
