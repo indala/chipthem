@@ -24,7 +24,7 @@ const FindReady: React.FC = () => {
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <button
-            onClick={() => handleNavigation("/registerpet")}
+            onClick={() => handleNavigation("/getpetmicrochipped")}
             className="bg-pet-primary text-white px-8 py-4 rounded-xl text-lg font-bold hover:bg-blue-600 transition-colors"
           >
             {t("registerPet")}

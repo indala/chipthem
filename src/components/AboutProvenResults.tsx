@@ -42,7 +42,7 @@ export default function AboutProvenResults() {
        </div>
 
        <Button
-        onClick={() => handleNavigate('registerpet')}
+        onClick={() => handleNavigate('getpetmicrochipped')}
         className="w-full bg-blue-400 text-white py-3 rounded-lg font-semibold hover:bg-blue-500 transition-colors"
        >
         {t('basic.button')}
@@ -84,7 +84,7 @@ export default function AboutProvenResults() {
        </div>
 
        <Button
-        onClick={() => handleNavigate('registerpet')}
+        onClick={() => handleNavigate('getpetmicrochipped')}
         className="w-full bg-blue-400 text-white py-3 rounded-lg font-semibold hover:bg-blue-500 transition-colors"
        >
         {t('complete.button')}

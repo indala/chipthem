@@ -24,7 +24,7 @@ const SuccessStoriesShare = () => {
           </button>
           <button
             onClick={() => {
-              Router.push('/registerpet');
+              Router.push('/getpetmicrochipped');
               window.scrollTo(0, 0);
             }}
             className="bg-green-500 text-white px-8 py-4 rounded-xl text-lg font-bold hover:bg-green-600 transition-all duration-200"

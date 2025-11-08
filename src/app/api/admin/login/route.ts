@@ -1,40 +1,71 @@
 import { NextResponse } from "next/server";
+import bcrypt from "bcryptjs";
+import * as jose from "jose";
+import { supabaseServerClient } from "@/lib/supabaseServerClient";
+
+// --- JWT setup ---
+if (!process.env.JWT_SECRET) {
+  throw new Error("FATAL ERROR: JWT_SECRET environment variable is not set.");
+}
+const secret = new TextEncoder().encode(process.env.JWT_SECRET);
 
 export async function POST(req: Request) {
+  const INVALID_CREDENTIALS_RESPONSE = NextResponse.json(
+    { success: false, error: "Invalid credentials" },
+    { status: 401 }
+  );
+
   try {
     const { username, password } = await req.json();
 
-    // 🔹 Dummy credentials (replace later with real auth logic)
-    const ADMIN_USERNAME = "admin";
-    const ADMIN_PASSWORD = "12345";
-
-    // 🔹 Simple validation
     if (!username || !password) {
       return NextResponse.json(
-        { error: "Missing username or password." },
+        { success: false, error: "Username and password required" },
         { status: 400 }
       );
     }
 
-    // 🔹 Dummy check
-    if (username === ADMIN_USERNAME && password === ADMIN_PASSWORD) {
-      // Optional: set a cookie (for session simulation)
-      const res = NextResponse.json({ success: true, message: "Login successful!" });
-      res.cookies.set("admin_session", "dummy_token_123", {
-        httpOnly: true,
-        secure: process.env.NODE_ENV === "production",
-        path: "/",
-        maxAge: 60 * 60, // 1 hour
-      });
-      return res;
-    }
+    // Fetch admin
+    const { data } = await supabaseServerClient
+      .from("admins")
+      .select("id, username, password_hash")
+      .eq("username", username)
+      .single();
 
-    // 🔹 Invalid credentials
-    return NextResponse.json({ error: "Invalid username or password." }, { status: 401 });
+    if (!data) return INVALID_CREDENTIALS_RESPONSE;
+
+    // Verify password
+    const isValid = await bcrypt.compare(password, data.password_hash);
+    if (!isValid) return INVALID_CREDENTIALS_RESPONSE;
+
+    // Create JWT
+    const token = await new jose.SignJWT({
+      id: data.id,
+      username: data.username,
+      role: "admin",
+    })
+      .setProtectedHeader({ alg: "HS256" })
+      .setIssuedAt()
+      .setExpirationTime("7d")
+      .sign(secret);
+
+    // Create response (no sensitive data)
+    const res = new NextResponse(null, { status: 204 }); // 204 = No Content
+
+    // Set secure cookie
+    res.cookies.set("admin_token", token, {
+      httpOnly: true,
+      secure: process.env.NODE_ENV === "production",
+      sameSite: "lax",
+      path: "/",
+      maxAge: 60 * 60 * 24 * 7,
+    });
+
+    return res;
   } catch (err) {
-    console.error("Login API Error:", err);
+    console.error("Login error:", err);
     return NextResponse.json(
-      { error: "Internal server error." },
+      { success: false, error: "Server error" },
       { status: 500 }
     );
   }

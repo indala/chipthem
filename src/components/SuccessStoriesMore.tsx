@@ -1,4 +1,6 @@
 import { useTranslations } from "next-intl";
+import Image from "next/image";
+
 
 const SuccessStoriesMore= () => {
   const t = useTranslations("SuccessStoriesMore");
@@ -8,7 +10,7 @@ const SuccessStoriesMore= () => {
       name: t('Samur.name'),
       breed: t('Samur.breed'),
       time: t('Samur.time'),
-      imgSrc: "https://pet-microchip-system.mrehman.com/assets/images/labrador.jpg",
+      imgSrc: "/assets/labrador.jpg",
       story: t('Samur.story'),
       author: t('Samur.author'),
     },
@@ -16,7 +18,7 @@ const SuccessStoriesMore= () => {
       name: t('whiskers.name'),
       breed: t('whiskers.breed'),
       time: t('whiskers.time'),
-      imgSrc: "https://pet-microchip-system.mrehman.com/assets/images/persian-cat.jpg",
+      imgSrc: "/assets/persian-cat.jpg",
       story: t('whiskers.story'),
       author: t('whiskers.author'),
     },
@@ -24,7 +26,7 @@ const SuccessStoriesMore= () => {
       name: t('rex.name'),
       breed: t('rex.breed'),
       time: t('rex.time'),
-      imgSrc: "https://pet-microchip-system.mrehman.com/assets/images/german-shepherd.jpg",
+      imgSrc: "/assets/german-shepherd.jpg",
       story: t('rex.story'),
       author: t('rex.author'),
     },
@@ -32,7 +34,7 @@ const SuccessStoriesMore= () => {
       name: t('mittens.name'),
       breed: t('mittens.breed'),
       time: t('mittens.time'),
-      imgSrc: "https://pet-microchip-system.mrehman.com/assets/images/calico-cat.jpg",
+      imgSrc: "/assets/calico-cat.jpg",
       story: t('mittens.story'),
       author: t('mittens.author'),
     },
@@ -40,7 +42,7 @@ const SuccessStoriesMore= () => {
       name: t('charlie.name'),
       breed: t('charlie.breed'),
       time: t('charlie.time'),
-      imgSrc: "https://pet-microchip-system.mrehman.com/assets/images/beagle.jpg",
+      imgSrc: "/assets/beagle.jpg",
       story: t('charlie.story'),
       author: t('charlie.author'),
     },
@@ -48,7 +50,7 @@ const SuccessStoriesMore= () => {
       name: t('Zatar.name'),
       breed: t('Zatar.breed'),
       time: t('Zatar.time'),
-      imgSrc: "https://pet-microchip-system.mrehman.com/assets/images/Sunny.jpg",
+      imgSrc: "/assets/Sunny.jpg",
       story: t('Zatar.story'),
       author: t('Zatar.author'),
     },
@@ -67,7 +69,7 @@ const SuccessStoriesMore= () => {
             <div key={name} className="bg-white rounded-xl p-6 shadow-lg">
               <div className="flex items-center mb-3">
                 <div className="w-12 h-12 bg-gray-200 rounded-full flex items-center justify-center mr-3 overflow-hidden">
-                  <img src={imgSrc} alt={name} className="w-full h-full object-cover" />
+                  <Image src={imgSrc} alt={name} width={100} height={100}className="w-full h-full object-cover" />
                 </div>
                 <div>
                   <h4 className="font-bold text-gray-800">{name}</h4>

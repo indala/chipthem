@@ -1,0 +1,33 @@
+export interface VeterinaryClinic {
+  id: string;
+  clinic_name: string;
+  contact_person?: string | null;
+  email: string;
+  phone?: string | null;
+  alt_phone?: string | null;
+  website?: string | null;
+  license_number?: string | null;
+  years_in_practice?: number | null;
+  specializations?: string[] | null;
+  additional_services?: string[] | null;
+  microchip_services?: boolean | null;
+  has_microchip_scanners?: boolean | null;
+  scanner_types?: string[] | null;
+  street_address?: string | null;
+  city?: string | null;
+  state_province?: string | null;
+  postal_code?: string | null;
+  country?: string | null;
+  operating_hours?: string | null;
+  provides_24h_emergency?: boolean | null;
+  terms_accepted?: boolean | null;
+  data_accuracy_confirmed?: boolean | null;
+  professional_confirmation?: boolean | null;
+  consent_for_referrals?: boolean | null;
+  email_updates_opt_in?: boolean | null;
+  is_verified: boolean;
+  status: "pending" | "verified" | "rejected" | null;
+  created_at?: string | null;
+  updated_at?: string | null;
+  verified_at?: string | null;
+}

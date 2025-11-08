@@ -1,6 +1,56 @@
 {
   "version": 3,
-  "middleware": {},
+  "middleware": {
+    "/": {
+      "files": [
+        "server/edge-runtime-webpack.js",
+        "server/src/middleware.js"
+      ],
+      "name": "src/middleware",
+      "page": "/",
+      "matchers": [
+        {
+          "regexp": "^(?:\\/(_next\\/data\\/[^/]{1,}))?\\/admin(?:\\/((?:[^\\/#\\?]+?)(?:\\/(?:[^\\/#\\?]+?))*))?(\\.json)?[\\/#\\?]?$",
+          "originalSource": "/admin/:path*"
+        },
+        {
+          "regexp": "^(?:\\/(_next\\/data\\/[^/]{1,}))?\\/veterinary(?:\\/((?:[^\\/#\\?]+?)(?:\\/(?:[^\\/#\\?]+?))*))?(\\.json)?[\\/#\\?]?$",
+          "originalSource": "/veterinary/:path*"
+        },
+        {
+          "regexp": "^(?:\\/(_next\\/data\\/[^/]{1,}))?\\/petOwner(?:\\/((?:[^\\/#\\?]+?)(?:\\/(?:[^\\/#\\?]+?))*))?(\\.json)?[\\/#\\?]?$",
+          "originalSource": "/petOwner/:path*"
+        },
+        {
+          "regexp": "^(?:\\/(_next\\/data\\/[^/]{1,}))?\\/alogin(\\.json)?[\\/#\\?]?$",
+          "originalSource": "/alogin"
+        },
+        {
+          "regexp": "^(?:\\/(_next\\/data\\/[^/]{1,}))?\\/vlogin(\\.json)?[\\/#\\?]?$",
+          "originalSource": "/vlogin"
+        },
+        {
+          "regexp": "^(?:\\/(_next\\/data\\/[^/]{1,}))?\\/pologin(\\.json)?[\\/#\\?]?$",
+          "originalSource": "/pologin"
+        },
+        {
+          "regexp": "^(?:\\/(_next\\/data\\/[^/]{1,}))?\\/unauthorized(\\.json)?[\\/#\\?]?$",
+          "originalSource": "/unauthorized"
+        }
+      ],
+      "wasm": [],
+      "assets": [],
+      "env": {
+        "__NEXT_BUILD_ID": "UEZJ0q--2XIqWI0QhbmfK",
+        "NEXT_SERVER_ACTIONS_ENCRYPTION_KEY": "eNH935B3vVFKn37yFL+t64KIcZsNHqaOw97l/qP9474=",
+        "__NEXT_PREVIEW_MODE_ID": "ba6ef0bd2458685a489c746fac043a84",
+        "__NEXT_PREVIEW_MODE_ENCRYPTION_KEY": "b84d299ff7bfc489bb7676edb7044852e80d7551c899f9be2baa5c32eaba15b0",
+        "__NEXT_PREVIEW_MODE_SIGNING_KEY": "1c77a0e0e6c903eb10dfc654ead5086fe37be70e6b9bb7bf8500fae71f7cca3f"
+      }
+    }
+  },
   "functions": {},
-  "sortedMiddleware": []
+  "sortedMiddleware": [
+    "/"
+  ]
 }

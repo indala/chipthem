@@ -17,7 +17,7 @@ export default function PetProtectionSection() {
 
         <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
           <Link
-            href="/registerpet"
+            href="/getpetmicrochipped"
             className="inline-flex items-center gap-3 bg-white text-blue-600 px-8 py-4 rounded-full text-lg font-bold shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-200"
           >
             <span className="text-xl">🏠</span>

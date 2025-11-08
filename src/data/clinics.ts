@@ -19,10 +19,10 @@ export const CLINICS_DATA: Clinic[] = [
   {
     id: 1,
     name: "Amazon Veterinary Center",
-    emergency: true,
+    emergency: false,
     address: "Al-Ruwaad Complex - 8, Amman, Jordan",
     phone: "+962 7 9206 2032",
-    hours: "Mon-Fri: 8AM-6PM, Sat: 9AM-4PM",
+    hours: "Sat-Thr: 10AM-10PM, Fri: 2PM-10PM",
     rating: 4.7,
     services: "Microchipping, Vaccinations, Surgery",
     mapLat: 31.9883,

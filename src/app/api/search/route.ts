@@ -1,11 +1,21 @@
 import { NextResponse } from "next/server";
 
+interface PetInfo {
+  petName: string;
+  petType: string;
+  petAge: string;
+  petColor: string;
+  ownerName: string;
+  phone: string;
+  email: string;
+}
+
 export async function GET(request: Request) {
   const { searchParams } = new URL(request.url);
   const chipNumber = searchParams.get("chipNumber");
 
   // Demo data
-  const demoPets: Record<string, any> = {
+  const demoPets: Record<string, PetInfo> = {
     "123456789012345": {
       petName: "Max",
       petType: "Golden Retriever",

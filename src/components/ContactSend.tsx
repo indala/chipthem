@@ -129,6 +129,7 @@ export default function ContactSend() {
                     <option value="success-story">{t("shareSuccessStory")}</option>
                     <option value="technical">{t("technicalSupport")}</option>
                     <option value="billing">{t("billingQuestion")}</option>
+                    <option value="mp">{t("mp")}</option>
                     <option value="other">{t("other")}</option>
                   </select>
                 </div>
@@ -214,17 +215,19 @@ export default function ContactSend() {
               <h3 className="text-lg font-bold text-gray-800 mb-4">{t('generalContact')}</h3>
               <div className="space-y-4">
                 <div>
+  <p className="text-sm text-gray-600 font-semibold">{t('phoneSupport')}</p>
+  <Link href="tel:+1234567890" className="text-pet-primary hover:text-blue-600">
+    {t('phone')}
+  </Link>
+</div>
+                <div>
                   <p className="text-sm text-gray-600 font-semibold">{t('emailSupport')}</p>
                   <Link href="mailto:Info@chipthem.com" className="text-pet-primary hover:text-blue-600">
                     {t('supportEmail')}
                   </Link>
+
                 </div>
-                <div>
-                  <p className="text-xs text-gray-500">{t('hoursSatThu')}</p>
-                </div>
-                <div>
-                  <p className="text-xs text-gray-500">{t('hoursFri')}</p>
-                </div>
+
               </div>
             </div>
 

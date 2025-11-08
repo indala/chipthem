@@ -1,4 +1,4 @@
-import { NextResponse } from 'next/server';
+import { NextResponse } from "next/server";
 
 export async function POST(request: Request) {
   try {
@@ -6,7 +6,7 @@ export async function POST(request: Request) {
     const formData = await request.formData();
 
     // Extract basic fields
-    const data: Record<string, any> = {};
+    const data: Record<string, FormDataEntryValue> = {};
     formData.forEach((value, key) => {
       data[key] = value;
     });
@@ -16,11 +16,11 @@ export async function POST(request: Request) {
 
     // Handle uploaded file if exists
     const file = formData.get("pet_photo");
-    if (file && file instanceof File) {
+    if (file instanceof File) {
       console.log("📸 Uploaded file name:", file.name);
       console.log("📸 File type:", file.type);
       console.log("📸 File size:", file.size, "bytes");
-      // In a real app, you'd upload this to Supabase, Cloudinary, etc.
+      // TODO: Upload to Supabase, Cloudinary, etc.
     }
 
     // Simulate successful save
@@ -29,7 +29,12 @@ export async function POST(request: Request) {
       { status: 200 }
     );
   } catch (error) {
-    console.error("❌ Error handling lost pet report:", error);
+    if (error instanceof Error) {
+      console.error("❌ Error handling lost pet report:", error.message);
+    } else {
+      console.error("❌ Unknown error:", error);
+    }
+
     return NextResponse.json(
       { message: "Failed to submit lost pet report." },
       { status: 500 }

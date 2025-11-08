@@ -29,7 +29,7 @@ const QuickActions = () => {
       title: t('registerPet'),
       description: t('registerPetDesc'),
       buttonText: t('registerNow'),
-      route: '/registerpet',
+      route: '/getpetmicrochipped',
       cardBg: "bg-green-50",
       iconBg: "bg-green-600",
       iconColor: "text-white",

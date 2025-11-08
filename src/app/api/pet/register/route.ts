@@ -1,80 +1,265 @@
-import { NextResponse, NextRequest } from 'next/server';
+import { NextResponse } from "next/server";
+import { supabaseServerClient } from "@/lib/supabaseServerClient";
+import bcrypt from "bcryptjs";
+import { sendEmail } from "@/utils/sendEmail";
 
-// Define the expected minimal structure for request body (optional, but good practice)
-interface RegistrationRequestData {
-  fullName: string;
-  email: string;
-  password: string;
-  microchipNumber: string;
-}
+export async function POST(req: Request) {
 
-/**
- * Handle POST requests for user and pet registration.
- * Endpoint: /api/admin/register
- */
-export async function POST(request: NextRequest) {
-  try {
-    const data: RegistrationRequestData = await request.json();
+try {
+ const formData = await req.json();
 
-    // --- 1. Basic Server-Side Validation ---
-    
-    // Check for critical required fields
-    if (!data.fullName || !data.email || !data.password || !data.microchipNumber) {
-      return NextResponse.json(
-        { message: 'Missing required fields: fullName, email, password, and microchipNumber are essential.' },
-        { status: 400 } // Bad Request
-      );
-    }
-    
-    // --- 2. Simulation Logic (DEMO DATA) ---
-    
-    // Simulate a pre-existing user (e.g., email or ID conflict)
-    if (data.email === 'test@conflict.com') {
-      return NextResponse.json(
-        { message: 'This email is already registered.' },
-        { status: 409 } // Conflict
-      );
-    }
+ // --- 1. Comprehensive Validation (Server-side) ---
+ const requiredFields = [
+ 'fullName', 'email', 'password', 'confirmPassword', 'phoneNumber', 'streetAddress',
+ 'city', 'country', 'microchipNumber', 'petName', 'petType', 'breed', 'sex', 'primaryColor',
+ 'termsAccepted', 'dataAccuracyConfirmed', 'ownershipConfirmed'
+ ];
 
-    // Simulate an existing microchip number conflict
-    if (data.microchipNumber === '123456789012345') {
-      return NextResponse.json(
-        { message: 'The microchip number is already associated with another account.' },
-        { status: 409 } // Conflict
-      );
-    }
+ for (const field of requiredFields) {
+ if (!formData[field]) {
+  return NextResponse.json(
+  { success: false, message: `Validation Error: The field '${field}' is required.` },
+  { status: 400 }
+  );
+ }
+ }
 
-    // --- 3. Mock Success Response ---
-    
-    // In a real application, you would:
-    // 1. Hash the password.
-    // 2. Save the owner and pet data to your database.
-    // 3. Send a confirmation email.
-
-    const mockResponse = {
-      success: true,
-      message: 'Registration successful! Redirecting to confirmation page.',
-      userId: 'mock-user-' + Math.random().toString(36).substring(2, 9),
-      petId: 'mock-pet-' + Math.random().toString(36).substring(2, 9),
-    };
-
-    // Simulate network delay
-    await new Promise(resolve => setTimeout(resolve, 500));
-
-    // Return a successful response
-    return NextResponse.json(mockResponse, { status: 201 }); // Created
-    
-  } catch (error) {
-    console.error('API Registration Error:', error);
-    
+ if (formData.password !== formData.confirmPassword) {
+ return NextResponse.json(
+  { success: false, message: "Validation Error: Passwords do not match." },
+  { status: 400 }
+ );
+ }
+  
+  // Add microchip length validation
+  if (!/^\d{15}$/.test(formData.microchipNumber)) {
     return NextResponse.json(
-      { message: 'Internal Server Error during registration process.' },
+      { success: false, message: "Validation Error: Microchip number must be exactly 15 digits." },
+      { status: 400 }
+    );
+  }
+
+
+ // --- 2. CHECK UNIQUENESS: Email ---
+ const { data: existingOwner, error: existingError } = await supabaseServerClient
+ .from("owners")
+ .select("id")
+ .eq("email", formData.email.trim().toLowerCase())
+ .maybeSingle();
+
+ if (existingError) {
+ console.error("Email check error:", existingError);
+ return NextResponse.json(
+  { success: false, message: "Server error while checking email uniqueness." },
+  { status: 500 }
+ );
+ }
+
+ if (existingOwner) {
+ return NextResponse.json(
+  { success: false, message: "Registration Error: Email already registered." },
+  { status: 400 }
+ );
+ }
+  
+  // --- 3. CHECK UNIQUENESS: Microchip ---
+  const { data: existingPet, error: petCheckError } = await supabaseServerClient
+    .from("pets")
+    .select("id")
+    .eq("microchip_number", formData.microchipNumber.trim())
+    .maybeSingle();
+
+  if (petCheckError) {
+    console.error("Microchip check error:", petCheckError);
+    return NextResponse.json(
+      { success: false, message: "Server error while checking microchip uniqueness." },
       { status: 500 }
     );
   }
-}
 
-// Optional: Prevent other HTTP methods if not needed
-export async function GET() {
-  return NextResponse.json({ message: 'Method not allowed' }, { status: 405 });
+  if (existingPet) {
+    return NextResponse.json(
+      { success: false, message: "Registration Error: Microchip number already registered." },
+      { status: 400 }
+    );
+  }
+
+
+ // --- 4. HASH PASSWORD ---
+ const passwordHash = await bcrypt.hash(formData.password, 12);
+
+ // --- 5. INSERT OWNER ---
+ const { data: ownerData, error: ownerError } = await supabaseServerClient
+ .from("owners")
+ .insert([
+  {
+  full_name: formData.fullName.trim(),
+  email: formData.email.trim().toLowerCase(),
+  password_hash: passwordHash,
+  phone_number: formData.phoneNumber?.trim(),
+  street_address: formData.streetAddress?.trim(),
+  city: formData.city?.trim(),
+  country: formData.country?.trim(),
+  terms_accepted: formData.termsAccepted,
+  data_accuracy_confirmed: formData.dataAccuracyConfirmed,
+  ownership_confirmed: formData.ownershipConfirmed,
+  is_verified: false,
+  status: "pending",
+  },
+ ])
+ .select("id")
+ .single();
+
+ if (ownerError || !ownerData) {
+ console.error("❌ Owner insert error:", ownerError);
+ return NextResponse.json(
+  { success: false, message: "Database Error: Failed to register owner." },
+  { status: 500 }
+ );
+ }
+  
+
+ // --- 6. INSERT PET ---
+ const { error: petError } = await supabaseServerClient
+ .from("pets")
+ .insert([
+  {
+  owner_id: ownerData.id,
+  microchip_number: formData.microchipNumber.trim(),
+  pet_name: formData.petName.trim(),
+  pet_type: formData.petType?.trim(),
+  breed: formData.breed?.trim(),
+  sex: formData.sex?.trim(),
+  primary_color: formData.primaryColor?.trim(),
+  is_verified: false,
+  status: "pending",
+  },
+ ]);
+
+ if (petError) {
+ console.error("❌ Pet insert error:", petError);
+    
+   // CRITICAL ROLLBACK LOGIC: Delete the orphaned owner record
+   const { error: ownerDeleteError } = await supabaseServerClient
+    .from("owners")
+    .delete()
+    .eq("id", ownerData.id);
+
+   if (ownerDeleteError) {
+    console.error("⚠️ CRITICAL ROLLBACK FAILED: Orphaned owner record:", ownerDeleteError);
+   } else {
+    console.log(`✅ Orphaned Owner (ID: ${ownerData.id}) successfully rolled back.`);
+   }
+
+ return NextResponse.json(
+  { success: false, message: "Database Error: Failed to register pet (Owner rolled back)." },
+  { status: 500 }
+ );
+ }
+  
+
+// --- 7.5. SEND ADMIN NOTIFICATION EMAIL with Link ---
+const adminHtml = `
+  <div style="font-family: Arial, sans-serif; padding: 16px; border: 1px solid #ddd;">
+    <h2>🚨 New Pet/Owner Registration for Verification</h2>
+    <p>A new pet owner and pet have registered and require **manual verification**.</p>
+    <hr style="border: 0; border-top: 1px solid #eee; margin: 15px 0;">
+
+    <h3>👤 Owner Details (DB ID: ${ownerData.id})</h3>
+    <p><strong>Full Name:</strong> ${formData.fullName}</p>
+    <p><strong>Email:</strong> ${formData.email}</p>
+    <p><strong>Phone Number:</strong> ${formData.phoneNumber}</p>
+    <p><strong>Address:</strong> ${formData.streetAddress}, ${formData.city}, ${formData.country}</p>
+    
+    <hr style="border: 0; border-top: 1px solid #eee; margin: 15px 0;">
+
+    <h3>🐶 Pet Details</h3>
+    <p><strong>Pet Name:</strong> ${formData.petName}</p>
+    <p><strong>Microchip Number:</strong> <strong style="color: blue;">${formData.microchipNumber}</strong></p>
+    <p><strong>Pet Type:</strong> ${formData.petType}</p>
+    <p><strong>Breed:</strong> ${formData.breed}</p>
+    <p><strong>Sex:</strong> ${formData.sex}</p>
+    <p><strong>Primary Color:</strong> ${formData.primaryColor}</p>
+
+    <hr style="border: 0; border-top: 1px solid #eee; margin: 15px 0;">
+
+    <h3>✅ Legal Confirmations</h3>
+    <p><strong>Terms Accepted:</strong> ${formData.termsAccepted ? 'Yes' : 'No'}</p>
+    <p><strong>Data Accuracy Confirmed:</strong> ${formData.dataAccuracyConfirmed ? 'Yes' : 'No'}</p>
+    <p><strong>Ownership Confirmed:</strong> ${formData.ownershipConfirmed ? 'Yes' : 'No'}</p>
+
+    <hr style="border: 0; border-top: 1px solid #eee; margin: 15px 0;">
+    <p style="font-weight: bold; color: red;">ACTION REQUIRED:</p>
+    <p>
+      Please review and approve this registration in your admin panel:
+      <a 
+        href="https://chipthem.com/admin/verifications/petOwner" 
+        target="_blank" 
+        style="
+          display: inline-block; 
+          padding: 10px 20px; 
+          background-color: #28a745; 
+          color: white !important; 
+          text-decoration: none; 
+          border-radius: 5px; 
+          font-weight: bold;
+        "
+      >
+        Go to Pet Owner Verifications
+      </a>
+    </p>
+  </div>
+`;
+
+await sendEmail({
+  to: "info@chipthem.com",
+  subject: `🚨 New Pet Microchip Registration: ${formData.petName} (${formData.microchipNumber})`,
+  html: adminHtml,
+});
+// --------------------------------------------------
+
+
+ // --- 8. SEND USER CONFIRMATION EMAIL ---
+ const emailHtml = `
+<div style="font-family: Arial, sans-serif; padding: 16px; color: #333;">
+ <h2>🐾 Thank you for registering with ChipThem, ${formData.fullName}!</h2>
+ <p>We’ve received your registration for <strong>${formData.petName}</strong>.</p>
+ <p><strong>Microchip Number:</strong> ${formData.microchipNumber}</p>
+ <p>Your submission is currently <strong>pending verification</strong> by our admin team.
+ Once verified, you’ll receive a confirmation email and your pet’s registration will become active.</p>
+ <p>This review process typically takes <strong>24–48 hours</strong>.</p>
+ <br/>
+ <p>If any additional information is needed, we’ll contact you at <strong>${formData.email}</strong>.</p>
+ <p>Thank you for helping us ensure the safety and lifelong protection of all pets!</p>
+ <br/>
+ <p>Warm regards,<br/><strong>The ChipThem Verification Team</strong></p>
+</div>
+`;
+
+
+ await sendEmail({
+ to: formData.email,
+ subject: "Welcome to ChipThem - Pet Registration Successful",
+ html: emailHtml,
+ });
+
+ console.log("✅ Pet registration successful:", formData.email);
+
+ // Return success message that client will use in toast
+ return NextResponse.json({
+ success: true,
+ message: "Pet registration successful! A confirmation email has been sent.",
+ });
+} catch (err) {
+ if (err instanceof Error) {
+  console.error("❌ Registration error:", err.message);
+ } else {
+  console.error("❌ Registration error:", err);
+ }
+// Generic internal error for unexpected failures
+ return NextResponse.json(
+ { success: false, message: "Internal server error: A critical error occurred during registration." },
+ { status: 500 }
+ );
+}
 }

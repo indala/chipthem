@@ -71,7 +71,7 @@ const Footer = () => {
               </li>
               <li className="flex items-center gap-3 text-gray-300">
                 <LuPlus className="h-4 w-4 text-yellow-400" />
-                <Link href="/registerpet" className="hover:text-white transition-colors cursor-pointer">
+                <Link href="/getpetmicrochipped" className="hover:text-white transition-colors cursor-pointer">
                   {t('services.petRegistration')}
                 </Link>
               </li>
@@ -93,7 +93,7 @@ const Footer = () => {
             <ul className="space-y-3 text-sm">
               <li className="flex items-center gap-3 text-gray-300">
                 <LuPlus className="h-4 w-4 text-blue-400" />
-                <Link href="/registerpet" className="hover:text-white transition-colors cursor-pointer">
+                <Link href="/getpetmicrochipped" className="hover:text-white transition-colors cursor-pointer">
                   {t('quickLinks.registerYourPet')}
                 </Link>
               </li>

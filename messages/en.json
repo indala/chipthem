@@ -68,7 +68,7 @@
     "callSupport": "Call Support: +962 7 98 98 05 04"
   },
   "Hero": {
-    "title": "Find Your Lost Pet with Advanced Microchip Technology",
+    "title": "One Small Chip One Big Reunion",
     "subtitle": "Join thousands of pet owners who have successfully reunited with their beloved companions through our comprehensive pet registry system.",
     "cta": "Register Your Pet Now",
     "learnMore": "Learn How It Works",
@@ -400,6 +400,10 @@
   },
   "AdminLogin": {
     "title": "Admin Portal",
+    "loading": "Loading...",
+    "loginSuccess":"Login Success",
+    "loginFailed":"Login Failed",
+    "networkError":"A network error occurred. Please try again later.",
     "subtitle": "System Administration Access",
     "username": "Admin Username",
     "usernamePlaceholder": "Enter admin username",
@@ -434,11 +438,21 @@
     "loginButton": "Sign In to Your Account",
     "newToChipthem": "New to Chipthem?",
     "createAccount": "Create New Account",
+    "loginSuccess": "Login successful! Redirecting to dashboard...",
+    "missingFields": "Email and password are required.",
+    "invalidCredentials": "Invalid email or password.",
+    "notVerified": "Account pending verification. Please wait for admin approval.",
+    "notFound": "No account found with this email.",
+    "serverError": "Server error, please try again later.",
+    "networkError": "Network error. Please check your connection and try again.",
+    "loggingIn": "Signing In...",
     "secureLogin": "🔒 Secure Login",
     "securityDesc": "Your account is protected with industry-standard encryption and security measures."
   },
 "Contact": {
   "title": "Contact Us",
+   "phoneSupport": "Phone Support", 
+  "phone": "+962 7 98 980504",
   "subtitle": "We're here to help 24/7. Get in touch with our support team for any questions or assistance.",
   "emergencyTitle": "🚨 Available 24/7 Support",
   "emergencyDesc": "If your pet is lost or you've found a pet, get in touch with us 24/7.",
@@ -449,6 +463,7 @@
   "email": "Email Address *",
   "phoneNumber": "Phone Number",
   "subject": "Subject *",
+  "mp":"MicroChipping my pet",
   "selectTopic": "Select a topic",
   "generalInquiry": "General Inquiry",
   "petRegistrationHelp": "Pet Registration Help",
@@ -1040,6 +1055,7 @@
     "title": "Pet Registration Form",
     "subtitle": "Please fill out all required information for both you and your pet",
     "ownerInfo": "Owner Information",
+    "submitting": "Submitting...",
     "fullName": "Full Name *",
     "fullNamePlaceholder": "Enter your full name",
     "nationalId": "National ID Number *",
@@ -1123,5 +1139,94 @@
     "changeLanguage": "Change Language",
     "microchipNumberPlaceholder": "e.g., 900123456789012 (15 digits)",
     "primaryColorPlaceholder": "e.g., Brown, Black, White, Calico"
+  },
+  "VHero": {
+    "badge": "Veterinary Professional Portal",
+    "title": "Veterinary Login",
+    "subtitle": "Access microchip scanning, pet registration tools, and clinic management features."
+  },
+  "VLog": {
+    "title": "Veterinary Login",
+    "subtitle": "Access your clinic's dashboard and tools",
+    "clinicId": "Clinic ID",
+    "invalidCredentials": "Invalid Clinic ID, username, or password.",
+    "notApproved": "Your clinic account is pending approval or has been disabled.",
+    "missingFields": "Clinic ID, username, and password are required.",
+    "networkError": "Network error. Please check your connection.",
+    "clinicIdPlaceholder": "Enter your clinic ID",
+    "clinicIdNote": "Contact support if you don't have your clinic ID",
+    "username": "Username",
+    "usernamePlaceholder": "Enter your username",
+    "password": "Password",
+    "passwordPlaceholder": "Enter your password",
+    "rememberMe": "Keep me signed in",
+    "needSupport": "Need support?",
+    "accessDashboard": "Access Clinic Dashboard",
+    "newPartner": "New clinic partner?",
+    "loggingIn": "Logging in...",
+    "partnerWithUs": "Partner With Chipthem",
+    "showPassword": "Show password",
+    "hidePassword": "Hide password",
+    "loginSuccess": "Login successful!",
+    "redirecting": "Redirecting you to the dashboard...",
+    "loginFailedTitle": "Login Failed",
+    "loginFailedGeneric": "Invalid Clinic ID, username, or password. Please try again.",
+    "unexpectedError": "An unexpected error occurred. Please try again later.",
+    "securityTitle": "🛡️ Secure Veterinary Access",
+    "securityDesc": "Your clinic data is protected with veterinary-grade security protocols and HIPAA compliance."
+  },
+  "VDashboard": {
+    "title": "Veterinary Dashboard Features",
+    "subtitle": "Powerful tools for modern veterinary practices",
+    "microchipScanner": {
+      "title": "Microchip Scanner",
+      "description": "Instant microchip reading and owner contact retrieval"
+    },
+    "petRegistration": {
+      "title": "Pet Registration",
+      "description": "Register new pets and update existing records"
+    },
+    "ownerContact": {
+      "title": "Owner Contact",
+      "description": "Instant access to pet owner contact information"
+    },
+    "lostPetAlerts": {
+      "title": "Lost Pet Alerts",
+      "description": "Immediate notifications for lost pet recoveries"
+    },
+    "clinicAnalytics": {
+      "title": "Clinic Analytics",
+      "description": "Track microchip scans and registration statistics"
+    },
+    "support": {
+      "title": "24/7 Support",
+      "description": "Professional veterinary support team available"
+    }
+  },
+  "PoNeed": {
+    "title": "Need Help Signing In?",
+    "subtitle": "We're here to help you access your account",
+    "forgotPassword": "Forgot Password",
+    "forgotPasswordDesc": "Reset your password securely via email",
+    "resetPassword": "Reset Password",
+    "accountIssues": "Account Issues",
+    "accountIssuesDesc": "Having trouble with your account access?",
+    "getSupport": "Get Support",
+    "newPetOwner": "New Pet Owner",
+    "newPetOwnerDesc": "Don't have an account yet?",
+    "registerPet": "Register Your Pet"
+  },
+  "VetRegistrationSuccess": {
+    "title": "🎉 Registration Submitted!",
+    "description1": "Thank you for registering your veterinary clinic with",
+    "description2": "Your information has been successfully received and is currently",
+    "underVerification": "under verification",
+    "description3": "by our team.",
+    "emailNotice": "You will receive an email once your registration has been reviewed and approved.",
+    "returnHome": "Return to Home"
   }
+
+
+
+
 }

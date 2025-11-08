@@ -1,6 +1,6 @@
 globalThis.openNextDebug = false;globalThis.openNextVersion = "3.8.5";
 
-// node_modules/.pnpm/@opennextjs+cloudflare@1.11.0_wrangler@4.45.3/node_modules/@opennextjs/cloudflare/dist/api/durable-objects/bucket-cache-purge.js
+// node_modules/.pnpm/@opennextjs+cloudflare@1.11.0_wrangler@4.45.4/node_modules/@opennextjs/cloudflare/dist/api/durable-objects/bucket-cache-purge.js
 import { DurableObject } from "cloudflare:workers";
 
 // node_modules/.pnpm/@opennextjs+aws@3.8.5/node_modules/@opennextjs/aws/dist/utils/error.js
@@ -62,10 +62,10 @@ function getOpenNextErrorLogLevel() {
   }
 }
 
-// node_modules/.pnpm/@opennextjs+cloudflare@1.11.0_wrangler@4.45.3/node_modules/@opennextjs/cloudflare/dist/api/cloudflare-context.js
+// node_modules/.pnpm/@opennextjs+cloudflare@1.11.0_wrangler@4.45.4/node_modules/@opennextjs/cloudflare/dist/api/cloudflare-context.js
 var cloudflareContextSymbol = Symbol.for("__cloudflare-context__");
 
-// node_modules/.pnpm/@opennextjs+cloudflare@1.11.0_wrangler@4.45.3/node_modules/@opennextjs/cloudflare/dist/api/overrides/internal.js
+// node_modules/.pnpm/@opennextjs+cloudflare@1.11.0_wrangler@4.45.4/node_modules/@opennextjs/cloudflare/dist/api/overrides/internal.js
 var debugCache = (name, ...args) => {
   if (process.env.NEXT_PRIVATE_DEBUG_CACHE) {
     console.log(`[${name}] `, ...args);
@@ -110,7 +110,7 @@ async function internalPurgeCacheByTags(env, tags) {
   }
 }
 
-// node_modules/.pnpm/@opennextjs+cloudflare@1.11.0_wrangler@4.45.3/node_modules/@opennextjs/cloudflare/dist/api/durable-objects/bucket-cache-purge.js
+// node_modules/.pnpm/@opennextjs+cloudflare@1.11.0_wrangler@4.45.4/node_modules/@opennextjs/cloudflare/dist/api/durable-objects/bucket-cache-purge.js
 var DEFAULT_BUFFER_TIME_IN_SECONDS = 5;
 var MAX_NUMBER_OF_TAGS_PER_PURGE = 100;
 var BucketCachePurge = class extends DurableObject {

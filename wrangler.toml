@@ -8,5 +8,4 @@ compatibility_flags = ["nodejs_compat"]
 directory = ".open-next/assets"
 binding = "ASSETS"
 
-[observability.logs]
-enabled = true
+

@@ -91,12 +91,12 @@ const Hero = () => {
           </motion.div>
 
           {/* Main Headline - Animated Item 2 */}
-          <motion.h1 
-            className="text-4xl md:text-6xl font-bold mb-6 text-white leading-tight drop-shadow-lg font-sans"
-            variants={itemVariants}
-          >
-            {t('title')}
-          </motion.h1>
+<motion.h1
+  className="text-4xl  md:text-6xl xl:text-7xl font-bold mb-6 text-white leading-tight drop-shadow-xl font-sans tracking-tight"
+  variants={itemVariants}
+>
+  {t('title')}
+</motion.h1>
 
           {/* Subtitle - Animated Item 3 */}
           <motion.p 
@@ -116,7 +116,7 @@ const Hero = () => {
               size="lg"
               className="w-[240px] h-[64px] bg-white hover:bg-gray-50 text-blue-600 hover:text-blue-700 border-0 shadow-lg rounded-xl transition-all duration-200 hover:scale-105 hover:shadow-xl"
             >
-              <Link href="/registerpet">
+              <Link href="/getpetmicrochipped">
                   <span className={`${isRTL ? 'ml-2' : 'mr-2'} text-lg`}>🏠</span>
                   {t('cta')}
               </Link>

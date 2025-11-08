@@ -11,7 +11,7 @@ export default function MicrochipPromo() {
   const locale = useLocale();
 
   // Example: you can check for RTL language manually
-  const isRTL = locale === 'ar' || locale === 'he'; // adjust based on your supported locales
+  const isRTL = locale === 'ar' || locale === 'en'; // adjust based on your supported locales
 
   return (
     <section className={`py-20 bg-green-600 ${isRTL ? 'rtl' : 'ltr'}`}>
@@ -48,7 +48,7 @@ export default function MicrochipPromo() {
           {/* Call to Action Buttons */}
           <div className={`flex flex-col sm:flex-row gap-4 justify-center items-center mb-8 ${isRTL ? 'sm:flex-row-reverse' : ''}`}>
             <Button
-              onClick={() => router.push('/registerpet')}
+              onClick={() => router.push('/getpetmicrochipped')}
               size="lg"
               className="w-[280px] h-[56px] bg-white hover:bg-gray-50 text-green-600 hover:text-green-700 border-0 shadow-lg rounded-xl transition-all duration-200 hover:scale-105 hover:shadow-xl font-semibold"
             >

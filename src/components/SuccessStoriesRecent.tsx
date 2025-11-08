@@ -1,5 +1,7 @@
 'use client';
 import { useTranslations } from "next-intl";
+import Image from "next/image";
+
 
 const SuccessStoriesRecent = () => {
   const t= useTranslations('SuccessStoriesRecent');
@@ -24,7 +26,7 @@ const SuccessStoriesRecent = () => {
             <div className="p-6">
               <div className="flex items-center mb-4">
                 <div className="w-16 h-16 bg-gray-200 rounded-full flex items-center justify-center mr-4 overflow-hidden">
-                  <img src="https://pet-microchip-system.mrehman.com/assets/images/Max.jpg" alt={t('max.petType')} className="w-full h-full object-cover" />
+                  <Image src="/assets/Max.jpg" alt={t('max.petType')} width={100} height={100} className="w-full h-full object-cover" />
                 </div>
                 <div>
                   <h4 className="font-bold text-gray-800">{t('max.petName')} - {t('max.petType')}</h4>
@@ -57,7 +59,7 @@ const SuccessStoriesRecent = () => {
             <div className="p-6">
               <div className="flex items-center mb-4">
                 <div className="w-16 h-16 bg-gray-200 rounded-full flex items-center justify-center mr-4 overflow-hidden">
-                  <img src="https://pet-microchip-system.mrehman.com/assets/images/Luna.jpg" alt={t('luna.petType')} className="w-full h-full object-cover" />
+                  <Image src="/assets/Luna.jpg" alt={t('luna.petType')} width={100} height={100}className="w-full h-full object-cover" />
                 </div>
                 <div>
                   <h4 className="font-bold text-gray-800">{t('luna.petName')} - {t('luna.petType')}</h4>
@@ -90,7 +92,7 @@ const SuccessStoriesRecent = () => {
             <div className="p-6">
               <div className="flex items-center mb-4">
                 <div className="w-16 h-16 bg-gray-200 rounded-full flex items-center justify-center mr-4 overflow-hidden">
-                  <img src="https://pet-microchip-system.mrehman.com/assets/images/Buddy.jpg" alt={t('Bonduk.petType')} className="w-full h-full object-cover" />
+                  <Image src="/assets/Buddy.jpg" alt={t('Bonduk.petType')} width={100} height={100}className="w-full h-full object-cover" />
                 </div>
                 <div>
                   <h4 className="font-bold text-gray-800">{t('Bonduk.petName')} - {t('Bonduk.petType')}</h4>
@@ -123,7 +125,7 @@ const SuccessStoriesRecent = () => {
             <div className="p-6">
               <div className="flex items-center mb-4">
                 <div className="w-16 h-16 bg-gray-200 rounded-full flex items-center justify-center mr-4 overflow-hidden">
-                  <img src="https://pet-microchip-system.mrehman.com/assets/images/milo.jpg" alt={t('milo.petType')} className="w-full h-full object-cover" />
+                  <Image src="/assets/milo.jpg" alt={t('milo.petType')} width={100} height={100}className="w-full h-full object-cover" />
                 </div>
                 <div>
                   <h4 className="font-bold text-gray-800">{t('milo.petName')} - {t('milo.petType')}</h4>
