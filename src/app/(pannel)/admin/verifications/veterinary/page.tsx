@@ -1,23 +1,38 @@
-"use client";
+'use client';
 
-import { useState, useEffect } from "react";
-import { Button, Modal, Spinner } from "react-bootstrap";
-import { useVeterinariesStore } from "@/store/useVeterinariesStore";
-import VeterinaryCard from "@/app/(pannel)/components/VeterinaryCard";
-import { VeterinaryClinic } from "@/types/veterinaries";
+import { useState, useEffect, useCallback } from 'react';
+import { Button, Modal, Spinner } from 'react-bootstrap';
+import { useVeterinariesStore } from '@/store/useVeterinariesStore';
+import VeterinaryCard from '@/app/(pannel)/components/VeterinaryCard';
+import { VeterinaryClinic } from '@/types/veterinaries';
+
 export default function VeterinariesPage() {
-  const { veterinaries, fetchVeterinaries, subscribeRealtime, hasMore, loading } =
-    useVeterinariesStore();
+  const { veterinaries, hasMore, loading } = useVeterinariesStore();
+  const storeFetchVeterinaries = useVeterinariesStore((state) => state.fetchVeterinaries);
+  const storeSubscribeRealtime = useVeterinariesStore((state) => state.subscribeRealtime);
 
   const [selectedVet, setSelectedVet] = useState<VeterinaryClinic | null>(null);
   const [showModal, setShowModal] = useState(false);
 
-  // ✅ Fetch on load
+  // Stable fetch function
+  const fetchVeterinaries = useCallback(
+    (reset?: boolean) => {
+      storeFetchVeterinaries(reset);
+    },
+    [storeFetchVeterinaries]
+  );
+
+  // Stable subscribe function
+  const subscribeRealtime = useCallback(() => {
+    return storeSubscribeRealtime();
+  }, [storeSubscribeRealtime]);
+
+  // Fetch on load
   useEffect(() => {
     fetchVeterinaries(true);
-  });
+  }, [fetchVeterinaries]);
 
-  // ✅ Realtime subscription
+  // Realtime subscription
   useEffect(() => {
     const unsub = subscribeRealtime();
     return () => unsub?.();
@@ -54,7 +69,7 @@ export default function VeterinariesPage() {
                 <Spinner animation="border" size="sm" /> Loading...
               </>
             ) : (
-              "Load More"
+              'Load More'
             )}
           </Button>
         </div>
@@ -75,21 +90,21 @@ export default function VeterinariesPage() {
               )}
               {selectedVet.city && (
                 <p className="text-muted">
-                  📍 {selectedVet.city}, {selectedVet.country || ""}
+                  📍 {selectedVet.city}, {selectedVet.country || ''}
                 </p>
               )}
               <div className="mb-3">
                 <strong>Status:</strong>{" "}
-                {selectedVet.is_verified ? "Verified" : "Unverified"}
+                {selectedVet.is_verified ? 'Verified' : 'Unverified'}
               </div>
 
               <h6 className="mt-3">🩺 Clinic Info</h6>
               <ul>
-                <li>License: {selectedVet.license_number || "N/A"}</li>
-                <li>Years in Practice: {selectedVet.years_in_practice || "N/A"}</li>
-                <li>Provides 24H Emergency: {selectedVet.provides_24h_emergency ? "Yes" : "No"}</li>
-                <li>Microchip Services: {selectedVet.microchip_services ? "Yes" : "No"}</li>
-                <li>Has Scanners: {selectedVet.has_microchip_scanners ? "Yes" : "No"}</li>
+                <li>License: {selectedVet.license_number || 'N/A'}</li>
+                <li>Years in Practice: {selectedVet.years_in_practice || 'N/A'}</li>
+                <li>Provides 24H Emergency: {selectedVet.provides_24h_emergency ? 'Yes' : 'No'}</li>
+                <li>Microchip Services: {selectedVet.microchip_services ? 'Yes' : 'No'}</li>
+                <li>Has Scanners: {selectedVet.has_microchip_scanners ? 'Yes' : 'No'}</li>
               </ul>
             </>
           ) : (

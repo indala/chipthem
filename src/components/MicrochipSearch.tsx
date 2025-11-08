@@ -7,7 +7,6 @@ import { useTranslations } from "next-intl";
 interface SearchResult {
   petName: string;
   petType: string;
-  petAge: string;
   petColor: string;
   ownerName: string;
   phone: string;
@@ -135,9 +134,6 @@ export default function MicrochipSearch() {
                     </p>
                     <p>
                       <strong>{t("typeBreed")}: </strong> {searchResult.petType}
-                    </p>
-                    <p>
-                      <strong>{t("age")}: </strong> {searchResult.petAge}
                     </p>
                     <p>
                       <strong>{t("color")}: </strong> {searchResult.petColor}

@@ -42,10 +42,10 @@ const Footer = () => {
                 <AiOutlineWarning className="h-5 w-5" />
                 <span className="font-bold">{t('lostPetEmergency')}</span>
               </div>
-              <div className="flex items-center gap-2 mb-1">
+              <a href="tel:+962798980504" className="flex items-center gap-2 mb-1 hover:text-white transition-colors">
                 <LuPhone className="h-4 w-4 text-pink-300" />
                 <span className="font-bold">{t('emergencyPhone')}</span>
-              </div>
+              </a>
               <p className="text-xs text-white/90">{t('emergencyAvailable')}</p>
             </div>
           </div>

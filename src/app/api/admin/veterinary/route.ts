@@ -1,19 +1,18 @@
+
 import { NextResponse } from 'next/server';
-import { cookies } from 'next/headers'; // ✅ App Router only
 import { supabaseServerClient } from '@/lib/supabaseServerClient';
+import { verifyTokenAndGetPayload } from '@/lib/auth';
 
 export async function GET(req: Request) {
+  // 1. Use the new centralized verification function
+  const payload = await verifyTokenAndGetPayload();
+
+  // 2. Check for authorization
+  if (!payload || payload.role !== 'admin') {
+    return NextResponse.json({ message: "Unauthorized" }, { status: 401 });
+  }
+
   try {
-    const cookieStore =await cookies();
-    const adminToken = cookieStore?.get('admin_token') || null;
-
-    if (!adminToken) {
-      return NextResponse.json({ success: false, message: 'Unauthorized' }, { status: 401 });
-    }
-
-    
-
-    // ✅ Proceed with your paginated query
     const { searchParams } = new URL(req.url);
     const page = parseInt(searchParams.get('page') || '1', 10);
     const limit = 20;

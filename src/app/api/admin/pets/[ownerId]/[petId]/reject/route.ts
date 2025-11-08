@@ -1,11 +1,18 @@
+
 import { NextResponse } from "next/server";
 import { supabaseServerClient } from "@/lib/supabaseServerClient";
+import { verifyTokenAndGetPayload } from "@/lib/auth";
 
 export async function DELETE(
   req: Request,
   { params }: { params: Promise<{ ownerId: string; petId: string }> }
 ) {
-  const { ownerId, petId } =await params;
+  const payload = await verifyTokenAndGetPayload();
+  if (!payload || payload.role !== 'admin') {
+    return NextResponse.json({ message: "Unauthorized" }, { status: 401 });
+  }
+
+  const { ownerId, petId } = await params;
 
   try {
     // 1️⃣ Fetch owner info

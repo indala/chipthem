@@ -1,16 +1,21 @@
+
 import { NextResponse } from "next/server";
 import { supabaseServerClient } from "@/lib/supabaseServerClient";
+import { verifyTokenAndGetPayload } from "@/lib/auth";
 
 export async function PATCH(
   req: Request,
   { params }: { params: Promise<{ vetId: string }> }
 ) {
-  const { vetId } =await params;
+  const payload = await verifyTokenAndGetPayload();
+  if (!payload || payload.role !== 'admin') {
+    return NextResponse.json({ message: "Unauthorized" }, { status: 401 });
+  }
+
+  const { vetId } = await params;
 
   try {
-    
-
-    // --- 3. Update verification fields ---
+    // --- Update verification fields ---
     const { error: updateError } = await supabaseServerClient
       .from("veterinary_clinics")
       .update({

@@ -1,26 +1,42 @@
-"use client";
+'use client';
 
-import { useState, useEffect } from "react";
-import { Button, Modal, Spinner } from "react-bootstrap";
-import { usePetsStore } from "@/store/usePetsStore";
-import PetCard from "@/app/(pannel)/components/PetCard";
-import { Pet } from "@/types/owners";
+import { useState, useEffect, useCallback } from 'react';
+import { Button, Modal, Spinner } from 'react-bootstrap';
+import { usePetsStore } from '@/store/usePetsStore';
+import PetCard from '@/app/(pannel)/components/PetCard';
+import { Pet } from '@/types/owners';
 
 export default function PetsPage() {
-  const { pets, fetchPets, subscribeRealtime, hasMore, loading } = usePetsStore();
+  const { pets, hasMore, loading } = usePetsStore();
+  const storeFetchPets = usePetsStore((state) => state.fetchPets);
+  const storeSubscribeRealtime = usePetsStore((state) => state.subscribeRealtime);
+
   const [selectedPet, setSelectedPet] = useState<Pet | null>(null);
   const [showModal, setShowModal] = useState(false);
+
+  // Stable fetch function
+  const fetchPets = useCallback(
+    (reset?: boolean) => {
+      storeFetchPets(reset);
+    },
+    [storeFetchPets]
+  );
+
+  // Stable subscribe function
+  const subscribeRealtime = useCallback(() => {
+    return storeSubscribeRealtime();
+  }, [storeSubscribeRealtime]);
 
   // Fetch pets on mount
   useEffect(() => {
     fetchPets(true);
-  });
+  }, [fetchPets]);
 
   // Subscribe to realtime updates
   useEffect(() => {
     const unsub = subscribeRealtime();
     return () => unsub?.();
-  });
+  }, [subscribeRealtime]);
 
   // Open modal
   const openModal = (pet: Pet) => {
@@ -55,7 +71,7 @@ export default function PetsPage() {
                 <Spinner animation="border" size="sm" /> Loading...
               </>
             ) : (
-              "Load More"
+              'Load More'
             )}
           </Button>
         </div>
@@ -70,10 +86,10 @@ export default function PetsPage() {
           {selectedPet ? (
             <>
               <h5>{selectedPet.pet_name}</h5>
-              <p className="text-muted mb-2">{selectedPet.pet_type || "Unknown type"}</p>
+              <p className="text-muted mb-2">{selectedPet.pet_type || 'Unknown type'}</p>
               <div className="mb-3">
                 <strong>Status:</strong>{" "}
-                {selectedPet.status || "N/A"} – {selectedPet.is_verified ? "Verified" : "Unverified"}
+                {selectedPet.status || 'N/A'} – {selectedPet.is_verified ? 'Verified' : 'Unverified'}
               </div>
 
               {/* Owner Info */}
@@ -87,7 +103,7 @@ export default function PetsPage() {
                   )}
                   {selectedPet.owner.city && (
                     <p className="text-muted">
-                      📍 {selectedPet.owner.city}, {selectedPet.owner.country || ""}
+                      📍 {selectedPet.owner.city}, {selectedPet.owner.country || ''}
                     </p>
                   )}
                 </>
