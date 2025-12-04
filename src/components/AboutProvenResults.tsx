@@ -84,7 +84,7 @@ export default function AboutProvenResults() {
        </div>
 
        <Button
-        onClick={() => handleNavigate('getpetmicrochipped')}
+        onClick={() => handleNavigate('contact')}
         className="w-full bg-blue-400 text-white py-3 rounded-lg font-semibold hover:bg-blue-500 transition-colors"
        >
         {t('complete.button')}

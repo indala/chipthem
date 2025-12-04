@@ -16,7 +16,7 @@ export async function middleware(req: NextRequest) {
       prefix: "/admin",
       cookieName: "admin_token",
       loginPath: "/alogin",
-      dashboardPath: "/admin/dashboard",
+      dashboardPath: "/admin/verifications/petOwner",
     },
     {
       role: "veterinary",
@@ -28,7 +28,7 @@ export async function middleware(req: NextRequest) {
     {
       role: "petOwner",
       prefix: "/petOwner",
-      cookieName: "pet_token",
+      cookieName: "petOwner_token",
       loginPath: "/pologin",
       dashboardPath: "/petOwner/dashboard",
     },

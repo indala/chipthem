@@ -2,8 +2,6 @@ import { create } from "zustand";
 import { supabaseClient } from "@/lib/supabaseClient";
 import { VeterinaryClinic } from "@/types/veterinaries";
 
-
-
 interface SupabasePayload<T> {
   eventType: "INSERT" | "UPDATE" | "DELETE";
   new: T | null;
@@ -59,7 +57,7 @@ export const useVeterinariesStore = create<VeterinariesState>((set, get) => ({
     }
   },
 
-  // --- Verify veterinary ---
+  // --- Verify veterinary (MODIFIED to remove from list) ---
   verifyVeterinary: async (vetId: string) => {
     try {
       const res = await fetch(`/api/admin/veterinary/${vetId}/verify`, {
@@ -69,12 +67,9 @@ export const useVeterinariesStore = create<VeterinariesState>((set, get) => ({
 
       if (!data.success) throw new Error(data.message);
 
+      // Filter the verified veterinary clinic out of the current list
       set({
-        veterinaries: get().veterinaries.map((v) =>
-          v.id === vetId
-            ? { ...v, is_verified: true, status: "verified" }
-            : v
-        ),
+        veterinaries: get().veterinaries.filter((v) => v.id !== vetId),
       });
 
       console.log("✅ Veterinary verified:", data.message);
@@ -83,7 +78,7 @@ export const useVeterinariesStore = create<VeterinariesState>((set, get) => ({
     }
   },
 
-  // --- Reject veterinary ---
+  // --- Reject veterinary (UNMODIFIED: already removes the clinic) ---
   rejectVeterinary: async (vetId: string) => {
     try {
       const res = await fetch(`/api/admin/veterinary/${vetId}/reject`, {

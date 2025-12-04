@@ -3,6 +3,8 @@ import {getMessages} from 'next-intl/server';
 import {cookies} from 'next/headers';
 import ScrollToTop from '@/components/ScrollToTop';
 import { Toaster } from "sonner";
+import './globals.css';
+
 
 
 export default async function RootLayout({children}: {children: React.ReactNode}) {

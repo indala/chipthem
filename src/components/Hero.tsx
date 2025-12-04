@@ -92,7 +92,7 @@ const Hero = () => {
 
           {/* Main Headline - Animated Item 2 */}
 <motion.h1
-  className="text-4xl  md:text-6xl xl:text-7xl font-bold mb-6 text-white leading-tight drop-shadow-xl font-sans tracking-tight"
+  className="text-[2.4rem]  md:text-6xl xl:text-7xl font-bold mb-6 text-white leading-tight drop-shadow-xl font-sans tracking-tight"
   variants={itemVariants}
 >
   {t('title')}

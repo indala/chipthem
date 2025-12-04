@@ -3,39 +3,79 @@
 import { useState, ChangeEvent, FormEvent } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
-import { useTranslations } from "next-intl";
+import { useTranslations } from "next-intl"; // Keeping the translation hook for structural text
 
-// --- VALIDATION HELPERS ---
+// =======================================================
+// 🛡️ STRONG VALIDATION HELPERS
+// =======================================================
 
-// Basic Email validation (more comprehensive validation should be server-side)
+/**
+ * 1. Stricter Email Validation
+ */
 const isValidEmail = (email: string): boolean => {
-    // Basic regex for email format
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    // Regex ensures a standard email format: letters, numbers, specific symbols (._%+-) 
+    // in the local part, @, domain (letters, numbers, hyphens), and TLD of 2+ chars.
+    const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
     return emailRegex.test(email);
 };
 
-// Simple phone number validation (allows numbers, spaces, dashes, and parentheses)
-const isValidPhone = (phone: string): boolean => {
-    // Allows 10-15 digits, optionally with basic international formatting (parentheses, spaces, dashes)
-    const phoneRegex = /^[\d\s()+-]{7,20}$/; 
-    return phoneRegex.test(phone.trim()) || phone.trim() === "";
+/**v
+ * 2. Stricter Phone Validation
+ * - Cleans phone number before validation.
+ */
+const isValidPhone = (phone: string, isRequired: boolean): boolean => {
+    // Remove common formatting characters like spaces, parentheses, and dashes
+    const cleanedPhone = phone.replace(/[\s()+-]/g, ''); 
+    
+    if (isRequired && cleanedPhone.length === 0) return false;
+    if (cleanedPhone.length === 0) return true; // Allows optional fields to be empty
+
+    // Check if it's strictly digits and within a reasonable length (7 to 15 digits)
+    const phoneRegex = /^\d{7,15}$/; 
+    return phoneRegex.test(cleanedPhone);
 };
 
-// Password strength validation (e.g., at least 8 chars, one uppercase, one lowercase, one number)
+/**
+ * 3. Strong Password Validation
+ * - Enforces minimum length and character complexity.
+ */
 const isStrongPassword = (password: string): boolean => {
-    if (password.length < 8) return false;
-    // Lookahead for at least one lowercase letter
-    if (!/(?=.*[a-z])/.test(password)) return false; 
-    // Lookahead for at least one uppercase letter
-    if (!/(?=.*[A-Z])/.test(password)) return false; 
-    // Lookahead for at least one digit
-    if (!/(?=.*\d)/.test(password)) return false; 
-    return true;
+    // Increased minimum length to 10 for better security
+    if (password.length < 10) return false; 
+    
+    // Requires: 1+ lowercase, 1+ uppercase, 1+ digit, 1+ special character (!@#$%^&*)
+    const strongRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*])[A-Za-z\d!@#$%^&*]{10,}$/;
+    return strongRegex.test(password);
 };
 
-// --------------------------
+/**
+ * 4. Website URL Validation
+ * - Checks for basic domain structure and optional protocols.
+ */
+const isValidWebsite = (url: string): boolean => {
+    if (url.trim() === "") return true; // Optional field allowed to be empty
+    const urlRegex = /^(https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|www\.[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,})$/;
+    return urlRegex.test(url.trim());
+};
+
+/**
+ * 5. Alpha-Space Validation (for names and city/country)
+ * - Restricts input to letters (including accented characters), spaces, hyphens, and periods.
+ */
+const isAlphaSpace = (text: string): boolean => {
+    if (text.trim() === "") return false;
+    // The 'u' flag enables Unicode property escapes (\p{L} for any letter).
+    const alphaSpaceRegex = /^[\p{L}\s.-]+$/u; 
+    return alphaSpaceRegex.test(text.trim());
+};
+
+
+// =======================================================
+// 🏥 VETERINARY CLINIC REGISTRATION COMPONENT
+// =======================================================
 
 const VeterinaryClinicRegistration = () => {
+    // Keeping these hooks as they handle the overall component localization
     const t = useTranslations("VetRegister");
     const tCommon = useTranslations("Common");
     const router = useRouter();
@@ -93,48 +133,105 @@ const VeterinaryClinicRegistration = () => {
         // Clear previous error
         setErrorMessage("");
 
-        // 1. Password Match
+        // --- A. ACCOUNT VALIDATION ---
+        
+        // A1. Required Fields: Email, Password, Confirm Password
+        if (!formData.email || !formData.password || !formData.confirmPassword) {
+            setErrorMessage("Please fill in all required account fields (Email, Password, Confirm Password).");
+            return false;
+        }
+
+        // A2. Password Match
         if (formData.password !== formData.confirmPassword) {
-            setErrorMessage(t('passwordMismatch'));
+            setErrorMessage("The passwords do not match.");
             return false;
         }
 
-        // 2. Required Fields (Email, Clinic Name, Contact Person, Phone, Address, City, Country)
-        if (!formData.email || !formData.clinicName || !formData.contact_person || !formData.phone || !formData.streetAddress || !formData.city || !formData.country) {
-            setErrorMessage(t('missingRequiredFields'));
-            return false;
-        }
-
-        // 3. Email Format
+        // A3. Email Format
         if (!isValidEmail(formData.email)) {
-            setErrorMessage(t('invalidEmailFormat'));
+            setErrorMessage("Please enter a valid email address format.");
             return false;
         }
 
-        // 4. Password Strength
+        // A4. Password Strength (now stronger)
         if (!isStrongPassword(formData.password)) {
-            setErrorMessage(t('passwordNotStrong'));
-            // You should define this translation key in your locale files
-            // E.g. "passwordNotStrong": "Password must be at least 8 characters and include uppercase, lowercase, and a number."
+            setErrorMessage("Password must be at least 10 characters and include uppercase, lowercase, a number, and a special character (!@#$%^&*).");
             return false;
         }
         
-        // 5. Phone Number Format
-        if (!isValidPhone(formData.phone)) {
-            setErrorMessage(t('invalidPhoneFormat'));
-            return false;
-        }
-        
-        // 6. Mandatory Checkboxes (Checked by HTML 'required', but good to double-check)
-        if (!formData.termsAccepted || !formData.dataAccuracyConfirmed || !formData.professionalConfirmation || !formData.consentForReferrals) {
-            setErrorMessage(t('mustAcceptTerms'));
+        // --- B. CLINIC & CONTACT VALIDATION (Required Field Check & Format Check) ---
+
+        // B1. Required Clinic/Address Fields
+        if (!formData.clinicName.trim() || !formData.contact_person.trim() || !formData.phone.trim() || 
+            !formData.streetAddress.trim() || !formData.city.trim() || !formData.country.trim()) {
+            setErrorMessage("Please fill in all required Clinic and Address fields.");
             return false;
         }
 
-        // Optional: Check if yearsInPractice is a reasonable number
+        // B2. Name/Location Fields (Alpha-Space Check to prevent simple injection)
+        if (!isAlphaSpace(formData.clinicName) || !isAlphaSpace(formData.contact_person) || 
+            (formData.stateProvince && formData.stateProvince.trim() !== "" && !isAlphaSpace(formData.stateProvince)) || 
+            !isAlphaSpace(formData.city) || !isAlphaSpace(formData.country)) {
+            setErrorMessage("Name, City, State/Province, and Country fields can only contain letters, spaces, hyphens, and periods."); 
+            return false;
+        }
+
+        // B3. Phone Number Format (Primary Phone is required, so pass 'true')
+        if (!isValidPhone(formData.phone, true)) {
+            setErrorMessage("The primary phone number format is invalid. Must be between 7 and 15 digits.");
+            return false;
+        }
+        
+        // B4. Alt Phone (Optional, but if filled, must be valid)
+        if (formData.alt_phone.trim() !== "" && !isValidPhone(formData.alt_phone, false)) {
+             setErrorMessage("The alternative phone number format is invalid. Must be between 7 and 15 digits.");
+             return false;
+        }
+
+        // B5. Website URL
+        if (formData.website.trim() !== "" && !isValidWebsite(formData.website)) {
+            setErrorMessage("The website URL format is invalid. Please include http:// or https:// or www.");
+            return false;
+        }
+        
+        // B6. Years in Practice (Numeric, Non-Negative, and Reasonable Range)
         const years = parseInt(formData.yearsInPractice);
-        if (formData.yearsInPractice && (isNaN(years) || years < 0 || years > 100)) {
-            setErrorMessage(t('invalidYearsInPractice'));
+        if (formData.yearsInPractice.trim() !== "" && (isNaN(years) || years < 0 || years > 100)) {
+            setErrorMessage("Years in practice must be a reasonable non-negative number (0-100).");
+            return false;
+        }
+        
+        // B7. License Number & Postal Code (Allow Alphanumeric, spaces, and hyphens/dashes)
+        const codeRegex = /^[a-zA-Z0-9\s-]+$/;
+        
+        if (formData.veterinaryLicenseNumber.trim() !== "" && !codeRegex.test(formData.veterinaryLicenseNumber.trim())) {
+             setErrorMessage("Veterinary license number can only contain letters, numbers, spaces, and hyphens.");
+             return false;
+        }
+        
+        if (formData.postalCode.trim() !== "" && !codeRegex.test(formData.postalCode.trim())) {
+            setErrorMessage("Postal code can only contain letters, numbers, spaces, and hyphens.");
+            return false;
+        }
+
+        // B8. Operating Hours (Simple length check to ensure it's not accidentally deleted)
+        if (formData.operatingHours.length < 10) {
+            setErrorMessage("Please provide valid operating hours.");
+            return false;
+        }
+
+        // B9. Long Text Fields (Additional Services, Scanner Types, Specializations)
+        // Set a max length (e.g., 500 chars)
+        const maxLen = 500;
+        if (formData.additionalServices.length > maxLen || formData.scannerTypes.length > maxLen || formData.specializations.length > maxLen) {
+            setErrorMessage(`Text fields (Services, Scanners, Specializations) cannot exceed ${maxLen} characters.`);
+            return false;
+        }
+
+        // --- C. MANDATORY CHECKBOXES ---
+
+        if (!formData.termsAccepted || !formData.dataAccuracyConfirmed || !formData.professionalConfirmation || !formData.consentForReferrals) {
+            setErrorMessage("You must agree to all mandatory terms and confirmations to register.");
             return false;
         }
 
@@ -147,7 +244,6 @@ const VeterinaryClinicRegistration = () => {
 
         // RUN VALIDATION
         if (!validateForm()) {
-            // Error message is already set by validateForm()
             return;
         }
 
@@ -172,16 +268,19 @@ const VeterinaryClinicRegistration = () => {
                 router.push('/registersuccessvet');
             } else {
                 // Use backend error message, or a general failure message
-                setErrorMessage(result.message || t('registrationFailed'));
+                setErrorMessage(result.message || "Registration failed. Please try again.");
             }
         } catch (error) {
             console.error('Registration error:', error);
-            setErrorMessage(t('unexpectedError'));
+            setErrorMessage("An unexpected network error occurred.");
         } finally {
             setIsLoading(false);
         }
-    }; // <--- CLOSED THE FUNCTION
+    };
 
+    // =======================================================
+    // 🎨 COMPONENT JSX (INCLUDING THE PROVIDED HALF)
+    // =======================================================
     return (
         <section className="pb-16">
             <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -197,6 +296,13 @@ const VeterinaryClinicRegistration = () => {
                     </div>
 
                     <form onSubmit={handleSubmit} className="px-8 py-8">
+                        {/* Display Error Message (placed higher for better visibility) */}
+                        {errorMessage && (
+                            <div className="mb-6 p-4 text-sm text-red-800 rounded-lg bg-red-50 font-semibold border border-red-200" role="alert">
+                                {errorMessage}
+                            </div>
+                        )}
+                        
                         {/* Account Information Section */}
                         <div className="mb-12">
                             <h3 className="text-xl font-bold text-gray-800 mb-6 pb-2 border-b border-gray-200">
@@ -210,7 +316,7 @@ const VeterinaryClinicRegistration = () => {
                                 {/* Email */}
                                 <div>
                                     <label className="block text-sm font-semibold text-gray-700 mb-2">
-                                        {t('email')} *
+                                        {t('email')} 
                                     </label>
                                     <input
                                         type="email"
@@ -229,13 +335,12 @@ const VeterinaryClinicRegistration = () => {
                                 {/* Password */}
                                 <div>
                                     <label className="block text-sm font-semibold text-gray-700 mb-2">
-                                        {t('password')} *
+                                        {t('password')} 
                                     </label>
                                     <input
                                         type="password"
                                         name="password"
                                         required
-                                        // minLength is now handled by isStrongPassword check
                                         value={formData.password}
                                         onChange={handleChange}
                                         className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-600 focus:border-transparent transition-all duration-200"
@@ -247,7 +352,7 @@ const VeterinaryClinicRegistration = () => {
                                 {/* Confirm Password */}
                                 <div className="md:col-span-2">
                                     <label className="block text-sm font-semibold text-gray-700 mb-2">
-                                        {t('confirmPassword')} *
+                                        {t('confirmPassword')} 
                                     </label>
                                     <input
                                         type="password"
@@ -275,12 +380,13 @@ const VeterinaryClinicRegistration = () => {
                                 {/* Clinic Name */}
                                 <div className="md:col-span-2">
                                     <label className="block text-sm font-semibold text-gray-700 mb-2">
-                                        {t('clinicName')} *
+                                        {t('clinicName')} 
                                     </label>
                                     <input
                                         type="text"
                                         name="clinicName"
                                         required
+                                        maxLength={100} 
                                         value={formData.clinicName}
                                         onChange={handleChange}
                                         className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-600 focus:border-transparent transition-all duration-200"
@@ -291,12 +397,13 @@ const VeterinaryClinicRegistration = () => {
                                 {/* Contact Person */}
                                 <div>
                                     <label className="block text-sm font-semibold text-gray-700 mb-2">
-                                        {t('contactPerson')} *
+                                        {t('contactPerson')} 
                                     </label>
                                     <input
                                         type="text"
                                         name="contact_person"
                                         required
+                                        maxLength={100} 
                                         value={formData.contact_person}
                                         onChange={handleChange}
                                         className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-600 focus:border-transparent transition-all duration-200"
@@ -312,6 +419,7 @@ const VeterinaryClinicRegistration = () => {
                                     <input
                                         type="text"
                                         name="veterinaryLicenseNumber"
+                                        maxLength={50} 
                                         value={formData.veterinaryLicenseNumber}
                                         onChange={handleChange}
                                         className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-600 focus:border-transparent transition-all duration-200"
@@ -325,7 +433,7 @@ const VeterinaryClinicRegistration = () => {
                                 {/* Primary Phone */}
                                 <div>
                                     <label className="block text-sm font-semibold text-gray-700 mb-2">
-                                        {t('phone')} *
+                                        {t('phone')} 
                                     </label>
                                     <input
                                         type="tel"
@@ -377,7 +485,7 @@ const VeterinaryClinicRegistration = () => {
                                         type="number"
                                         name="yearsInPractice"
                                         min={0}
-                                        max={50}
+                                        max={100} 
                                         value={formData.yearsInPractice}
                                         onChange={handleChange}
                                         className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-600 focus:border-transparent transition-all duration-200"
@@ -400,12 +508,13 @@ const VeterinaryClinicRegistration = () => {
                                 {/* streetAddress */}
                                 <div className="md:col-span-2">
                                     <label className="block text-sm font-semibold text-gray-700 mb-2">
-                                        {t('streetAddress')} *
+                                        {t('streetAddress')} 
                                     </label>
                                     <input
                                         type="text"
                                         name="streetAddress"
                                         required
+                                        maxLength={150} 
                                         value={formData.streetAddress}
                                         onChange={handleChange}
                                         className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-600 focus:border-transparent transition-all duration-200"
@@ -416,12 +525,13 @@ const VeterinaryClinicRegistration = () => {
                                 {/* City */}
                                 <div>
                                     <label className="block text-sm font-semibold text-gray-700 mb-2">
-                                        {t('city')} *
+                                        {t('city')} 
                                     </label>
                                     <input
                                         type="text"
                                         name="city"
                                         required
+                                        maxLength={50}
                                         value={formData.city}
                                         onChange={handleChange}
                                         className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-600 focus:border-transparent transition-all duration-200"
@@ -437,6 +547,7 @@ const VeterinaryClinicRegistration = () => {
                                     <input
                                         type="text"
                                         name="stateProvince"
+                                        maxLength={50}
                                         value={formData.stateProvince}
                                         onChange={handleChange}
                                         className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-600 focus:border-transparent transition-all duration-200"
@@ -452,6 +563,7 @@ const VeterinaryClinicRegistration = () => {
                                     <input
                                         type="text"
                                         name="postalCode"
+                                        maxLength={20}
                                         value={formData.postalCode}
                                         onChange={handleChange}
                                         className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-600 focus:border-transparent transition-all duration-200"
@@ -462,12 +574,13 @@ const VeterinaryClinicRegistration = () => {
                                 {/* Country */}
                                 <div>
                                     <label className="block text-sm font-semibold text-gray-700 mb-2">
-                                        {t('country')} *
+                                        {t('country')} 
                                     </label>
                                     <input
                                         type="text"
                                         name="country"
                                         required
+                                        maxLength={50}
                                         value={formData.country}
                                         onChange={handleChange}
                                         className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-600 focus:border-transparent transition-all duration-200"
@@ -490,12 +603,13 @@ const VeterinaryClinicRegistration = () => {
                                 {/* Operating Hours */}
                                 <div>
                                     <label className="block text-sm font-semibold text-gray-700 mb-2">
-                                        {t('operatingHours')} *
+                                        {t('operatingHours')} 
                                     </label>
                                     <textarea
                                         name="operatingHours"
                                         rows={7}
                                         required
+                                        maxLength={500}
                                         value={formData.operatingHours}
                                         onChange={handleChange}
                                         className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-600 focus:border-transparent transition-all duration-200"
@@ -577,6 +691,7 @@ const VeterinaryClinicRegistration = () => {
                                     <input
                                         type="text"
                                         name="scannerTypes"
+                                        maxLength={500}
                                         value={formData.scannerTypes}
                                         onChange={handleChange}
                                         className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-600 focus:border-transparent transition-all duration-200"
@@ -587,14 +702,15 @@ const VeterinaryClinicRegistration = () => {
                                     </p>
                                 </div>
 
-                                {/* Services Offered */}
+                                {/* Additional Services */}
                                 <div className="md:col-span-2">
                                     <label className="block text-sm font-semibold text-gray-700 mb-2">
-                                        {t('additionalServices')}
+                                         {t('additionalServices')}
                                     </label>
                                     <textarea
                                         name="additionalServices"
                                         rows={3}
+                                        maxLength={500}
                                         value={formData.additionalServices}
                                         onChange={handleChange}
                                         className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-600 focus:border-transparent transition-all duration-200"
@@ -610,6 +726,7 @@ const VeterinaryClinicRegistration = () => {
                                     <input
                                         type="text"
                                         name="specializations"
+                                        maxLength={255}
                                         value={formData.specializations}
                                         onChange={handleChange}
                                         className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-600 focus:border-transparent transition-all duration-200"
@@ -619,8 +736,14 @@ const VeterinaryClinicRegistration = () => {
                             </div>
                         </div>
 
-                        {/* Terms and Agreement */}
+                        {/* Terms and Agreement Section */}
                         <div className="mb-8">
+                            <h3 className="text-xl font-bold text-gray-800 mb-6 pb-2 border-b border-gray-200">
+                                <span className="bg-red-600 text-white w-8 h-8 rounded-full inline-flex items-center justify-center text-sm font-bold mr-3">
+                                    6
+                                </span>
+                                {t('termsAgreement')}
+                            </h3>
                             <div className="bg-gray-50 rounded-lg p-6 border">
                                 <h4 className="font-semibold text-gray-800 mb-4">
                                     {t('termsAgreement')}
@@ -651,7 +774,7 @@ const VeterinaryClinicRegistration = () => {
                                             >
                                                 {t('privacyPolicy')}
                                             </Link>{" "}
-                                            *
+                                            
                                         </span>
                                     </label>
                                     
@@ -666,7 +789,7 @@ const VeterinaryClinicRegistration = () => {
                                             className="mt-1 mr-3 h-4 w-4 text-green-600 focus:ring-green-600 border-gray-300 rounded"
                                         />
                                         <span className="text-sm text-gray-700">
-                                            {t('infoAccurate')} *
+                                            {t('infoAccurate')} 
                                         </span>
                                     </label>
                                     
@@ -681,7 +804,7 @@ const VeterinaryClinicRegistration = () => {
                                             className="mt-1 mr-3 h-4 w-4 text-green-600 focus:ring-green-600 border-gray-300 rounded"
                                         />
                                         <span className="text-sm text-gray-700">
-                                            {t('licensedProfessional')} *
+                                            {t('licensedProfessional')} 
                                         </span>
                                     </label>
                                     
@@ -696,7 +819,7 @@ const VeterinaryClinicRegistration = () => {
                                             className="mt-1 mr-3 h-4 w-4 text-green-600 focus:ring-green-600 border-gray-300 rounded"
                                         />
                                         <span className="text-sm text-gray-700">
-                                            {t('dataUsageConsent')} *
+                                            {t('dataUsageConsent')} 
                                         </span>
                                     </label>
                                     
@@ -717,39 +840,20 @@ const VeterinaryClinicRegistration = () => {
                             </div>
                         </div>
 
-                        {/* Error Message */}
-                        {errorMessage && (
-                            <div className="mb-6 bg-red-50 border border-red-200 rounded-lg p-4">
-                                <div className="flex items-center">
-                                    <svg
-                                        className="w-5 h-5 text-red-600 mr-2"
-                                        fill="currentColor"
-                                        viewBox="0 0 24 24"
-                                        aria-hidden="true"
-                                        focusable="false"
-                                    >
-                                        {/* Error/Alert Icon path */}
-                                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" /> 
-                                    </svg>
-                                    <span className="text-red-800 text-sm">{errorMessage}</span>
-                                </div>
-                            </div>
-                        )}
-
                         {/* Submit Button */}
-                        <div className="text-center">
+                        <div className="pt-6 border-t border-gray-200">
                             <button
                                 type="submit"
                                 disabled={isLoading}
-                                className={`bg-gradient-to-r from-green-600 to-blue-600 text-white px-12 py-4 rounded-xl text-lg font-bold hover:shadow-2xl transform hover:scale-105 transition-all duration-200 ${
-                                    isLoading ? 'opacity-50 cursor-not-allowed' : ''
+                                className={`w-full py-3 px-4 rounded-lg font-bold text-lg transition-all duration-200 ${
+                                    isLoading 
+                                        ? 'bg-gray-400 cursor-not-allowed' 
+                                        : 'bg-green-600 text-white hover:bg-green-700 shadow-md hover:shadow-lg'
                                 }`}
                             >
                                 {isLoading ? tCommon('loading') || 'Submitting...' : t('submitButton')}
                             </button>
-                            <p className="text-sm text-gray-500 mt-4">
-                                {t('submitNote')}
-                            </p>
+                          
                         </div>
                     </form>
                 </div>
@@ -764,7 +868,6 @@ const VeterinaryClinicRegistration = () => {
                             aria-hidden="true"
                             focusable="false"
                         >
-                            {/* Info Icon path */}
                             <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z" /> 
                         </svg>
                         <div>

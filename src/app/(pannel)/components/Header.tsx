@@ -1,89 +1,108 @@
-'use client';
+"use client";
 
-import React from 'react';
-import { Container, Dropdown } from 'react-bootstrap';
-import { FiLogOut, FiSettings, FiUser } from 'react-icons/fi';
-import Link from 'next/link';
-import { useRolesStore } from '@/store/rolesStore';
+import { useState, useRef, useEffect, useCallback } from "react";
+import { FiLogOut, FiSettings, FiUser } from "react-icons/fi";
+import Link from "next/link";
+import { useRolesStore } from "@/store/rolesStore";
+import { useRouter } from "next/navigation";
 
-const Header: React.FC = () => {
+export default function Header() {
   const { user, clearUser } = useRolesStore();
-  const username = user?.username || 'User'; // ✅ changed from username → name
-  const role = user?.role || 'admin';
+  const router = useRouter();
 
-  const handleLogout = async () => {
-    try {
-      await fetch('/api/logout', {
-        method: 'POST',
-        credentials: 'include',
-      });
-      clearUser();
-      window.location.reload();
-    } catch (err) {
-      console.error('Logout failed:', err);
-    }
-  };
+  const username = user?.username ?? "User";
+  const role = user?.role ?? "admin";
+
+  const [open, setOpen] = useState(false);
+  const dropdownRef = useRef<HTMLDivElement>(null);
+
+  const handleLogout = useCallback(async () => {
+  await fetch("/api/logout", { method: "POST", credentials: "include" });
+  clearUser();
+
+  // Redirect based on role
+  let loginRoute = "/alogin"; // default
+  if (role === "petOwner") loginRoute = "/p0login";
+  else if (role === "veterinary") loginRoute = "/vlogin";
+
+  router.push(loginRoute);
+}, [clearUser, router, role]);
+
+
+  // Close dropdown when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (
+        dropdownRef.current &&
+        !dropdownRef.current.contains(event.target as Node)
+      ) {
+        setOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () =>
+      document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
 
   return (
-    <header
-      className="bg-dark text-white py-2 border-bottom border-secondary shadow-lg"
-      style={{
-        position: 'relative',
-        top: 0,
-        width: '100%',
-        zIndex: 1030,
-      }}
-    >
-      <Container fluid className="d-flex align-items-center justify-content-between px-3">
-        {/* Left Section */}
-        <div className="d-flex align-items-center fw-bold text-uppercase">
-          <FiSettings className="me-2 text-warning" size={20} />
-          {role} Panel
+    <header className="bg-gray-800 text-white py-3 border-b border-gray-700 shadow-xl z-50 relative">
+      <div className="max-w-7xl mx-auto px-4 flex justify-between items-center">
+        {/* LEFT */}
+        <div className="flex items-center font-bold text-lg uppercase">
+          <FiSettings className="mr-2 text-yellow-400" /> {role} Panel
         </div>
 
-        {/* Right Section */}
-        <div className="d-flex align-items-center">
-          <Dropdown align="end">
-            <Dropdown.Toggle
-              variant="outline-light"
-              id="dropdown-basic"
-              className="d-flex align-items-center"
-            >
-              <FiUser className="me-2" />
-              {username}
-            </Dropdown.Toggle>
+        {/* RIGHT */}
+        <div className="relative" ref={dropdownRef}>
+          <button
+            onClick={() => setOpen((prev) => !prev)}
+            className="flex items-center gap-2 px-3 py-2 bg-gray-700 hover:bg-gray-600 rounded-md transition"
+          >
+            <FiUser /> {username}
+          </button>
 
-            <Dropdown.Menu>
-              <Dropdown.Item
-                as={Link}
+          {open && (
+            <div className="absolute right-0 mt-2 w-48 bg-white text-black rounded-md shadow-lg overflow-hidden dropdown-fade">
+              <Link
                 href={`/${role}/profile`}
-                className="d-flex align-items-center"
+                className="flex items-center gap-2 px-4 py-2 hover:bg-gray-100"
+                onClick={() => setOpen(false)}
               >
-                <FiUser className="me-2 text-primary" /> Profile
-              </Dropdown.Item>
+                <FiUser className="text-indigo-600" />
+                Profile
+              </Link>
 
-              <Dropdown.Item
-                as={Link}
-                href={`/${role}/settings`}
-                className="d-flex align-items-center"
-              >
-                <FiSettings className="me-2 text-secondary" /> Settings
-              </Dropdown.Item>
+              <div className="border-t my-1" />
 
-              <Dropdown.Divider />
-
-              <Dropdown.Item
+              <button
                 onClick={handleLogout}
-                className="d-flex align-items-center text-danger"
+                className="w-full flex items-center gap-2 px-4 py-2 text-red-600 hover:bg-gray-100"
               >
-                <FiLogOut className="me-2" /> Log Out
-              </Dropdown.Item>
-            </Dropdown.Menu>
-          </Dropdown>
+                <FiLogOut />
+                Log Out
+              </button>
+            </div>
+          )}
         </div>
-      </Container>
+      </div>
+
+      {/* Animation */}
+      <style jsx>{`
+        .dropdown-fade {
+          animation: fadeIn 0.2s ease-out;
+        }
+        @keyframes fadeIn {
+          from {
+            opacity: 0;
+            transform: translateY(-6px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+      `}</style>
     </header>
   );
-};
-
-export default Header;
+}

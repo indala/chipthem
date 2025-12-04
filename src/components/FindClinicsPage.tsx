@@ -52,7 +52,6 @@ const defaultLocation = useMemo(() => ({ lat: 31.9883, lng: 35.8701 }), []);
         },
         (error) => {
           console.error("Error getting location:", error);
-          setLocationError("Please enable location access or enter an address.");
           setCurrentLocation(defaultLocation);
         }
       );
@@ -96,7 +95,6 @@ const defaultLocation = useMemo(() => ({ lat: 31.9883, lng: 35.8701 }), []);
           },
           () => {
             if (mounted) {
-              setLocationError("Please enable location access or enter an address.");
               setCurrentLocation(defaultLocation);
             }
           }

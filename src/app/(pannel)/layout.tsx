@@ -1,9 +1,7 @@
-
 // app/(panels)/admin/layout.tsx
-import React from 'react';
 
-// 🛑 IMPORT BOOTSTRAP HERE! 🛑
-import 'bootstrap/dist/css/bootstrap.min.css';
+// ❌ Removed: import 'bootstrap/dist/css/bootstrap.min.css'; ❌
+
 import Sidebar from './components/Sidebar';
 import Header from './components/Header';
 import MobileNav from './components/MobileNav';
@@ -11,35 +9,49 @@ import ClientInit from './components/ClientInit';
 import SwipeWrapper from './components/SwipeWrapper';
 import { AnimatePresence } from 'framer-motion';
 
-// Note: Do NOT import globals.css here
+// Define the sidebar width (240px, consistent with the Sidebar component conversion)
+const SIDEBAR_WIDTH = '240px'; 
 
 export default function AdminLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
-  
-
   return (
-    <div className="d-flex flex-column vh-100 bg-light">
+    // Replaced: d-flex flex-column vh-100 bg-light
+    <div className="flex flex-col h-screen bg-gray-100">
+      
       {/* HEADER (always visible) */}
       <ClientInit />
-      <Header />
+      <Header /> {/* Note: Header is fixed, see previous conversion */}
 
-      <div className="d-flex flex-grow-1 overflow-hidden">
+      {/* Main Layout Area: Sidebar and Content */}
+      {/* Replaced: d-flex flex-grow-1 overflow-hidden */}
+      <div className="flex flex-grow overflow-hidden pt-12 md:pt-0"> {/* Added pt-12 to account for fixed Header height on mobile */}
+
         {/* SIDEBAR (scrollable, fixed width) */}
         <aside
-          className="d-none d-md-flex flex-column bg-white border-end overflow-auto"
-          style={{ width: '250px' }}
+          // Replaced: d-none d-md-flex flex-column bg-white border-end overflow-auto
+          className="hidden md:flex flex-col bg-white border-r border-gray-200 overflow-y-auto overflow-x-hidden flex-shrink-0"
+          style={{ width: SIDEBAR_WIDTH }} // Set fixed width
         >
           <Sidebar />
         </aside>
 
         {/* MAIN CONTENT (scrollable area) */}
-        <main className="flex-grow-1 p-3 overflow-auto mb-5" style={{ height: 'calc(100vh - 56px)' }}>
-            <AnimatePresence mode="wait">
-              <SwipeWrapper>{children}</SwipeWrapper>
-            </AnimatePresence>
+        {/* Replaced: flex-grow-1 p-3 overflow-auto mb-5 */}
+        <main 
+          className="flex-grow overflow-y-auto p-4 md:p-6" 
+          // The height logic is handled by 'h-screen' on the root div and 'flex-grow' here.
+          // The fixed header is handled by setting the header as 'fixed' and starting content below it, 
+          // or by letting the content scroll under the header (which is common for full-height layouts).
+          // Given the previous Header was converted to 'fixed top-0', we adjust the padding/margin as needed.
+        >
+          <AnimatePresence mode="wait">
+            <SwipeWrapper>{children}</SwipeWrapper>
+          </AnimatePresence>
+          {/* Add padding at the bottom for the fixed MobileNav */}
+          <div className="h-[70px] md:hidden" />
         </main>
       </div>
 

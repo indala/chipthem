@@ -6,6 +6,8 @@ import Link from 'next/link';
 import { useTranslations } from 'next-intl';
 import { Loader2 } from 'lucide-react'; // Spinner icon
 import { toast } from "sonner"; // <--- Import toast from sonner
+import { useLocale } from 'next-intl';
+
 
 interface FormData {
  fullName: string;
@@ -36,6 +38,9 @@ const isStrongPassword = (password: string): boolean =>
 const RegisterMenu = () => {
  const router = useRouter();
  const t = useTranslations('RegisterMenu');
+ const locale = useLocale();
+const isRTL = locale === 'ar';
+
 
  const [formData, setFormData] = useState<FormData>({
   fullName: '',
@@ -142,7 +147,7 @@ const RegisterMenu = () => {
       
       // Success case
       toast.success(data.message || t('registrationSuccess'));
-   router.push('/registersuccess');
+   router.push('/registersuccesspet');
   } catch (err) {
       console.error("Fetch Error:", err);
       // Fallback for network or parsing errors
@@ -264,7 +269,7 @@ const RegisterMenu = () => {
                   name="termsAccepted"
                   checked={formData.termsAccepted}
                   onChange={handleChange}
-                  className="mt-1 h-4 w-4 text-pet-primary border-gray-300 rounded"
+                  className={`mt-1 h-4 w-4 text-pet-primary border-gray-300 rounded ${isRTL ? 'ml-3' : 'mr-3'}`}
                   required
                 />
                 <span className="text-sm text-gray-700">
@@ -278,7 +283,7 @@ const RegisterMenu = () => {
                   name="dataAccuracyConfirmed"
                   checked={formData.dataAccuracyConfirmed}
                   onChange={handleChange}
-                  className="mt-1 h-4 w-4 text-pet-primary border-gray-300 rounded"
+                  className={`mt-1 h-4 w-4 text-pet-primary border-gray-300 rounded ${isRTL ? 'ml-3' : 'mr-3'}`}
                   required
                 />
                 <span className="text-sm text-gray-700">{t('certifyAccurate')}</span>
@@ -290,7 +295,7 @@ const RegisterMenu = () => {
                   name="ownershipConfirmed"
                   checked={formData.ownershipConfirmed}
                   onChange={handleChange}
-                  className="mt-1 h-4 w-4 text-pet-primary border-gray-300 rounded"
+                  className={`mt-1 h-4 w-4 text-pet-primary border-gray-300 rounded ${isRTL ? 'ml-3' : 'mr-3'}`}
                   required
                 />
                 <span className="text-sm text-gray-700">{t('confirmOwnership')}</span>

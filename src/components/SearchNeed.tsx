@@ -26,7 +26,8 @@ const SearchNeed: React.FC = () => {
           <div className="bg-white rounded-2xl p-8 shadow-md ring-1 ring-gray-100 h-full flex flex-col justify-between">
             <div>
               <h3 className="text-lg font-semibold text-gray-900 mb-3 flex items-start">
-                <span className="mr-4 inline-flex w-10 h-10 rounded-md items-center justify-center bg-pink-50 text-pink-600 text-xl">
+                {/* RTL Fix: Replaced 'mr-4' with 'me-4' (margin-inline-end) */}
+                <span className="me-4 inline-flex w-10 h-10 rounded-md items-center justify-center bg-pink-50 text-pink-600 text-xl">
                   📋
                 </span>
                 <span className="leading-tight">{t('visitClinic')}</span>
@@ -52,7 +53,8 @@ const SearchNeed: React.FC = () => {
           <div className="bg-white rounded-2xl p-8 shadow-md ring-1 ring-gray-100 h-full flex flex-col justify-between">
             <div>
               <h3 className="text-lg font-semibold text-gray-900 mb-3 flex items-start">
-                <span className="mr-4 inline-flex w-10 h-10 rounded-md items-center justify-center bg-amber-50 text-amber-600 text-xl">
+                {/* RTL Fix: Replaced 'mr-4' with 'me-4' (margin-inline-end) */}
+                <span className="me-4 inline-flex w-10 h-10 rounded-md items-center justify-center bg-amber-50 text-amber-600 text-xl">
                   🏠
                 </span>
                 <span className="leading-tight">{t('contactSupport')}</span>

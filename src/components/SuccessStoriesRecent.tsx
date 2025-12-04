@@ -4,7 +4,7 @@ import Image from "next/image";
 
 
 const SuccessStoriesRecent = () => {
-  const t= useTranslations('SuccessStoriesRecent');
+  const t = useTranslations('SuccessStoriesRecent');
 
   return (
     <section className="py-16">
@@ -15,7 +15,7 @@ const SuccessStoriesRecent = () => {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-          {/* Story 1 */}
+          {/* Story 1: Max */}
           <div className="bg-white rounded-2xl shadow-xl overflow-hidden">
             <div className="bg-green-500 px-6 py-4">
               <div className="flex items-center justify-between">
@@ -25,7 +25,8 @@ const SuccessStoriesRecent = () => {
             </div>
             <div className="p-6">
               <div className="flex items-center mb-4">
-                <div className="w-16 h-16 bg-gray-200 rounded-full flex items-center justify-center mr-4 overflow-hidden">
+                {/* RTL Fix: Replaced 'mr-4' with 'me-4' (margin-inline-end) */}
+                <div className="w-16 h-16 bg-gray-200 rounded-full flex items-center justify-center me-4 overflow-hidden">
                   <Image src="/assets/Max.jpg" alt={t('max.petType')} width={100} height={100} className="w-full h-full object-cover" />
                 </div>
                 <div>
@@ -39,7 +40,7 @@ const SuccessStoriesRecent = () => {
               <div className="flex items-center justify-between">
                 <p className="text-sm font-semibold text-gray-800">- {t('max.author')}</p>
                 <div className="flex items-center text-green-600">
-                  <svg className="w-5 h-5 mr-1" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                  <svg className="w-5 h-5 me-1" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
                     <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                   </svg>
                   <span className="text-sm font-semibold">{t('reunited')}</span>
@@ -48,7 +49,7 @@ const SuccessStoriesRecent = () => {
             </div>
           </div>
 
-          {/* Story 2 */}
+          {/* Story 2: Luna */}
           <div className="bg-white rounded-2xl shadow-xl overflow-hidden">
             <div className="bg-blue-500 px-6 py-4">
               <div className="flex items-center justify-between">
@@ -58,7 +59,8 @@ const SuccessStoriesRecent = () => {
             </div>
             <div className="p-6">
               <div className="flex items-center mb-4">
-                <div className="w-16 h-16 bg-gray-200 rounded-full flex items-center justify-center mr-4 overflow-hidden">
+                {/* RTL Fix: Replaced 'mr-4' with 'me-4' */}
+                <div className="w-16 h-16 bg-gray-200 rounded-full flex items-center justify-center me-4 overflow-hidden">
                   <Image src="/assets/Luna.jpg" alt={t('luna.petType')} width={100} height={100}className="w-full h-full object-cover" />
                 </div>
                 <div>
@@ -72,7 +74,7 @@ const SuccessStoriesRecent = () => {
               <div className="flex items-center justify-between">
                 <p className="text-sm font-semibold text-gray-800">- {t('luna.author')}</p>
                 <div className="flex items-center text-green-600">
-                  <svg className="w-5 h-5 mr-1" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                  <svg className="w-5 h-5 me-1" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
                     <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                   </svg>
                   <span className="text-sm font-semibold">{t('reunited')}</span>
@@ -81,7 +83,7 @@ const SuccessStoriesRecent = () => {
             </div>
           </div>
 
-          {/* Story 3 */}
+          {/* Story 3: Bonduk */}
           <div className="bg-white rounded-2xl shadow-xl overflow-hidden">
             <div className="bg-purple-500 px-6 py-4">
               <div className="flex items-center justify-between">
@@ -91,7 +93,8 @@ const SuccessStoriesRecent = () => {
             </div>
             <div className="p-6">
               <div className="flex items-center mb-4">
-                <div className="w-16 h-16 bg-gray-200 rounded-full flex items-center justify-center mr-4 overflow-hidden">
+                {/* RTL Fix: Replaced 'mr-4' with 'me-4' */}
+                <div className="w-16 h-16 bg-gray-200 rounded-full flex items-center justify-center me-4 overflow-hidden">
                   <Image src="/assets/Buddy.jpg" alt={t('Bonduk.petType')} width={100} height={100}className="w-full h-full object-cover" />
                 </div>
                 <div>
@@ -105,7 +108,7 @@ const SuccessStoriesRecent = () => {
               <div className="flex items-center justify-between">
                 <p className="text-sm font-semibold text-gray-800">- {t('Bonduk.author')}</p>
                 <div className="flex items-center text-green-600">
-                  <svg className="w-5 h-5 mr-1" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                  <svg className="w-5 h-5 me-1" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
                     <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                   </svg>
                   <span className="text-sm font-semibold">{t('reunited')}</span>
@@ -114,7 +117,7 @@ const SuccessStoriesRecent = () => {
             </div>
           </div>
 
-          {/* Story 4 */}
+          {/* Story 4: Milo */}
           <div className="bg-white rounded-2xl shadow-xl overflow-hidden">
             <div className="bg-orange-500 px-6 py-4">
               <div className="flex items-center justify-between">
@@ -124,7 +127,8 @@ const SuccessStoriesRecent = () => {
             </div>
             <div className="p-6">
               <div className="flex items-center mb-4">
-                <div className="w-16 h-16 bg-gray-200 rounded-full flex items-center justify-center mr-4 overflow-hidden">
+                {/* RTL Fix: Replaced 'mr-4' with 'me-4' */}
+                <div className="w-16 h-16 bg-gray-200 rounded-full flex items-center justify-center me-4 overflow-hidden">
                   <Image src="/assets/milo.jpg" alt={t('milo.petType')} width={100} height={100}className="w-full h-full object-cover" />
                 </div>
                 <div>
@@ -138,7 +142,7 @@ const SuccessStoriesRecent = () => {
               <div className="flex items-center justify-between">
                 <p className="text-sm font-semibold text-gray-800">- {t('milo.author')}</p>
                 <div className="flex items-center text-green-600">
-                  <svg className="w-5 h-5 mr-1" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                  <svg className="w-5 h-5 me-1" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
                     <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                   </svg>
                   <span className="text-sm font-semibold">{t('reunited')}</span>

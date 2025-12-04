@@ -1,31 +1,45 @@
+// components/FindMain.tsx
+
 "use client";
 
 import dynamic from "next/dynamic";
 import { useState } from "react";
 import { useTranslations } from "next-intl";
+import Link from "next/link";
 
 // 💡 IMPORT the distance utility
 import { haversineDistance } from "@/utils/distance";
 // 💡 IMPORT the data and the type
-import { CLINICS_DATA, Clinic } from "@/data/clinics"; // Ensure Clinic type is exported/imported
+// ASSUMPTION: Clinic type now uses 'nameKey', 'addressKey', etc., as previously defined
+import { CLINICS_DATA, Clinic } from "@/data/clinics"; 
 
 // Dynamically import map to disable SSR
 const FindMap = dynamic(() => import("./FindMap"), { ssr: false });
 
 // Helper type for the displayed clinic (with calculated distance)
+// ASSUMPTION: The imported Clinic type still contains the original fields (name, address, etc.) 
+// if you haven't updated it yet, but it should be updated to use keys.
+// For this modification, we assume the data file structure has been updated to use keys.
 type DisplayClinic = Clinic & {
     calculatedDistance?: string; // Add optional calculated distance field
 };
 
 
+
+
 export default function FindMain({
-userLocation,
-searchRadius,
+  userLocation,
+  searchRadius,
 }: {
-userLocation: { lat: number; lng: number } | null;
-searchRadius: string;
+  userLocation: { lat: number; lng: number } | null;
+  searchRadius: string;
 }) {
+    // 1. Translation hook for general component text (e.g., button labels, titles)
     const t = useTranslations("FindMain");
+    // 2. Translation hook for data text (e.g., clinic name, address, hours)
+    // ASSUMPTION: Your translation file uses "clinic" as the namespace for data.
+    const tClinic = useTranslations("clinic"); 
+
     const [showEmergencyOnly, setShowEmergencyOnly] = useState(false);
 
     // Parse the radius string into a number
@@ -85,17 +99,23 @@ searchRadius: string;
                     >
                         <div className="flex justify-between">
                             <div>
-                                <h3 className="text-lg font-semibold text-gray-800 mb-1">{clinic.name}</h3>
+                                {/* 💡 MODIFIED: Translate Name via nameKey */}
+                                <h3 className="text-lg font-semibold text-gray-800 mb-1">{tClinic(clinic.nameKey)}</h3>
+                                
                                 {clinic.emergency && (
                                     <span className="text-xs bg-red-100 text-red-700 px-2 py-1 rounded">
                                         {t("emergency")}
                                     </span>
                                 )}
-                                <p className="text-gray-600 mt-2 text-sm">📍 {clinic.address}</p>
-                                <p className="text-gray-600 text-sm">☎️ {clinic.phone}</p>
-                                <p className="text-gray-500 text-sm">🕒 {clinic.hours}</p>
+                                {/* 💡 MODIFIED: Translate Address via addressKey */}
+                                <p className="text-gray-600 mt-2 text-sm">📍 {tClinic(clinic.addressKey)}</p>
+                                <p className=" text-gray-600 text-sm">☎️ <Link href="tel:+962798980504" className="[direction:ltr] [unicode-bidi:bidi-override]">{clinic.phone}</Link></p>
+                                {/* 💡 MODIFIED: Translate Hours via hoursKey */}
+                                <p className="text-gray-500 text-sm">🕒 {tClinic(clinic.hoursKey)}</p>
+                                
                                 <p className="text-gray-500 text-sm mt-1">
-                                    Services: {clinic.services}
+                                    {/* ASSUMPTION: You've added 'servicesLabel' to your FindMain translations */}
+                                    {t("servicesLabel")}: {tClinic(clinic.servicesKey)}
                                 </p>
                             </div>
                             <div className="text-right">

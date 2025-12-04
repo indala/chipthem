@@ -8,6 +8,8 @@ export interface Pet {
   is_verified: boolean;
   status: string | null;
   owner?:Owner | null;
+  microchip_number?: string | null;
+
 }
 
 export interface Owner {
@@ -22,4 +24,5 @@ export interface Owner {
   status: string | null;
   created_at: string;
   pets?: Pet[];
+  verified_at?: string | null; 
 }

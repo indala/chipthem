@@ -22,6 +22,18 @@
     "successRate": "Success Rate",
     "averageReunionTime": "Average Reunion Time"
   },
+  "ForgotPassword": {
+  "title": "Forgot Password",
+  "subtitle": "Enter your email and we will send you a password reset link.",
+  "email": "Email Address",
+  "emailPlaceholder": "example@mail.com",
+  "button": "Send Reset Link",
+  "loading": "Sending...",
+  "emailSent": "Password reset link sent to your email.",
+  "error": "We could not find an account with that email.",
+  "networkError": "Network error. Please try again.",
+  "security": "Your information is protected by high-level security standards."
+},
   "SuccessStoriesNumber": {
     "title": "The Numbers Don't Lie",
     "subtitle": "Microchips dramatically increase reunion rates",
@@ -101,7 +113,8 @@
     "mapInstructions": "Click markers for clinic details • Scroll to zoom",
     "showAllClinics": "Show All Clinics",
     "emergencyOnly": "Emergency Clinics Only",
-    "away": "away"
+    "away": "away",
+    "servicesLabel": "Services"
   },
   "FindSearch": {
     "useMyLocation": "Use My Location",
@@ -207,6 +220,7 @@
       "petRegistration": "Pet Registration",
       "microchipSearch": "Microchip Search"
     },
+
     "quickLinks": {
       "title": "Quick Links",
       "registerYourPet": "Register Your Pet",
@@ -336,6 +350,15 @@
       "privacy": "Privacy protection guaranteed"
     }
   },
+      "PetRegistrationSuccess": {   
+    "title": "🐾 Registration Submitted!",
+    "description1": "Thank you for registering your pet with",
+    "description2": "Your pet's information has been successfully received and is currently",
+    "underVerification": "under verification",
+    "description3": "by our team.",
+    "emailNotice": "You will receive an email once your pet's registration has been reviewed and approved.",
+    "returnHome": "Return to Home"
+},
   "Pricing": {
     "basic": {
       "title": "Basic Registration",
@@ -398,12 +421,14 @@
       "description": "Your pet is now protected for life with 24/7 support and instant reunification services."
     }
   },
+ 
   "AdminLogin": {
     "title": "Admin Portal",
     "loading": "Loading...",
-    "loginSuccess":"Login Success",
-    "loginFailed":"Login Failed",
-    "networkError":"A network error occurred. Please try again later.",
+    "loginSuccess": "Login Success",
+    "invalidCredentials": "Invalid username or password. Please try again.",
+    "unexpectedError": "An unexpected server error occurred. Please try again.",    
+    "networkError": "A network error occurred. Please try again later.",
     "subtitle": "System Administration Access",
     "username": "Admin Username",
     "usernamePlaceholder": "Enter admin username",
@@ -424,10 +449,11 @@
       "feature4": "Session timeout after inactivity"
     },
     "emergencyContact": "System emergency? Contact IT:",
-    "emergencyPhone": "1-800-CHIP-IT"
+    "emergencyPhone": "+962 7 98 98 05 04"
   },
   "PetOwnerLogin": {
     "title": "Pet Owner Login",
+    "invalidEmail": "Please enter a valid email address.",
     "subtitle": "Sign in to manage your pet's profile",
     "email": "Email Address",
     "emailPlaceholder": "Enter your email address",
@@ -453,6 +479,8 @@
   "title": "Contact Us",
    "phoneSupport": "Phone Support", 
   "phone": "+962 7 98 980504",
+  "sending": "Sending your message...",
+      "successMessage": "Message sent successfully! Thank you.",
   "subtitle": "We're here to help 24/7. Get in touch with our support team for any questions or assistance.",
   "emergencyTitle": "🚨 Available 24/7 Support",
   "emergencyDesc": "If your pet is lost or you've found a pet, get in touch with us 24/7.",
@@ -671,8 +699,7 @@
     "countryPlaceholder": "Enter country",
     "hoursOperation": "Hours of Operation",
     "operatingHours": "Operating Hours *",
-    "hoursPlaceholder": "Monday: 8:00 AM - 6:00 PM\nTuesday: 8:00 AM - 6:00 PM\nWednesday: 8:00 AM - 6:00 PM\nThursday: 8:00 AM - 6:00 PM\nFriday: 8:00 AM - 6:00 PM\nSaturday: 9:00 AM - 4:00 PM\nSunday: Closed",
-    "hoursNote": "Please list your operating hours for each day of the week",
+"hoursPlaceholder": "Saturday: 10:00 AM - 10:00 PM\nSunday: 10:00 AM - 10:00 PM\nMonday: 10:00 AM - 10:00 PM\nTuesday: 10:00 AM - 10:00 PM\nWednesday: 10:00 AM - 10:00 PM\nThursday: 10:00 AM - 10:00 PM\nFriday: 2:00 PM - 10:00 PM",    "hoursNote": "Please list your operating hours for each day of the week",
     "emergencyServices": "We provide 24/7 emergency services",
     "microchipServices": "Microchip Services",
     "microchipImplant": "We provide microchip implantation services",
@@ -713,6 +740,19 @@
     "howToFindTitle": "How to Find a Microchip",
     "howToFindDesc": "Take the pet to any veterinary clinic or animal shelter. They can scan for a microchip using a special reader device and provide you with the 15-digit number to search below."
   },
+  "clinic": {
+    "amazon_vet_center": {
+      "name": "Amazon Veterinary Center",
+      "address_ruwaad": "Al-Ruwaad Complex - 8, Amman, Jordan"
+    },
+    "hours": {
+      "sat_thru_thu_10pm_fri_2pm": "Sat-Thu: 10AM-10PM, Fri: 2PM-10PM"
+    },
+    "services": {
+      "default": "Microchipping, Vaccinations, Surgery"
+    }
+  },
+  
   "SearchSearch": {
     "title": "Microchip Database Search",
     "subtitle": "Enter the 15-digit microchip number to find owner information",
@@ -1053,6 +1093,8 @@
   },
   "RegisterMenu": {
     "title": "Pet Registration Form",
+    "microchipPlaceholder": "Enter microchip number",
+    "weakPassword": "Password is too weak",
     "subtitle": "Please fill out all required information for both you and your pet",
     "ownerInfo": "Owner Information",
     "submitting": "Submitting...",
@@ -1128,6 +1170,7 @@
     "agreeTo": "I agree to the",
     "termsOfService": "Terms of Service",
     "and": "and",
+    "microchipLength": "enter valid microchip number",
     "privacyPolicy": "Privacy Policy",
     "certifyAccurate": "I certify that all information provided is accurate and complete",
     "confirmOwnership": "I confirm that I am the legal owner of this pet",
@@ -1146,6 +1189,7 @@
     "subtitle": "Access microchip scanning, pet registration tools, and clinic management features."
   },
   "VLog": {
+    "forgotPassword": "Forgot Password?", 
     "title": "Veterinary Login",
     "subtitle": "Access your clinic's dashboard and tools",
     "clinicId": "Clinic ID",
@@ -1203,6 +1247,26 @@
       "description": "Professional veterinary support team available"
     }
   },
+  "ResetPassword":{
+  "title": "Reset Your Password",
+  "subtitle": "Enter a new password to access your account",
+  "newPassword": "New Password",
+  "newPasswordPlaceholder": "Enter your new password",
+  "confirmPassword": "Confirm Password",
+  "confirmPasswordPlaceholder": "Re-enter your new password",
+  "button": "Reset Password",
+  "loading": "Processing...",
+  "note": "Make sure your password is at least 6 characters.",
+  "fillFields": "Please fill in all fields.",
+  "passwordMismatch": "Passwords do not match.",
+  "minLength": "Password must be at least 6 characters.",
+  "success": "Password reset successfully!",
+  "error": "Something went wrong. Please try again.",
+  "networkError": "Network error. Please check your connection.",
+  "tokenMissing": "Token is missing. Redirecting...",
+  "tokenInvalid": "Token is invalid or expired. Redirecting..."
+}
+,
   "PoNeed": {
     "title": "Need Help Signing In?",
     "subtitle": "We're here to help you access your account",

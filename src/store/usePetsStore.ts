@@ -10,8 +10,8 @@ interface PetsState {
   error: string | null;
   fetchPets: (reset?: boolean) => Promise<void>;
   subscribeRealtime: () => () => void;
-  verifyPet: (petId: string) => Promise<void>;
-  rejectPet: (petId: string) => Promise<void>;
+  verifyPet: (ownerId: string, petId: string) => Promise<void>;
+  rejectPet: (ownerId: string, petId: string) => Promise<void>;
 }
 
 interface SupabasePayload<T> {
@@ -20,7 +20,6 @@ interface SupabasePayload<T> {
   old: T | null;
 }
 
-
 export const usePetsStore = create<PetsState>((set, get) => ({
   pets: [],
   page: 1,
@@ -28,14 +27,17 @@ export const usePetsStore = create<PetsState>((set, get) => ({
   loading: false,
   error: null,
 
+  // ✅ FETCH PETS (UNCHANGED)
   fetchPets: async (reset = false) => {
     if (get().loading) return;
     set({ loading: true, error: null });
+
     const page = reset ? 1 : get().page;
 
     try {
       const res = await fetch(`/api/admin/pets?page=${page}`);
       const data = await res.json();
+
       if (data.success) {
         set({
           pets: reset ? data.pets : [...get().pets, ...data.pets],
@@ -43,52 +45,84 @@ export const usePetsStore = create<PetsState>((set, get) => ({
           hasMore: data.pagination?.hasMore ?? false,
           loading: false,
         });
-      } else set({ loading: false, error: data.message });
+      } else {
+        set({ loading: false, error: data.message });
+      }
     } catch (err) {
       console.error("❌ Fetch pets failed:", err);
       set({ loading: false, error: "Failed to fetch pets." });
     }
   },
 
-  verifyPet: async (petId: string) => {
+  // ✅ ✅ ✅ FIXED VERIFY PET (OWNER + PET ID)
+  verifyPet: async (ownerId: string, petId: string) => {
     try {
-      const res = await fetch(`/api/admin/pets/${petId}/verify`, { method: "PATCH" });
+      const res = await fetch(
+        `/api/admin/pets/${ownerId}/${petId}/verify`,
+        { method: "PATCH" }
+      );
+
       const data = await res.json();
       if (!data.success) throw new Error(data.message);
+
+      // ✅ Remove verified pet from UI
       set({
-        pets: get().pets.map(p =>
-          p.id === petId ? { ...p, is_verified: true, status: "verified" } : p
-        ),
+        pets: get().pets.filter((p) => p.id !== petId),
       });
+
     } catch (err) {
       console.error("❌ Verify pet failed:", err);
     }
   },
 
-  rejectPet: async (petId: string) => {
+  // ✅ ✅ ✅ FIXED REJECT PET (OWNER + PET ID)
+  rejectPet: async (ownerId: string, petId: string) => {
     try {
-      const res = await fetch(`/api/admin/pets/${petId}/reject`, { method: "DELETE" });
+      const res = await fetch(
+        `/api/admin/pets/${ownerId}/${petId}/reject`,
+        { method: "DELETE" }
+      );
+
       const data = await res.json();
       if (!data.success) throw new Error(data.message);
-      set({ pets: get().pets.filter(p => p.id !== petId) });
+
+      // ✅ Remove rejected pet from UI
+      set({
+        pets: get().pets.filter((p) => p.id !== petId),
+      });
+
     } catch (err) {
       console.error("❌ Reject pet failed:", err);
     }
   },
 
+  // ✅ REALTIME SUBSCRIPTION (UNCHANGED)
   subscribeRealtime: () => {
     const handlePetChange = (payload: SupabasePayload<Pet>) => {
       const { eventType, new: newPet, old: oldPet } = payload;
       const pets = [...get().pets];
+
       switch (eventType) {
         case "INSERT":
-          if (newPet && !pets.some(p => p.id === newPet.id)) set({ pets: [newPet, ...pets] });
+          if (newPet && !pets.some((p) => p.id === newPet.id)) {
+            set({ pets: [newPet, ...pets] });
+          }
           break;
+
         case "UPDATE":
-          if (newPet) set({ pets: pets.map(p => p.id === newPet.id ? { ...p, ...newPet } : p) });
+          if (newPet) {
+            set({
+              pets: pets.map((p) =>
+                p.id === newPet.id ? { ...p, ...newPet } : p
+              ),
+            });
+          }
           break;
+
         case "DELETE":
-          if (oldPet) set({ pets: pets.filter(p => p.id !== oldPet.id) });
+          if (oldPet) {
+            set({ pets: pets.filter((p) => p.id !== oldPet.id) });
+          }
           break;
       }
     };

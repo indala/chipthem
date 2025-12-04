@@ -1,34 +1,33 @@
-// src/data/clinics.ts
+// src/data/clinics.ts (Revised for keys)
 
 export type Clinic = {
   id: number;
-  name: string;
+  nameKey: string;     // <-- Use a key
   emergency: boolean;
-  address: string;
+  addressKey: string;  // <-- Use a key
   phone: string;
-  hours: string;
+  hoursKey: string;    // <-- Use a key
   rating: number;
-  services: string;
+  servicesKey: string; // <-- Use a key
   mapLat: number;
   mapLng: number;
-  distance: string; // Placeholder for display, ideally calculated
+  distance: string;
   email: string;
 };
 
 export const CLINICS_DATA: Clinic[] = [
   {
     id: 1,
-    name: "Amazon Veterinary Center",
+    nameKey: "amazon_vet_center.name",
     emergency: false,
-    address: "Al-Ruwaad Complex - 8, Amman, Jordan",
+    addressKey: "amazon_vet_center.address_ruwaad",
     phone: "+962 7 9206 2032",
-    hours: "Sat-Thr: 10AM-10PM, Fri: 2PM-10PM",
+    hoursKey: "hours.sat_thru_thu_10pm_fri_2pm",
     rating: 4.7,
-    services: "Microchipping, Vaccinations, Surgery",
+    servicesKey: "services.default",
     mapLat: 31.9883,
     mapLng: 35.8701,
     distance: "2.3 km",
     email: "info@cityvet.com",
   },
-  
 ];

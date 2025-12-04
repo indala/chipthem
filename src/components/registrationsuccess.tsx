@@ -4,15 +4,25 @@ import { useTranslations } from "next-intl";
 import { useRouter } from "next/navigation";
 import { motion } from "framer-motion";
 import VetVerificationHero from "@/components/VetVerificationHero";
+import RegisterHero from "./RegisterHero";
 
-export default function RegistrationSuccess() {
+interface RegistrationSuccessProps {
+  type: "vet" | "pet";
+}
+
+export default function RegistrationSuccess({ type }: RegistrationSuccessProps) {
   const router = useRouter();
-  const t = useTranslations("VetRegistrationSuccess"); // 👈 Translation namespace
+  const namespace = type === "pet" ? "PetRegistrationSuccess" : "VetRegistrationSuccess";
+  const t = useTranslations(namespace);
 
   return (
     <main className="min-h-screen bg-gray-50 flex flex-col">
       {/* Hero Section */}
-      <VetVerificationHero />
+      {type !== "pet" ? (
+        <VetVerificationHero />
+      ) : (
+        <RegisterHero />
+      )}
 
       {/* Confirmation Content */}
       <motion.section
@@ -27,9 +37,7 @@ export default function RegistrationSuccess() {
           </h2>
 
           <p className="text-gray-600 mb-6">
-            {t("description1")}{" "}
-            <strong>ChipThem</strong>.
-            <br />
+            {t("description1")} <strong>ChipThem</strong>.<br />
             {t("description2")}{" "}
             <span className="text-blue-600 font-medium">
               {t("underVerification")}
@@ -45,7 +53,7 @@ export default function RegistrationSuccess() {
             onClick={() => router.replace("/")}
             className="px-6 py-3 bg-green-600 text-white rounded-lg font-medium hover:bg-green-700 transition"
           >
-            {t("returnHome")}a
+            {t("returnHome")}
           </button>
         </div>
       </motion.section>

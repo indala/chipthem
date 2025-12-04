@@ -1,13 +1,9 @@
 
 import type { FC } from 'react';
+import { Pet } from '@/types/owners';
 
 // Define the structure for a single pet
-interface Pet {
-  id: string;
-  name: string;
-  pet_type: string;
-  microchip_number: string;
-}
+
 
 // Define the props for the PetList component
 const PetList: FC<{ pets: Pet[] }> = ({ pets }) => {
@@ -18,7 +14,7 @@ const PetList: FC<{ pets: Pet[] }> = ({ pets }) => {
         <div className="space-y-4">
           {pets.map((pet) => (
             <div key={pet.id} className="border rounded-lg p-4 bg-gray-50">
-              <p className="font-bold text-lg text-gray-800">{pet.name}</p>
+              <p className="font-bold text-lg text-gray-800">{pet.pet_name}</p>
               <p className="text-sm text-gray-600"><strong>Type:</strong> {pet.pet_type}</p>
               <p className="text-sm text-gray-600"><strong>Microchip:</strong> {pet.microchip_number}</p>
             </div>

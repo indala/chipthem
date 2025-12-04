@@ -3,7 +3,6 @@
 import { useEffect } from 'react';
 import { useVeterinaryStore } from '@/store/useVeterinaryStore';
 import VeterinaryProfile from '../../components/VeterinaryProfile';
-import { VeterinaryClinic } from '@/types/veterinaries';
 export default function VeterinaryDashboard() {
   const { veterinary, isLoading, error, fetchVeterinaryData } = useVeterinaryStore();
 

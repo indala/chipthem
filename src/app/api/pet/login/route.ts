@@ -46,7 +46,7 @@ export async function POST(req: Request) {
     // 5️⃣ Create JWT Token
     const token = await new jose.SignJWT({
       role: "petOwner",
-      userId: owner.id,
+      id: owner.id,
       email: owner.email,
     })
       .setProtectedHeader({ alg: "HS256" })

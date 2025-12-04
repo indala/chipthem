@@ -17,7 +17,7 @@ export async function POST(req: Request) {
     // 2️⃣ Find the clinic
     const { data: clinic, error } = await supabaseServerClient
       .from("veterinary_clinics")
-      .select("clinic_id, email, clinic_name, password, is_verified, status")
+      .select("clinic_id, email, clinic_name, password_hash, is_verified, status")
       .eq("clinic_id", clinic_id)
       .eq("email", username)
       .single();
@@ -32,7 +32,7 @@ export async function POST(req: Request) {
     }
 
     // 4️⃣ Validate password
-    const validPassword = await bcrypt.compare(password, clinic.password);
+    const validPassword = await bcrypt.compare(password, clinic.password_hash);
     if (!validPassword) {
       return new NextResponse(null, { status: 401 });
     }
@@ -41,7 +41,7 @@ export async function POST(req: Request) {
     const token = await new jose.SignJWT({
       role: "veterinary",
       email: clinic.email,
-      clinic_id: clinic.clinic_id,
+      id: clinic.clinic_id,
       clinic_name: clinic.clinic_name,
     })
       .setProtectedHeader({ alg: "HS256" })

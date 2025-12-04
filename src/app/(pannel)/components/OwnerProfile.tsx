@@ -2,7 +2,7 @@
 import type { FC } from 'react';
 
 // Define the expected props by destructuring the owner object
-const OwnerProfile: FC<{ owner: { full_name: string; email: string; phone_number: string } }> = ({ owner }) => {
+const OwnerProfile: FC<{ owner: { full_name: string; email: string; phone_number?: string | null } }> = ({ owner }) => {
   return (
     <div className="bg-white shadow-lg rounded-2xl p-6 border border-gray-200">
       <h2 className="text-2xl font-bold text-gray-800 mb-4">Your Profile</h2>

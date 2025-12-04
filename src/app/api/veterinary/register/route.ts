@@ -46,7 +46,7 @@ export async function POST(req: Request) {
     // ✅ 3️⃣ Normalize data for Supabase
     const cleanData = {
       email: formData.email.trim().toLowerCase(), // Use trimmed/lowercase email for consistency
-      password: hashedPassword,
+      password_hash: hashedPassword,
       clinic_name: formData.clinicName,
       contact_person: formData.contact_person || null,
       license_number: formData.veterinaryLicenseNumber || null,
