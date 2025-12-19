@@ -1,16 +1,15 @@
-
 import { NextResponse } from "next/server";
 import { supabaseServerClient } from "@/lib/supabaseServerClient";
-import { verifyTokenAndGetPayload } from "@/lib/auth";
+// import { verifyTokenAndGetPayload } from "@/lib/auth"; // REMOVED
 
 export async function DELETE(
   req: Request,
   { params }: { params: Promise<{ vetId: string }> }
 ) {
-  const payload = await verifyTokenAndGetPayload();
-  if (!payload || payload.role !== 'admin') {
-    return NextResponse.json({ message: "Unauthorized" }, { status: 401 });
-  }
+  // const payload = await verifyTokenAndGetPayload(); // REMOVED
+  // if (!payload || payload.role !== 'admin') { // REMOVED
+  //   return NextResponse.json({ message: "Unauthorized" }, { status: 401 }); // REMOVED
+  // } // REMOVED
 
   const { vetId } = await params;
 

@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useRef, useEffect, useCallback } from "react";
-import { FiLogOut, FiSettings, FiUser } from "react-icons/fi";
+import { FiLogOut, FiSettings, FiUser, FiHome } from "react-icons/fi";
 import Link from "next/link";
 import { useRolesStore } from "@/store/rolesStore";
 import { useRouter } from "next/navigation";
@@ -17,17 +17,16 @@ export default function Header() {
   const dropdownRef = useRef<HTMLDivElement>(null);
 
   const handleLogout = useCallback(async () => {
-  await fetch("/api/logout", { method: "POST", credentials: "include" });
-  clearUser();
+    await fetch("/api/logout", { method: "POST", credentials: "include" });
+    clearUser();
 
-  // Redirect based on role
-  let loginRoute = "/alogin"; // default
-  if (role === "petOwner") loginRoute = "/p0login";
-  else if (role === "veterinary") loginRoute = "/vlogin";
+    // Redirect based on role
+    let loginRoute = "/alogin"; // default
+    if (role === "petOwner") loginRoute = "/pologin";
+    else if (role === "veterinary") loginRoute = "/vlogin";
 
-  router.push(loginRoute);
-}, [clearUser, router, role]);
-
+    router.push(loginRoute);
+  }, [clearUser, router, role]);
 
   // Close dropdown when clicking outside
   useEffect(() => {
@@ -48,9 +47,18 @@ export default function Header() {
   return (
     <header className="bg-gray-800 text-white py-3 border-b border-gray-700 shadow-xl z-50 relative">
       <div className="max-w-7xl mx-auto px-4 flex justify-between items-center">
-        {/* LEFT */}
-        <div className="flex items-center font-bold text-lg uppercase">
-          <FiSettings className="mr-2 text-yellow-400" /> {role} Panel
+        {/* LEFT - Home + Panel */}
+        <div className="flex items-center space-x-4">
+          <Link 
+            href={`/`}
+            className="p-2 hover:bg-gray-700 rounded-lg transition-colors flex items-center"
+          >
+            <FiHome className="text-xl text-yellow-400" />
+          </Link>
+          <div className="flex items-center font-bold text-lg uppercase">
+            <FiSettings className="mr-2 text-yellow-400" /> 
+            {role} Panel
+          </div>
         </div>
 
         {/* RIGHT */}

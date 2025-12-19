@@ -23,7 +23,6 @@ const Footer = () => {
     <footer className="bg-slate-800 text-white relative">
       <div className="container mx-auto px-4 pt-12 pb-6">
         <div className="grid md:grid-cols-4 gap-8 mb-8">
-
           {/* Chipthem Info */}
           <div>
             <h3 className="font-bold text-xl mb-2">
@@ -48,10 +47,12 @@ const Footer = () => {
 
               <Link
                 href="tel:+962798980504"
-                className="flex items-center gap-2 mb-1 hover:text-white transition-colors "
+                className="flex items-center gap-2 mb-1 hover:text-white transition-colors"
               >
                 <LuPhone className="h-4 w-4 text-pink-300" />
-                <span className="font-bold [direction:ltr] [unicode-bidi:bidi-override]">{t('emergencyPhone')}</span>
+                <span className="font-bold [direction:ltr] [unicode-bidi:bidi-override]">
+                  {t('emergencyPhone')}
+                </span>
               </Link>
               <p className="text-xs text-white/90">
                 {t('emergencyAvailable')}
@@ -147,7 +148,10 @@ const Footer = () => {
               <div className="flex items-center gap-2 text-gray-300 mb-1">
                 <LuMail className="h-4 w-4 text-blue-400" />
 
-                <a href="mailto:Info@chipthem.com" className="hover:text-white transition-colors">
+                <a
+                  href="mailto:Info@chipthem.com"
+                  className="hover:text-white transition-colors"
+                >
                   <span>{t('supportEmail')}</span>
                 </a>
               </div>
@@ -204,11 +208,7 @@ const Footer = () => {
       <div className="bg-slate-900 border-t border-slate-700">
         <div className="mx-auto px-4 py-4">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-            
-            <div className="text-sm text-gray-300">
-              {t('copyright')}
-            </div>
-
+            {/* Left: security / trust badges */}
             <div className="flex items-center gap-6 text-sm text-gray-300">
               <div className="flex items-center gap-2">
                 <AiOutlineCheckCircle className="h-4 w-4 text-green-400" />
@@ -223,6 +223,7 @@ const Footer = () => {
               <div>{t('trustedBy')}</div>
             </div>
 
+            {/* Middle: links */}
             <div className="flex items-center gap-4 text-sm text-gray-300">
               <Link href="/privacy" className="hover:text-white transition-colors">
                 {t('privacyPolicy')}
@@ -236,7 +237,11 @@ const Footer = () => {
                 {t('contactUs')}
               </Link>
             </div>
-
+          
+            {/* Right / last: copyright */}
+            <div className="text-sm text-gray-300 md:order-last text-center">
+              {t('copyright')}
+            </div>
           </div>
         </div>
       </div>

@@ -1,105 +1,174 @@
 'use client';
 
-import React, { useState, FormEvent } from 'react';
+import React from 'react';
+import { useForm,useWatch } from 'react-hook-form';
+import { z } from 'zod';
+import { zodResolver } from '@hookform/resolvers/zod';
 import { useTranslations } from 'next-intl';
 
-// UPDATED: Added pet_photo field
-interface FoundPetFormData {
-  pet_type: string;
-  size: string;
-  color: string;
-  description: string;
-  date_found: string;
-  time_found: string;
-  found_location: string;
-  finder_name: string;
-  phone: string;
-  email: string;
-  current_location: string;
-  pet_photo: File | null; // <-- NEW FIELD
-}
+const PET_TYPES = ['Dog', 'Cat', 'Bird', 'Other'] as const;
+ type PetType = (typeof PET_TYPES)[number]; // 'Dog' | 'Cat' | 'Bird' | 'Other'
+ const SIZES = ['Small', 'Medium', 'Large', 'Extra Large'] as const;
+
 
 const LostFoundFoundReport: React.FC = () => {
   const t = useTranslations('FoundPet');
+  const tv = useTranslations('FoundPet.validation');
+ 
 
-  const [formData, setFormData] = useState<FoundPetFormData>({
-    pet_type: '',
-    size: '',
-    color: '',
-    description: '',
-    date_found: '',
-    time_found: '',
-    found_location: '',
-    finder_name: '',
-    phone: '',
-    email: '',
-    current_location: '',
-    pet_photo: null, // <-- INITIAL STATE
+
+  // Zod schema with translated messages
+  const foundPetSchema = React.useMemo(
+  () =>
+    z
+      .object({
+        pet_type: z
+  .string()
+  .refine((val:string) => PET_TYPES.includes(val as PetType), {
+    message: tv('petTypeRequired'),
+  }),
+
+
+        size: z.string()
+  .optional()
+  .refine((val) => !val || SIZES.includes(val as typeof SIZES[number]), {
+    message: tv('sizeRequired'),
+  }),
+
+
+        color: z.string().min(1, { message: tv('colorRequired') }),
+
+        description: z.string().optional(),
+
+        date_found: z.string().min(1, {
+          message: tv('dateFoundRequired'),
+        }),
+
+        time_found: z.string().optional(),
+
+        found_location: z.string().min(1, {
+          message: tv('locationRequired'),
+        }),
+
+        finder_name: z.string().min(1, {
+          message: tv('nameRequired'),
+        }),
+
+        phone: z
+          .string()
+          .min(1, { message: tv('phoneRequired') })
+          .regex(/^[0-9+\-\s]{7,}$/, {
+            message: tv('phoneInvalid'),
+          }),
+
+        email: z
+          .string()
+          .optional()
+          .refine(
+            (val) =>
+              !val || z.string().email().safeParse(val).success,
+            { message: tv('emailInvalid') }
+          ),
+
+        current_location: z
+          .string()
+          .optional(),
+
+        pet_photo: z
+          .instanceof(File)
+          .refine((file) => file.size <= 5 * 1024 * 1024, {
+            message: tv('fileTooLarge'),
+          })
+          .refine(
+            (file) =>
+              ['image/jpeg', 'image/png', 'image/jpg'].includes(file.type),
+            { message: tv('fileTypeNotAllowed') }
+          )
+          .optional(),
+      })
+      .refine(
+        (data) => {
+          const date = new Date(data.date_found);
+          const today = new Date();
+          today.setHours(0, 0, 0, 0);
+          return !isNaN(date.getTime()) && date <= today;
+        },
+        {
+          message: tv('dateFuture'),
+          path: ['date_found'],
+        }
+      ),
+  [tv]
+);
+
+
+  type FoundPetFormData = z.infer<typeof foundPetSchema>;
+
+  const {
+    register,
+    handleSubmit,
+    formState: { errors, isSubmitting },
+    control,
+    setValue,
+    reset
+  } = useForm<FoundPetFormData>({
+    resolver: zodResolver(foundPetSchema),
+    defaultValues: {
+      pet_type: '',
+      size: '',
+      color: '',
+      description: '',
+      date_found: '',
+      time_found: '',
+      found_location: '',
+      finder_name: '',
+      phone: '',
+      email: '',
+      current_location: '',
+      pet_photo: undefined
+    }
   });
 
-  const [isSending, setIsSending] = useState(false);
+  // ✅ useWatch instead of watch()
+    const photoFile = useWatch({
+      control,
+      name: 'pet_photo'
+    });
 
-  const handleChange = (
-    e: React.ChangeEvent<
-      HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement
-    >
-  ) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({ ...prev, [name]: value }));
-  };
+  const onSubmit = async (data: FoundPetFormData) => {
+    const formData = new FormData();
 
-  // NEW HANDLER for file input
-  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const file = e.target.files?.[0] || null;
-    setFormData((prev) => ({ ...prev, pet_photo: file }));
-  };
+    if (data.pet_photo) {
+      formData.append('pet_photo', data.pet_photo);
+    }
 
-  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    setIsSending(true);
-
-    // UPDATED SUBMISSION: Using FormData for file upload
-    const data = new FormData();
-    (Object.keys(formData) as (keyof FoundPetFormData)[]).forEach((key) => {
-      const value = formData[key];
-      if (value !== null) {
-        data.append(key, value instanceof File ? value : String(value));
+    Object.entries(data).forEach(([key, value]) => {
+      if (value && key !== 'pet_photo') {
+        formData.append(key, String(value));
       }
     });
 
     try {
-      const response = await fetch('/api/reportFound', {
+      const res = await fetch('/api/reportFound', {
         method: 'POST',
-        // IMPORTANT: No 'Content-Type' header needed; browser sets it automatically for FormData
-        body: data,
+        body: formData
       });
 
-      if (response.ok) {
+      if (res.ok) {
         alert(t('successMessage'));
-        // Reset form data including the new field
-        setFormData({
-          pet_type: '',
-          size: '',
-          color: '',
-          description: '',
-          date_found: '',
-          time_found: '',
-          found_location: '',
-          finder_name: '',
-          phone: '',
-          email: '',
-          current_location: '',
-          pet_photo: null, // Reset photo state
-        });
+        reset();
       } else {
         alert(t('errorMessage'));
       }
     } catch (error) {
-      console.error('Error submitting form:', error);
+      console.error(error);
       alert(t('networkError'));
-    } finally {
-      setIsSending(false);
     }
+  };
+
+  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0] || undefined;
+    setValue('pet_photo', file as File, { shouldValidate: true });
   };
 
   return (
@@ -119,10 +188,9 @@ const LostFoundFoundReport: React.FC = () => {
           </div>
 
           <form
-            onSubmit={handleSubmit}
+            onSubmit={handleSubmit(onSubmit)}
             className="px-8 py-8"
-            // IMPORTANT: Set encType for file upload
-            encType="multipart/form-data" 
+            encType="multipart/form-data"
           >
             {/* Pet Description */}
             <div className="mb-8">
@@ -130,16 +198,18 @@ const LostFoundFoundReport: React.FC = () => {
                 {t('petDescription')}
               </h4>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                {/* Pet type */}
                 <div>
                   <label className="block text-sm font-semibold text-gray-700 mb-2">
-                    {t('petType')} *
+                    {t('petType')}
                   </label>
                   <select
-                    name="pet_type"
-                    required
-                    value={formData.pet_type}
-                    onChange={handleChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-yellow-500 focus:border-transparent"
+                    {...register('pet_type')}
+                    className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-yellow-500 focus:border-transparent ${
+                      errors.pet_type
+                        ? 'border-red-500 bg-red-50'
+                        : 'border-gray-300'
+                    }`}
                   >
                     <option value="">{t('selectPetType')}</option>
                     <option value="Dog">{t('dog')}</option>
@@ -147,17 +217,25 @@ const LostFoundFoundReport: React.FC = () => {
                     <option value="Bird">{t('bird')}</option>
                     <option value="Other">{t('other')}</option>
                   </select>
+                  {errors.pet_type && (
+                    <p className="mt-1 text-sm text-red-600">
+                      {errors.pet_type.message}
+                    </p>
+                  )}
                 </div>
 
+                {/* Size */}
                 <div>
                   <label className="block text-sm font-semibold text-gray-700 mb-2">
                     {t('size')}
                   </label>
                   <select
-                    name="size"
-                    value={formData.size}
-                    onChange={handleChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-yellow-500 focus:border-transparent"
+                    {...register('size')}
+                    className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-yellow-500 focus:border-transparent ${
+                      errors.size
+                        ? 'border-red-500 bg-red-50'
+                        : 'border-gray-300'
+                    }`}
                   >
                     <option value="">{t('selectSize')}</option>
                     <option value="Small">{t('small')}</option>
@@ -167,30 +245,36 @@ const LostFoundFoundReport: React.FC = () => {
                   </select>
                 </div>
 
+                {/* Color */}
                 <div className="md:col-span-2">
                   <label className="block text-sm font-semibold text-gray-700 mb-2">
-                    {t('color')} *
+                    {t('color')}
                   </label>
                   <input
                     type="text"
-                    name="color"
-                    required
-                    value={formData.color}
-                    onChange={handleChange}
+                    {...register('color')}
                     placeholder={t('colorPlaceholder')}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-yellow-500 focus:border-transparent"
+                    className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-yellow-500 focus:border-transparent ${
+                      errors.color
+                        ? 'border-red-500 bg-red-50'
+                        : 'border-gray-300'
+                    }`}
                   />
+                  {errors.color && (
+                    <p className="mt-1 text-sm text-red-600">
+                      {errors.color.message}
+                    </p>
+                  )}
                 </div>
 
+                {/* Description */}
                 <div className="md:col-span-2">
                   <label className="block text-sm font-semibold text-gray-700 mb-2">
                     {t('description')}
                   </label>
                   <textarea
-                    name="description"
+                    {...register('description')}
                     rows={3}
-                    value={formData.description}
-                    onChange={handleChange}
                     placeholder={t('descriptionPlaceholder')}
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-yellow-500 focus:border-transparent"
                   />
@@ -204,51 +288,64 @@ const LostFoundFoundReport: React.FC = () => {
                 {t('locationSection')}
               </h4>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                {/* Date found */}
                 <div>
                   <label className="block text-sm font-semibold text-gray-700 mb-2">
-                    {t('dateFound')} *
+                    {t('dateFound')}
                   </label>
                   <input
                     type="date"
-                    name="date_found"
-                    required
-                    value={formData.date_found}
-                    onChange={handleChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-yellow-500 focus:border-transparent"
+                    {...register('date_found')}
+                    className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-yellow-500 focus:border-transparent ${
+                      errors.date_found
+                        ? 'border-red-500 bg-red-50'
+                        : 'border-gray-300'
+                    }`}
                   />
+                  {errors.date_found && (
+                    <p className="mt-1 text-sm text-red-600">
+                      {errors.date_found.message}
+                    </p>
+                  )}
                 </div>
 
+                {/* Time found */}
                 <div>
                   <label className="block text-sm font-semibold text-gray-700 mb-2">
                     {t('timeFound')}
                   </label>
                   <input
                     type="time"
-                    name="time_found"
-                    value={formData.time_found}
-                    onChange={handleChange}
+                    {...register('time_found')}
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-yellow-500 focus:border-transparent"
                   />
                 </div>
 
+                {/* Location found */}
                 <div className="md:col-span-2">
                   <label className="block text-sm font-semibold text-gray-700 mb-2">
-                    {t('locationFound')} *
+                    {t('locationFound')}
                   </label>
                   <input
                     type="text"
-                    name="found_location"
-                    required
-                    value={formData.found_location}
-                    onChange={handleChange}
+                    {...register('found_location')}
                     placeholder={t('locationPlaceholder')}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-yellow-500 focus:border-transparent"
+                    className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-yellow-500 focus:border-transparent ${
+                      errors.found_location
+                        ? 'border-red-500 bg-red-50'
+                        : 'border-gray-300'
+                    }`}
                   />
+                  {errors.found_location && (
+                    <p className="mt-1 text-sm text-red-600">
+                      {errors.found_location.message}
+                    </p>
+                  )}
                 </div>
               </div>
             </div>
 
-            {/* Photo Upload (NEW SECTION) */}
+            {/* Photo Upload */}
             <div className="mb-8">
               <h4 className="text-lg font-bold text-gray-800 mb-4">
                 {t('photoUpload')}
@@ -256,13 +353,13 @@ const LostFoundFoundReport: React.FC = () => {
               <div className="border-2 border-dashed border-gray-300 rounded-lg p-6 text-center">
                 <input
                   type="file"
-                  name="pet_photo"
                   accept="image/*"
+                  {...register('pet_photo')}
                   id="photo-upload"
                   className="hidden"
                   onChange={handleFileChange}
                 />
-                <label htmlFor="photo-upload" className="cursor-pointer">
+                <label htmlFor="photo-upload" className="cursor-pointer block">
                   <svg
                     className="w-12 h-12 text-gray-400 mx-auto mb-4"
                     fill="none"
@@ -274,70 +371,102 @@ const LostFoundFoundReport: React.FC = () => {
                       strokeLinejoin="round"
                       strokeWidth={2}
                       d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"
-                    ></path>
+                    />
                   </svg>
-                  <p className="text-gray-600">{t('photoDescription')}</p>
+                  <p className="text-gray-600">
+                    {photoFile 
+                      ? photoFile.name
+                      : t('photoDescription')}
+                  </p>
                   <p className="text-sm text-gray-500">{t('photoNote')}</p>
                 </label>
+                {errors.pet_photo && (
+                  <p className="mt-2 text-sm text-red-600">
+                    {errors.pet_photo.message as string}
+                  </p>
+                )}
               </div>
             </div>
 
-
-            {/* Contact Info and Pet's Current Location */}
+            {/* Contact Info */}
             <div className="mb-8">
               <h4 className="text-lg font-bold text-gray-800 mb-4">
                 {t('contactSection')}
               </h4>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                {/* Finder name */}
                 <div>
                   <label className="block text-sm font-semibold text-gray-700 mb-2">
-                    {t('name')} *
+                    {t('name')}
                   </label>
                   <input
                     type="text"
-                    name="finder_name"
-                    required
-                    value={formData.finder_name}
-                    onChange={handleChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-yellow-500 focus:border-transparent"
+                    {...register('finder_name')}
+                    placeholder={t('namePlaceholder')}
+                    className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-yellow-500 focus:border-transparent ${
+                      errors.finder_name
+                        ? 'border-red-500 bg-red-50'
+                        : 'border-gray-300'
+                    }`}
                   />
+                  {errors.finder_name && (
+                    <p className="mt-1 text-sm text-red-600">
+                      {errors.finder_name.message}
+                    </p>
+                  )}
                 </div>
 
+                {/* Phone */}
                 <div>
                   <label className="block text-sm font-semibold text-gray-700 mb-2">
-                    {t('phone')} *
+                    {t('phone')}
                   </label>
                   <input
                     type="tel"
-                    name="phone"
-                    required
-                    value={formData.phone}
-                    onChange={handleChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-yellow-500 focus:border-transparent"
+                    {...register('phone')}
+                    placeholder={t('phonePlaceholder')}
+                    className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-yellow-500 focus:border-transparent ${
+                      errors.phone
+                        ? 'border-red-500 bg-red-50'
+                        : 'border-gray-300'
+                    }`}
                   />
+                  {errors.phone && (
+                    <p className="mt-1 text-sm text-red-600">
+                      {errors.phone.message}
+                    </p>
+                  )}
                 </div>
 
+                {/* Email */}
                 <div>
                   <label className="block text-sm font-semibold text-gray-700 mb-2">
                     {t('email')}
                   </label>
                   <input
                     type="email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-yellow-500 focus:border-transparent"
+                    {...register('email')}
+                    placeholder={t('emailPlaceholder')}
+                    className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-yellow-500 focus:border-transparent ${
+                      errors.email
+                        ? 'border-red-500 bg-red-50'
+                        : 'border-gray-300'
+                    }`}
                   />
+                  {errors.email && (
+                    <p className="mt-1 text-sm text-red-600">
+                      {errors.email.message}
+                    </p>
+                  )}
                 </div>
 
+                {/* Current location */}
                 <div>
                   <label className="block text-sm font-semibold text-gray-700 mb-2">
                     {t('currentLocation')}
                   </label>
                   <select
-                    name="current_location"
-                    value={formData.current_location}
-                    onChange={handleChange}
+                    {...register('current_location')}
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-yellow-500 focus:border-transparent"
                   >
                     <option value="">{t('selectCurrentLocation')}</option>
@@ -354,14 +483,14 @@ const LostFoundFoundReport: React.FC = () => {
             <div className="text-center">
               <button
                 type="submit"
-                disabled={isSending}
+                disabled={isSubmitting}
                 className={`px-8 py-4 rounded-xl text-lg font-bold transition-all duration-200 ${
-                  isSending
+                  isSubmitting
                     ? 'bg-gray-400 text-white cursor-not-allowed'
                     : 'bg-yellow-500 text-white hover:bg-yellow-600'
                 }`}
               >
-                {isSending ? t('sendingButton') : t('submit')}
+                {isSubmitting ? t('sendingButton') : t('submit')}
               </button>
               <p className="text-sm text-gray-500 mt-2">{t('submitNote')}</p>
             </div>

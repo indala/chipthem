@@ -27,7 +27,13 @@ export interface VeterinaryClinic {
   email_updates_opt_in?: boolean | null;
   is_verified: boolean;
   status: "pending" | "verified" | "rejected" | null;
-  created_at?: string | null;
+  created_at: string ;
   updated_at?: string | null;
   verified_at?: string | null;
+  subscription_status?: string | null ;
+  subscribed_at?: string | null;          
+  subscription_expires_at?: string | null; 
+  latitude?: string | null;
+  longitude?: string | null;
+  google_maps_url?:string;
 }

@@ -27,7 +27,7 @@ export default function AdminLoginPage() {
 
       if (res.status === 204) {
         toast.success(t("loginSuccess"));
-        router.replace("/admin/verifications/petOwner");
+        router.replace("/admin/dashboard");
       } else if (res.status === 401) {
         toast.error(t("invalidCredentials"));
       } else {

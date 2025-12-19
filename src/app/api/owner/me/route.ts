@@ -3,8 +3,6 @@ import { NextResponse } from 'next/server';
 import { supabaseServerClient } from '@/lib/supabaseServerClient';
 import { verifyTokenAndGetPayload } from '@/lib/auth';
 
-// This route handler is responsible for fetching data for the currently authenticated owner.
-// It uses our centralized auth function to identify the user and then fetches their data.
 export async function GET() {
   try {
     // 1. Verify the token and get the user's payload

@@ -1,18 +1,19 @@
 import { NextResponse } from "next/server";
 import { supabaseServerClient } from "@/lib/supabaseServerClient";
-import { verifyTokenAndGetPayload } from "@/lib/auth";
+// import { verifyTokenAndGetPayload } from "@/lib/auth"; // REMOVED
 
 export async function GET() {
   try {
-    const payload = await verifyTokenAndGetPayload();
+    // const payload = await verifyTokenAndGetPayload(); // REMOVED
 
-    if (!payload || payload.role !== 'admin') {
-      return NextResponse.json({ message: "Unauthorized" }, { status: 401 });
-    }
+    // if (!payload || payload.role !== 'admin') { // REMOVED
+    //   return NextResponse.json({ message: "Unauthorized" }, { status: 401 }); // REMOVED
+    // } // REMOVED
 
     const { data, error } = await supabaseServerClient
       .from("lost_reports")
       .select("*")
+      .eq('status', 'unresolved')
       .order("created_at", { ascending: false });
 
     if (error) {
@@ -23,9 +24,10 @@ export async function GET() {
   } catch (error) {
     const errorMessage = error instanceof Error ? error.message : "Unknown error";
     
-    if (errorMessage.includes("Unauthorized")) {
-        return NextResponse.json({ message: "Unauthorized" }, { status: 401 });
-    }
+    // Authorization check removed, so this block is simplified
+    // if (errorMessage.includes("Unauthorized")) {
+    //   return NextResponse.json({ message: "Unauthorized" }, { status: 401 });
+    // }
     
     console.error("❌ Error fetching lost pet reports:", errorMessage);
 

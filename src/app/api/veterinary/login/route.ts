@@ -3,67 +3,72 @@ import bcrypt from "bcryptjs";
 import * as jose from "jose";
 import { supabaseServerClient } from "@/lib/supabaseServerClient";
 
-const secret = new TextEncoder().encode(process.env.JWT_SECRET || "default_secret");
+const jwtSecret = process.env.JWT_SECRET;
+if (!jwtSecret) throw new Error("JWT_SECRET is not set in environment variables.");
+const secret = new TextEncoder().encode(jwtSecret);
 
 export async function POST(req: Request) {
   try {
-    const { clinic_id, username, password } = await req.json();
+    const { email, password } = await req.json();
 
-    // 1️⃣ Basic validation
-    if (!clinic_id || !username || !password) {
+    // 1️⃣ Validate input
+    if (!email || !password) {
       return new NextResponse(null, { status: 400 });
     }
 
-    // 2️⃣ Find the clinic
+
+    // 2️⃣ Fetch clinic from DB (no status)
     const { data: clinic, error } = await supabaseServerClient
       .from("veterinary_clinics")
-      .select("clinic_id, email, clinic_name, password_hash, is_verified, status")
-      .eq("clinic_id", clinic_id)
-      .eq("email", username)
-      .single();
+      .select("id, email, clinic_name, password_hash, is_verified")
+      .eq("email", email)
+      .maybeSingle();
 
-    if (error || !clinic) {
-      return new NextResponse(null, { status: 401 }); // invalid credentials
+    if (error) {
+      console.error("Veterinary DB fetch error:", error);
+      return new NextResponse(null, { status: 500 });
     }
 
-    // 3️⃣ Check verification status
-    if (!clinic.is_verified || clinic.status !== "approved") {
-      return new NextResponse(null, { status: 403 }); // not verified/approved
+    if (!clinic) {
+      return new NextResponse(null, { status: 404 }); // Not found
+    }
+
+    // 3️⃣ Check verification only
+    if (!clinic.is_verified) {
+      return new NextResponse(null, { status: 403 }); // Not verified
     }
 
     // 4️⃣ Validate password
     const validPassword = await bcrypt.compare(password, clinic.password_hash);
     if (!validPassword) {
-      return new NextResponse(null, { status: 401 });
+      return new NextResponse(null, { status: 401 }); // Wrong password
     }
 
-    // 5️⃣ Generate JWT
+    // 5️⃣ Create JWT token
     const token = await new jose.SignJWT({
       role: "veterinary",
+      id: clinic.id,
       email: clinic.email,
-      id: clinic.clinic_id,
-      clinic_name: clinic.clinic_name,
+
     })
       .setProtectedHeader({ alg: "HS256" })
-      .setIssuedAt()
       .setExpirationTime("7d")
       .sign(secret);
 
-    // 6️⃣ Create a blank response (no JSON sent to client)
+    // 6️⃣ Send token in secure cookie (no JSON)
     const response = new NextResponse(null, { status: 204 });
-
-    // 7️⃣ Set secure cookie
     response.cookies.set("veterinary_token", token, {
       httpOnly: true,
       secure: process.env.NODE_ENV === "production",
       sameSite: "lax",
       path: "/",
-      maxAge: 60 * 60 * 24 * 7, // 7 days
+      maxAge: 60 * 60 * 24 * 7,
     });
 
+    console.log("✅ Veterinary login:", clinic.email);
     return response;
   } catch (err) {
-    console.error("Veterinary login error:", err);
+    console.error("❌ Veterinary login error:", err);
     return new NextResponse(null, { status: 500 });
   }
 }

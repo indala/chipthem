@@ -26,6 +26,7 @@ export async function verifyTokenAndGetPayload(): Promise<TokenPayload | null> {
     const petOwnerToken = cookieStore.get("petOwner_token")?.value;
 
     const token = adminToken || vetToken || petOwnerToken;
+    
 
     if (!token) {
       return null; // No token found
@@ -36,6 +37,7 @@ export async function verifyTokenAndGetPayload(): Promise<TokenPayload | null> {
 
     // Validate the essential parts of the payload.
     if (payload && typeof payload.role === 'string' && payload.id) {
+      
       return payload as TokenPayload;
     }
 

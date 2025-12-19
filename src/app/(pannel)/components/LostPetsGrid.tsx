@@ -1,18 +1,31 @@
 'use client';
 
-import { useReportStore } from "@/store/useReportStore";
-import { ReportCard } from "./ReportCard";
-// Removed: Row, Col imports from 'react-bootstrap'
+import { useState } from 'react';
+import { useReportStore } from '@/store/useReportStore';
+import { ReportCard } from './ReportCard';
+import Modal from './Modal';
 
 export default function LostPetsGrid() {
-  const { lostReports, isLoading, deleteLostReport, resolveLostReport } = useReportStore();
+  const { lostReports, isLoading, deleteLostReport, resolveLostReport } =
+    useReportStore();
+
+  const [selectedId, setSelectedId] = useState<string | null>(null);
 
   const handleDelete = async (id: string) => {
     await deleteLostReport(id);
+    if (selectedId === id) setSelectedId(null);
   };
 
   const handleResolve = async (id: string) => {
     await resolveLostReport(id);
+  };
+
+  const handleViewDetails = (id: string) => {
+    setSelectedId(id);
+  };
+
+  const handleCloseModal = () => {
+    setSelectedId(null);
   };
 
   if (isLoading) {
@@ -31,26 +44,85 @@ export default function LostPetsGrid() {
     );
   }
 
+  const selectedReport = selectedId
+    ? lostReports.find((r) => r.id === selectedId)
+    : null;
+
   return (
-    // Replaced <Row className="g-4 py-4"> 
-    // This div establishes the responsive grid:
-    // grid-cols-1 (1 column on small screens, equivalent to xs={12})
-    // md:grid-cols-2 (2 columns on medium screens, equivalent to md={6})
-    // lg:grid-cols-3 (3 columns on large screens, equivalent to lg={4})
-    // gap-6 (Replaces Bootstrap's g-4 for spacing)
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 py-4">
-      {lostReports.map((report) => (
-        // Replaced <Col key={report.id} xs={12} md={6} lg={4}>
-        // Each child occupies one column (col-span-1), allowing the parent grid to handle responsiveness.
-        <div key={report.id} className="col-span-1">
-          <ReportCard 
-            report={report} 
-            reportType="lost" 
-            onDelete={() => handleDelete(report.id)} 
-            onResolve={() => handleResolve(report.id)} 
-          />
-        </div>
-      ))}
-    </div>
+    <>
+      <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-6 py-4">
+        {lostReports.map((report) => (
+          <div key={report.id} className="col-span-1">
+            <ReportCard
+              report={report}
+              reportType="lost"
+              onDelete={handleDelete}
+              onResolve={handleResolve}
+              onViewDetails={handleViewDetails}
+            />
+          </div>
+        ))}
+      </div>
+
+      {selectedReport && (
+        <Modal
+          title={selectedReport.pet_name ?? 'Lost pet details'}
+          onClose={handleCloseModal}
+        >
+          <div className="space-y-4 text-sm text-gray-800">
+            {/* Top section: basic info */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div className="space-y-1">
+                <p>
+                  <span className="font-semibold">Pet name:</span>{' '}
+                  {selectedReport.pet_name ?? 'N/A'}
+                </p>
+                <p>
+                  <span className="font-semibold">Type:</span>{' '}
+                  {selectedReport.pet_type}
+                </p>
+                <p>
+                  <span className="font-semibold">Color:</span>{' '}
+                  {selectedReport.color}
+                </p>
+                <p>
+                  <span className="font-semibold">Size:</span>{' '}
+                  {selectedReport.size}
+                </p>
+              </div>
+
+              <div className="space-y-1">
+                <p>
+                  <span className="font-semibold">Last seen location:</span>{' '}
+                  {selectedReport.last_seen_location ?? 'N/A'}
+                </p>
+                <p>
+                  <span className="font-semibold">Reported on:</span>{' '}
+                  {new Date(selectedReport.created_at).toLocaleString()}
+                </p>
+                <p>
+                  <span className="font-semibold">Status:</span>{' '}
+                  <span
+                    className={
+                      selectedReport.status === 'resolved'
+                        ? 'text-green-600 font-semibold'
+                        : 'text-yellow-600 font-semibold'
+                    }
+                  >
+                    {selectedReport.status}
+                  </span>
+                </p>
+              </div>
+            </div>
+
+            {/* Optional: footer note */}
+            <p className="text-xs text-gray-500 border-t pt-3">
+              These details were submitted by the pet owner when reporting the
+              loss.
+            </p>
+          </div>
+        </Modal>
+      )}
+    </>
   );
 }

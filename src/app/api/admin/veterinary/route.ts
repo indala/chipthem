@@ -1,16 +1,14 @@
-
 import { NextResponse } from 'next/server';
 import { supabaseServerClient } from '@/lib/supabaseServerClient';
-import { verifyTokenAndGetPayload } from '@/lib/auth';
+// import { verifyTokenAndGetPayload } from '@/lib/auth'; // REMOVED
 
 export async function GET(req: Request) {
-  // 1. Use the new centralized verification function
-  const payload = await verifyTokenAndGetPayload();
+  // const payload = await verifyTokenAndGetPayload(); // REMOVED
 
-  // 2. Check for authorization
-  if (!payload || payload.role !== 'admin') {
-    return NextResponse.json({ message: "Unauthorized" }, { status: 401 });
-  }
+  // // Check for authorization - REMOVED
+  // if (!payload || payload.role !== 'admin') {
+  //   return NextResponse.json({ message: "Unauthorized" }, { status: 401 });
+  // }
 
   try {
     const { searchParams } = new URL(req.url);
@@ -22,7 +20,7 @@ export async function GET(req: Request) {
     const { data, error, count } = await supabaseServerClient
       .from('veterinary_clinics')
       .select('*', { count: 'exact' })
-      .eq('status', 'pending') 
+      .eq('status', 'pending')
       .order('created_at', { ascending: false })
       .range(from, to);
 

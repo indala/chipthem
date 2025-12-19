@@ -92,7 +92,7 @@ export default function VeterinaryCard({ vet, index, onView }: VeterinaryCardPro
       key={vet.id}
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ delay: index * 0.05 }}
+      transition={{ delay: index * 0.05 }} 
       // Replaced Bootstrap classes with Tailwind:
       // bg-white border rounded-4 shadow-sm p-3 -> bg-white border border-gray-200 rounded-xl shadow-md p-4
       // d-flex flex-column justify-content-between -> flex flex-col justify-between

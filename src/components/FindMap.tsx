@@ -3,8 +3,7 @@
 import { MapContainer, TileLayer, Marker, Popup, useMap } from "react-leaflet";
 import L from "leaflet";
 import { useEffect } from "react";
-import { useTranslations } from "next-intl";
-import type { Clinic } from "@/data/clinics";
+import type { ClinicAPIResponse } from "@/store/useClinicsStore";
 
 const userIcon = new L.Icon({
   iconUrl: "https://cdn-icons-png.flaticon.com/512/149/149071.png",
@@ -16,7 +15,7 @@ const clinicIcon = new L.Icon({
   iconSize: [30, 30],
 });
 
-// Recenter map when user location changes
+// Recenter map when center changes
 function MapCenterUpdater({ lat, lng }: { lat: number; lng: number }) {
   const map = useMap();
 
@@ -30,28 +29,32 @@ function MapCenterUpdater({ lat, lng }: { lat: number; lng: number }) {
 export default function FindMap({
   userLocation,
   clinics,
+  selectedClinic,
 }: {
   userLocation: { lat: number; lng: number } | null;
-  clinics: Clinic[];  // ✔️ use the real Clinic type
+  clinics: (ClinicAPIResponse & { calculatedDistance?: string; distance?: number })[];
+  selectedClinic?: { lat: number; lng: number } | null;
 }) {
-  const tClinic = useTranslations("clinic");  // ✔️ translations for keys
+  const defaultCenter: [number, number] = [31.9883, 35.8701];
 
-  const defaultCenter = [31.9883, 35.8701] as [number, number];
+  const center: [number, number] =
+    selectedClinic
+      ? [selectedClinic.lat, selectedClinic.lng]
+      : userLocation
+      ? [userLocation.lat, userLocation.lng]
+      : defaultCenter;
 
   return (
     <div className="h-96 rounded-lg overflow-hidden ">
       <MapContainer
-        center={userLocation ? [userLocation.lat, userLocation.lng] : defaultCenter}
+        center={center}
         zoom={12}
         className="z-10"
         style={{ width: "100%", height: "100%" }}
-
       >
         <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
 
-        {userLocation && (
-          <MapCenterUpdater lat={userLocation.lat} lng={userLocation.lng} />
-        )}
+        <MapCenterUpdater lat={center[0]} lng={center[1]} />
 
         {userLocation && (
           <Marker position={[userLocation.lat, userLocation.lng]} icon={userIcon}>
@@ -62,13 +65,13 @@ export default function FindMap({
         {clinics.map((clinic) => (
           <Marker
             key={clinic.id}
-            position={[clinic.mapLat, clinic.mapLng]}
+            position={[clinic.lat, clinic.lng]}
             icon={clinicIcon}
           >
             <Popup>
-              <strong>{tClinic(clinic.nameKey)}</strong>
+              <strong>{clinic.name}</strong>
               <br />
-              {tClinic(clinic.addressKey)}
+              {clinic.address}
             </Popup>
           </Marker>
         ))}

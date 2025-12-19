@@ -3060,297 +3060,387 @@
       "format": "cjs"
     },
     ".open-next/server-functions/default/.next/server/app/_not-found/page_client-reference-manifest.js": {
-      "bytes": 59343,
+      "bytes": 60803,
       "imports": [],
       "format": "cjs"
     },
     ".open-next/server-functions/default/.next/server/app/(main)/page_client-reference-manifest.js": {
-      "bytes": 59279,
+      "bytes": 60739,
       "imports": [],
       "format": "cjs"
     },
     ".open-next/server-functions/default/.next/server/app/api/search/route_client-reference-manifest.js": {
-      "bytes": 59345,
+      "bytes": 60805,
       "imports": [],
       "format": "cjs"
     },
     ".open-next/server-functions/default/.next/server/app/api/reportLost/route_client-reference-manifest.js": {
-      "bytes": 59353,
+      "bytes": 60813,
       "imports": [],
       "format": "cjs"
     },
     ".open-next/server-functions/default/.next/server/app/api/reportFound/route_client-reference-manifest.js": {
-      "bytes": 59355,
+      "bytes": 60815,
+      "imports": [],
+      "format": "cjs"
+    },
+    ".open-next/server-functions/default/.next/server/app/api/maps-coords/route_client-reference-manifest.js": {
+      "bytes": 60815,
       "imports": [],
       "format": "cjs"
     },
     ".open-next/server-functions/default/.next/server/app/api/logout/route_client-reference-manifest.js": {
-      "bytes": 59345,
+      "bytes": 60805,
       "imports": [],
       "format": "cjs"
     },
     ".open-next/server-functions/default/.next/server/app/api/contacts/route_client-reference-manifest.js": {
-      "bytes": 59349,
+      "bytes": 60809,
+      "imports": [],
+      "format": "cjs"
+    },
+    ".open-next/server-functions/default/.next/server/app/api/clinics/route_client-reference-manifest.js": {
+      "bytes": 60807,
       "imports": [],
       "format": "cjs"
     },
     ".open-next/server-functions/default/.next/server/app/(main)/terms/page_client-reference-manifest.js": {
-      "bytes": 59162,
+      "bytes": 60622,
       "imports": [],
       "format": "cjs"
     },
     ".open-next/server-functions/default/.next/server/app/(main)/successstories/page_client-reference-manifest.js": {
-      "bytes": 60082,
+      "bytes": 61542,
       "imports": [],
       "format": "cjs"
     },
     ".open-next/server-functions/default/.next/server/app/(main)/search/page_client-reference-manifest.js": {
-      "bytes": 59832,
+      "bytes": 61292,
       "imports": [],
       "format": "cjs"
     },
     ".open-next/server-functions/default/.next/server/app/(main)/registersuccessvet/page_client-reference-manifest.js": {
-      "bytes": 59546,
+      "bytes": 61006,
       "imports": [],
       "format": "cjs"
     },
     ".open-next/server-functions/default/.next/server/app/(main)/registersuccesspet/page_client-reference-manifest.js": {
-      "bytes": 59546,
+      "bytes": 61006,
       "imports": [],
       "format": "cjs"
     },
     ".open-next/server-functions/default/.next/server/app/(main)/privacy/page_client-reference-manifest.js": {
-      "bytes": 59168,
+      "bytes": 60628,
       "imports": [],
       "format": "cjs"
     },
     ".open-next/server-functions/default/.next/server/app/(main)/practice/page_client-reference-manifest.js": {
-      "bytes": 59353,
+      "bytes": 60813,
       "imports": [],
       "format": "cjs"
     },
     ".open-next/server-functions/default/.next/server/app/(main)/lostfound/page_client-reference-manifest.js": {
-      "bytes": 59819,
+      "bytes": 61471,
       "imports": [],
       "format": "cjs"
     },
     ".open-next/server-functions/default/.next/server/app/(main)/getpetmicrochipped/page_client-reference-manifest.js": {
-      "bytes": 59498,
+      "bytes": 60958,
       "imports": [],
       "format": "cjs"
     },
     ".open-next/server-functions/default/.next/server/app/(main)/findclinic/page_client-reference-manifest.js": {
-      "bytes": 59613,
+      "bytes": 61073,
       "imports": [],
       "format": "cjs"
     },
     ".open-next/server-functions/default/.next/server/app/(main)/contact/page_client-reference-manifest.js": {
-      "bytes": 59837,
+      "bytes": 61297,
       "imports": [],
       "format": "cjs"
     },
     ".open-next/server-functions/default/.next/server/app/(main)/about/page_client-reference-manifest.js": {
-      "bytes": 61336,
+      "bytes": 62814,
       "imports": [],
       "format": "cjs"
     },
     ".open-next/server-functions/default/.next/server/app/api/veterinary/register/route_client-reference-manifest.js": {
-      "bytes": 59371,
+      "bytes": 60831,
       "imports": [],
       "format": "cjs"
     },
     ".open-next/server-functions/default/.next/server/app/api/veterinary/me/route_client-reference-manifest.js": {
-      "bytes": 59359,
+      "bytes": 60819,
       "imports": [],
       "format": "cjs"
     },
     ".open-next/server-functions/default/.next/server/app/api/veterinary/login/route_client-reference-manifest.js": {
-      "bytes": 59365,
+      "bytes": 60825,
+      "imports": [],
+      "format": "cjs"
+    },
+    ".open-next/server-functions/default/.next/server/app/api/veterinary/[clinicId]/route_client-reference-manifest.js": {
+      "bytes": 60835,
       "imports": [],
       "format": "cjs"
     },
     ".open-next/server-functions/default/.next/server/app/api/pet/register/route_client-reference-manifest.js": {
-      "bytes": 59357,
+      "bytes": 60817,
       "imports": [],
       "format": "cjs"
     },
     ".open-next/server-functions/default/.next/server/app/api/pet/login/route_client-reference-manifest.js": {
-      "bytes": 59351,
+      "bytes": 60811,
+      "imports": [],
+      "format": "cjs"
+    },
+    ".open-next/server-functions/default/.next/server/app/api/pet/[petId]/route_client-reference-manifest.js": {
+      "bytes": 60815,
       "imports": [],
       "format": "cjs"
     },
     ".open-next/server-functions/default/.next/server/app/api/owner/me/route_client-reference-manifest.js": {
-      "bytes": 59349,
+      "bytes": 60809,
+      "imports": [],
+      "format": "cjs"
+    },
+    ".open-next/server-functions/default/.next/server/app/api/owner/[ownerId]/route_client-reference-manifest.js": {
+      "bytes": 60823,
       "imports": [],
       "format": "cjs"
     },
     ".open-next/server-functions/default/.next/server/app/api/auth/reset-password/route_client-reference-manifest.js": {
-      "bytes": 59371,
-      "imports": [],
-      "format": "cjs"
-    },
-    ".open-next/server-functions/default/.next/server/app/api/auth/me/route_client-reference-manifest.js": {
-      "bytes": 59347,
+      "bytes": 60831,
       "imports": [],
       "format": "cjs"
     },
     ".open-next/server-functions/default/.next/server/app/api/auth/forgot-password/route_client-reference-manifest.js": {
-      "bytes": 59373,
+      "bytes": 60833,
+      "imports": [],
+      "format": "cjs"
+    },
+    ".open-next/server-functions/default/.next/server/app/api/auth/me/route_client-reference-manifest.js": {
+      "bytes": 60807,
       "imports": [],
       "format": "cjs"
     },
     ".open-next/server-functions/default/.next/server/app/api/admin/veterinary/route_client-reference-manifest.js": {
-      "bytes": 59365,
+      "bytes": 60825,
       "imports": [],
       "format": "cjs"
     },
     ".open-next/server-functions/default/.next/server/app/api/admin/users/route_client-reference-manifest.js": {
-      "bytes": 59355,
-      "imports": [],
-      "format": "cjs"
-    },
-    ".open-next/server-functions/default/.next/server/app/api/admin/pets/route_client-reference-manifest.js": {
-      "bytes": 59353,
+      "bytes": 60815,
       "imports": [],
       "format": "cjs"
     },
     ".open-next/server-functions/default/.next/server/app/api/admin/lost-reports/route_client-reference-manifest.js": {
-      "bytes": 59369,
+      "bytes": 60829,
       "imports": [],
       "format": "cjs"
     },
-    ".open-next/server-functions/default/.next/server/app/api/admin/login/route_client-reference-manifest.js": {
-      "bytes": 59355,
+    ".open-next/server-functions/default/.next/server/app/api/admin/pets/route_client-reference-manifest.js": {
+      "bytes": 60813,
       "imports": [],
       "format": "cjs"
     },
     ".open-next/server-functions/default/.next/server/app/api/admin/found-reports/route_client-reference-manifest.js": {
-      "bytes": 59371,
+      "bytes": 60831,
+      "imports": [],
+      "format": "cjs"
+    },
+    ".open-next/server-functions/default/.next/server/app/api/admin/dashboard/route_client-reference-manifest.js": {
+      "bytes": 60823,
+      "imports": [],
+      "format": "cjs"
+    },
+    ".open-next/server-functions/default/.next/server/app/api/admin/analytics/route_client-reference-manifest.js": {
+      "bytes": 60823,
+      "imports": [],
+      "format": "cjs"
+    },
+    ".open-next/server-functions/default/.next/server/app/api/admin/login/route_client-reference-manifest.js": {
+      "bytes": 60815,
+      "imports": [],
+      "format": "cjs"
+    },
+    ".open-next/server-functions/default/.next/server/app/(pannel)/veterinary/settings/page_client-reference-manifest.js": {
+      "bytes": 60919,
       "imports": [],
       "format": "cjs"
     },
     ".open-next/server-functions/default/.next/server/app/(pannel)/veterinary/profile/page_client-reference-manifest.js": {
-      "bytes": 59556,
+      "bytes": 60916,
+      "imports": [],
+      "format": "cjs"
+    },
+    ".open-next/server-functions/default/.next/server/app/(pannel)/veterinary/my-clinic/page_client-reference-manifest.js": {
+      "bytes": 60922,
       "imports": [],
       "format": "cjs"
     },
     ".open-next/server-functions/default/.next/server/app/(pannel)/veterinary/dashboard/page_client-reference-manifest.js": {
-      "bytes": 59514,
-      "imports": [],
-      "format": "cjs"
-    },
-    ".open-next/server-functions/default/.next/server/app/(pannel)/petOwner/profile/page_client-reference-manifest.js": {
-      "bytes": 59550,
-      "imports": [],
-      "format": "cjs"
-    },
-    ".open-next/server-functions/default/.next/server/app/(pannel)/petOwner/dashboard/page_client-reference-manifest.js": {
-      "bytes": 59456,
+      "bytes": 60970,
       "imports": [],
       "format": "cjs"
     },
     ".open-next/server-functions/default/.next/server/app/(pannel)/admin/profile/page_client-reference-manifest.js": {
-      "bytes": 59541,
+      "bytes": 61001,
       "imports": [],
       "format": "cjs"
     },
     ".open-next/server-functions/default/.next/server/app/(pannel)/admin/manage-users/page_client-reference-manifest.js": {
-      "bytes": 59456,
+      "bytes": 61012,
       "imports": [],
       "format": "cjs"
     },
     ".open-next/server-functions/default/.next/server/app/(pannel)/admin/lost-found/page_client-reference-manifest.js": {
-      "bytes": 59550,
+      "bytes": 61058,
+      "imports": [],
+      "format": "cjs"
+    },
+    ".open-next/server-functions/default/.next/server/app/(pannel)/admin/dashboard/page_client-reference-manifest.js": {
+      "bytes": 60955,
+      "imports": [],
+      "format": "cjs"
+    },
+    ".open-next/server-functions/default/.next/server/app/(pannel)/admin/analytics/page_client-reference-manifest.js": {
+      "bytes": 61051,
+      "imports": [],
+      "format": "cjs"
+    },
+    ".open-next/server-functions/default/.next/server/app/(pannel)/petOwner/settings/page_client-reference-manifest.js": {
+      "bytes": 60961,
+      "imports": [],
+      "format": "cjs"
+    },
+    ".open-next/server-functions/default/.next/server/app/(pannel)/petOwner/profile/page_client-reference-manifest.js": {
+      "bytes": 60958,
+      "imports": [],
+      "format": "cjs"
+    },
+    ".open-next/server-functions/default/.next/server/app/(pannel)/petOwner/my-pets/page_client-reference-manifest.js": {
+      "bytes": 61058,
+      "imports": [],
+      "format": "cjs"
+    },
+    ".open-next/server-functions/default/.next/server/app/(pannel)/petOwner/dashboard/page_client-reference-manifest.js": {
+      "bytes": 61064,
       "imports": [],
       "format": "cjs"
     },
     ".open-next/server-functions/default/.next/server/app/(main)/(register)/vetregister/page_client-reference-manifest.js": {
-      "bytes": 59735,
+      "bytes": 61291,
       "imports": [],
       "format": "cjs"
     },
     ".open-next/server-functions/default/.next/server/app/(main)/(register)/registerpet/page_client-reference-manifest.js": {
-      "bytes": 59831,
+      "bytes": 61387,
       "imports": [],
       "format": "cjs"
     },
     ".open-next/server-functions/default/.next/server/app/(main)/(forgot-reset)/reset-password/page_client-reference-manifest.js": {
-      "bytes": 59579,
+      "bytes": 61039,
       "imports": [],
       "format": "cjs"
     },
     ".open-next/server-functions/default/.next/server/app/(main)/(forgot-reset)/forgot-password/page_client-reference-manifest.js": {
-      "bytes": 59582,
+      "bytes": 61042,
       "imports": [],
       "format": "cjs"
     },
     ".open-next/server-functions/default/.next/server/app/(main)/(auth)/vlogin/page_client-reference-manifest.js": {
-      "bytes": 59498,
+      "bytes": 60958,
       "imports": [],
       "format": "cjs"
     },
     ".open-next/server-functions/default/.next/server/app/(main)/(auth)/pologin/page_client-reference-manifest.js": {
-      "bytes": 59719,
+      "bytes": 61179,
       "imports": [],
       "format": "cjs"
     },
     ".open-next/server-functions/default/.next/server/app/(main)/(auth)/alogin/page_client-reference-manifest.js": {
-      "bytes": 59579,
+      "bytes": 61039,
+      "imports": [],
+      "format": "cjs"
+    },
+    ".open-next/server-functions/default/.next/server/app/api/veterinary/[clinicId]/reset-password/route_client-reference-manifest.js": {
+      "bytes": 60941,
+      "imports": [],
+      "format": "cjs"
+    },
+    ".open-next/server-functions/default/.next/server/app/api/owner/[ownerId]/reset-password/route_client-reference-manifest.js": {
+      "bytes": 60923,
+      "imports": [],
+      "format": "cjs"
+    },
+    ".open-next/server-functions/default/.next/server/app/api/admin/users/[userId]/route_client-reference-manifest.js": {
+      "bytes": 60899,
       "imports": [],
       "format": "cjs"
     },
     ".open-next/server-functions/default/.next/server/app/api/admin/lost-reports/[id]/route_client-reference-manifest.js": {
-      "bytes": 59452,
+      "bytes": 60912,
       "imports": [],
       "format": "cjs"
     },
     ".open-next/server-functions/default/.next/server/app/api/admin/found-reports/[id]/route_client-reference-manifest.js": {
-      "bytes": 59455,
+      "bytes": 60915,
       "imports": [],
       "format": "cjs"
     },
     ".open-next/server-functions/default/.next/server/app/(pannel)/admin/verifications/veterinary/page_client-reference-manifest.js": {
-      "bytes": 59686,
+      "bytes": 61244,
       "imports": [],
       "format": "cjs"
     },
     ".open-next/server-functions/default/.next/server/app/(pannel)/admin/verifications/petOwner/page_client-reference-manifest.js": {
-      "bytes": 59680,
+      "bytes": 61238,
       "imports": [],
       "format": "cjs"
     },
     ".open-next/server-functions/default/.next/server/app/api/admin/veterinary/[vetId]/verify/route_client-reference-manifest.js": {
-      "bytes": 59466,
+      "bytes": 60926,
       "imports": [],
       "format": "cjs"
     },
     ".open-next/server-functions/default/.next/server/app/api/admin/veterinary/[vetId]/reject/route_client-reference-manifest.js": {
-      "bytes": 59466,
+      "bytes": 60926,
+      "imports": [],
+      "format": "cjs"
+    },
+    ".open-next/server-functions/default/.next/server/app/api/admin/users/pets/[petId]/route_client-reference-manifest.js": {
+      "bytes": 60907,
+      "imports": [],
+      "format": "cjs"
+    },
+    ".open-next/server-functions/default/.next/server/app/api/admin/users/clinics/[veterinaryId]/route_client-reference-manifest.js": {
+      "bytes": 60927,
       "imports": [],
       "format": "cjs"
     },
     ".open-next/server-functions/default/.next/server/app/api/admin/lost-reports/[id]/resolve/route_client-reference-manifest.js": {
-      "bytes": 59546,
+      "bytes": 61006,
       "imports": [],
       "format": "cjs"
     },
     ".open-next/server-functions/default/.next/server/app/api/admin/found-reports/[id]/resolve/route_client-reference-manifest.js": {
-      "bytes": 59550,
-      "imports": [],
-      "format": "cjs"
-    },
-    ".open-next/server-functions/default/.next/server/app/api/admin/pets/[ownerId]/[petId]/verify/route_client-reference-manifest.js": {
-      "bytes": 59468,
+      "bytes": 61010,
       "imports": [],
       "format": "cjs"
     },
     ".open-next/server-functions/default/.next/server/app/api/admin/pets/[ownerId]/[petId]/reject/route_client-reference-manifest.js": {
-      "bytes": 59468,
+      "bytes": 60928,
+      "imports": [],
+      "format": "cjs"
+    },
+    ".open-next/server-functions/default/.next/server/app/api/admin/pets/[ownerId]/[petId]/verify/route_client-reference-manifest.js": {
+      "bytes": 60928,
       "imports": [],
       "format": "cjs"
     },
     ".open-next/server-functions/default/node_modules/.pnpm/next@15.1.6_@babel+core@7.28.5_@opentelemetry+api@1.9.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/server/load-manifest.js": {
-      "bytes": 71626,
+      "bytes": 91460,
       "imports": [
         {
           "path": "fs",
@@ -3393,6 +3483,11 @@
           "original": "/home/chinnu/projects/chipthem/.open-next/server-functions/default/.next/server/app/api/reportFound/route_client-reference-manifest.js"
         },
         {
+          "path": ".open-next/server-functions/default/.next/server/app/api/maps-coords/route_client-reference-manifest.js",
+          "kind": "require-call",
+          "original": "/home/chinnu/projects/chipthem/.open-next/server-functions/default/.next/server/app/api/maps-coords/route_client-reference-manifest.js"
+        },
+        {
           "path": ".open-next/server-functions/default/.next/server/app/api/logout/route_client-reference-manifest.js",
           "kind": "require-call",
           "original": "/home/chinnu/projects/chipthem/.open-next/server-functions/default/.next/server/app/api/logout/route_client-reference-manifest.js"
@@ -3401,6 +3496,11 @@
           "path": ".open-next/server-functions/default/.next/server/app/api/contacts/route_client-reference-manifest.js",
           "kind": "require-call",
           "original": "/home/chinnu/projects/chipthem/.open-next/server-functions/default/.next/server/app/api/contacts/route_client-reference-manifest.js"
+        },
+        {
+          "path": ".open-next/server-functions/default/.next/server/app/api/clinics/route_client-reference-manifest.js",
+          "kind": "require-call",
+          "original": "/home/chinnu/projects/chipthem/.open-next/server-functions/default/.next/server/app/api/clinics/route_client-reference-manifest.js"
         },
         {
           "path": ".open-next/server-functions/default/.next/server/app/(main)/terms/page_client-reference-manifest.js",
@@ -3478,6 +3578,11 @@
           "original": "/home/chinnu/projects/chipthem/.open-next/server-functions/default/.next/server/app/api/veterinary/login/route_client-reference-manifest.js"
         },
         {
+          "path": ".open-next/server-functions/default/.next/server/app/api/veterinary/[clinicId]/route_client-reference-manifest.js",
+          "kind": "require-call",
+          "original": "/home/chinnu/projects/chipthem/.open-next/server-functions/default/.next/server/app/api/veterinary/[clinicId]/route_client-reference-manifest.js"
+        },
+        {
           "path": ".open-next/server-functions/default/.next/server/app/api/pet/register/route_client-reference-manifest.js",
           "kind": "require-call",
           "original": "/home/chinnu/projects/chipthem/.open-next/server-functions/default/.next/server/app/api/pet/register/route_client-reference-manifest.js"
@@ -3488,9 +3593,19 @@
           "original": "/home/chinnu/projects/chipthem/.open-next/server-functions/default/.next/server/app/api/pet/login/route_client-reference-manifest.js"
         },
         {
+          "path": ".open-next/server-functions/default/.next/server/app/api/pet/[petId]/route_client-reference-manifest.js",
+          "kind": "require-call",
+          "original": "/home/chinnu/projects/chipthem/.open-next/server-functions/default/.next/server/app/api/pet/[petId]/route_client-reference-manifest.js"
+        },
+        {
           "path": ".open-next/server-functions/default/.next/server/app/api/owner/me/route_client-reference-manifest.js",
           "kind": "require-call",
           "original": "/home/chinnu/projects/chipthem/.open-next/server-functions/default/.next/server/app/api/owner/me/route_client-reference-manifest.js"
+        },
+        {
+          "path": ".open-next/server-functions/default/.next/server/app/api/owner/[ownerId]/route_client-reference-manifest.js",
+          "kind": "require-call",
+          "original": "/home/chinnu/projects/chipthem/.open-next/server-functions/default/.next/server/app/api/owner/[ownerId]/route_client-reference-manifest.js"
         },
         {
           "path": ".open-next/server-functions/default/.next/server/app/api/auth/reset-password/route_client-reference-manifest.js",
@@ -3498,14 +3613,14 @@
           "original": "/home/chinnu/projects/chipthem/.open-next/server-functions/default/.next/server/app/api/auth/reset-password/route_client-reference-manifest.js"
         },
         {
-          "path": ".open-next/server-functions/default/.next/server/app/api/auth/me/route_client-reference-manifest.js",
-          "kind": "require-call",
-          "original": "/home/chinnu/projects/chipthem/.open-next/server-functions/default/.next/server/app/api/auth/me/route_client-reference-manifest.js"
-        },
-        {
           "path": ".open-next/server-functions/default/.next/server/app/api/auth/forgot-password/route_client-reference-manifest.js",
           "kind": "require-call",
           "original": "/home/chinnu/projects/chipthem/.open-next/server-functions/default/.next/server/app/api/auth/forgot-password/route_client-reference-manifest.js"
+        },
+        {
+          "path": ".open-next/server-functions/default/.next/server/app/api/auth/me/route_client-reference-manifest.js",
+          "kind": "require-call",
+          "original": "/home/chinnu/projects/chipthem/.open-next/server-functions/default/.next/server/app/api/auth/me/route_client-reference-manifest.js"
         },
         {
           "path": ".open-next/server-functions/default/.next/server/app/api/admin/veterinary/route_client-reference-manifest.js",
@@ -3518,19 +3633,14 @@
           "original": "/home/chinnu/projects/chipthem/.open-next/server-functions/default/.next/server/app/api/admin/users/route_client-reference-manifest.js"
         },
         {
-          "path": ".open-next/server-functions/default/.next/server/app/api/admin/pets/route_client-reference-manifest.js",
-          "kind": "require-call",
-          "original": "/home/chinnu/projects/chipthem/.open-next/server-functions/default/.next/server/app/api/admin/pets/route_client-reference-manifest.js"
-        },
-        {
           "path": ".open-next/server-functions/default/.next/server/app/api/admin/lost-reports/route_client-reference-manifest.js",
           "kind": "require-call",
           "original": "/home/chinnu/projects/chipthem/.open-next/server-functions/default/.next/server/app/api/admin/lost-reports/route_client-reference-manifest.js"
         },
         {
-          "path": ".open-next/server-functions/default/.next/server/app/api/admin/login/route_client-reference-manifest.js",
+          "path": ".open-next/server-functions/default/.next/server/app/api/admin/pets/route_client-reference-manifest.js",
           "kind": "require-call",
-          "original": "/home/chinnu/projects/chipthem/.open-next/server-functions/default/.next/server/app/api/admin/login/route_client-reference-manifest.js"
+          "original": "/home/chinnu/projects/chipthem/.open-next/server-functions/default/.next/server/app/api/admin/pets/route_client-reference-manifest.js"
         },
         {
           "path": ".open-next/server-functions/default/.next/server/app/api/admin/found-reports/route_client-reference-manifest.js",
@@ -3538,24 +3648,39 @@
           "original": "/home/chinnu/projects/chipthem/.open-next/server-functions/default/.next/server/app/api/admin/found-reports/route_client-reference-manifest.js"
         },
         {
+          "path": ".open-next/server-functions/default/.next/server/app/api/admin/dashboard/route_client-reference-manifest.js",
+          "kind": "require-call",
+          "original": "/home/chinnu/projects/chipthem/.open-next/server-functions/default/.next/server/app/api/admin/dashboard/route_client-reference-manifest.js"
+        },
+        {
+          "path": ".open-next/server-functions/default/.next/server/app/api/admin/analytics/route_client-reference-manifest.js",
+          "kind": "require-call",
+          "original": "/home/chinnu/projects/chipthem/.open-next/server-functions/default/.next/server/app/api/admin/analytics/route_client-reference-manifest.js"
+        },
+        {
+          "path": ".open-next/server-functions/default/.next/server/app/api/admin/login/route_client-reference-manifest.js",
+          "kind": "require-call",
+          "original": "/home/chinnu/projects/chipthem/.open-next/server-functions/default/.next/server/app/api/admin/login/route_client-reference-manifest.js"
+        },
+        {
+          "path": ".open-next/server-functions/default/.next/server/app/(pannel)/veterinary/settings/page_client-reference-manifest.js",
+          "kind": "require-call",
+          "original": "/home/chinnu/projects/chipthem/.open-next/server-functions/default/.next/server/app/(pannel)/veterinary/settings/page_client-reference-manifest.js"
+        },
+        {
           "path": ".open-next/server-functions/default/.next/server/app/(pannel)/veterinary/profile/page_client-reference-manifest.js",
           "kind": "require-call",
           "original": "/home/chinnu/projects/chipthem/.open-next/server-functions/default/.next/server/app/(pannel)/veterinary/profile/page_client-reference-manifest.js"
         },
         {
+          "path": ".open-next/server-functions/default/.next/server/app/(pannel)/veterinary/my-clinic/page_client-reference-manifest.js",
+          "kind": "require-call",
+          "original": "/home/chinnu/projects/chipthem/.open-next/server-functions/default/.next/server/app/(pannel)/veterinary/my-clinic/page_client-reference-manifest.js"
+        },
+        {
           "path": ".open-next/server-functions/default/.next/server/app/(pannel)/veterinary/dashboard/page_client-reference-manifest.js",
           "kind": "require-call",
           "original": "/home/chinnu/projects/chipthem/.open-next/server-functions/default/.next/server/app/(pannel)/veterinary/dashboard/page_client-reference-manifest.js"
-        },
-        {
-          "path": ".open-next/server-functions/default/.next/server/app/(pannel)/petOwner/profile/page_client-reference-manifest.js",
-          "kind": "require-call",
-          "original": "/home/chinnu/projects/chipthem/.open-next/server-functions/default/.next/server/app/(pannel)/petOwner/profile/page_client-reference-manifest.js"
-        },
-        {
-          "path": ".open-next/server-functions/default/.next/server/app/(pannel)/petOwner/dashboard/page_client-reference-manifest.js",
-          "kind": "require-call",
-          "original": "/home/chinnu/projects/chipthem/.open-next/server-functions/default/.next/server/app/(pannel)/petOwner/dashboard/page_client-reference-manifest.js"
         },
         {
           "path": ".open-next/server-functions/default/.next/server/app/(pannel)/admin/profile/page_client-reference-manifest.js",
@@ -3571,6 +3696,36 @@
           "path": ".open-next/server-functions/default/.next/server/app/(pannel)/admin/lost-found/page_client-reference-manifest.js",
           "kind": "require-call",
           "original": "/home/chinnu/projects/chipthem/.open-next/server-functions/default/.next/server/app/(pannel)/admin/lost-found/page_client-reference-manifest.js"
+        },
+        {
+          "path": ".open-next/server-functions/default/.next/server/app/(pannel)/admin/dashboard/page_client-reference-manifest.js",
+          "kind": "require-call",
+          "original": "/home/chinnu/projects/chipthem/.open-next/server-functions/default/.next/server/app/(pannel)/admin/dashboard/page_client-reference-manifest.js"
+        },
+        {
+          "path": ".open-next/server-functions/default/.next/server/app/(pannel)/admin/analytics/page_client-reference-manifest.js",
+          "kind": "require-call",
+          "original": "/home/chinnu/projects/chipthem/.open-next/server-functions/default/.next/server/app/(pannel)/admin/analytics/page_client-reference-manifest.js"
+        },
+        {
+          "path": ".open-next/server-functions/default/.next/server/app/(pannel)/petOwner/settings/page_client-reference-manifest.js",
+          "kind": "require-call",
+          "original": "/home/chinnu/projects/chipthem/.open-next/server-functions/default/.next/server/app/(pannel)/petOwner/settings/page_client-reference-manifest.js"
+        },
+        {
+          "path": ".open-next/server-functions/default/.next/server/app/(pannel)/petOwner/profile/page_client-reference-manifest.js",
+          "kind": "require-call",
+          "original": "/home/chinnu/projects/chipthem/.open-next/server-functions/default/.next/server/app/(pannel)/petOwner/profile/page_client-reference-manifest.js"
+        },
+        {
+          "path": ".open-next/server-functions/default/.next/server/app/(pannel)/petOwner/my-pets/page_client-reference-manifest.js",
+          "kind": "require-call",
+          "original": "/home/chinnu/projects/chipthem/.open-next/server-functions/default/.next/server/app/(pannel)/petOwner/my-pets/page_client-reference-manifest.js"
+        },
+        {
+          "path": ".open-next/server-functions/default/.next/server/app/(pannel)/petOwner/dashboard/page_client-reference-manifest.js",
+          "kind": "require-call",
+          "original": "/home/chinnu/projects/chipthem/.open-next/server-functions/default/.next/server/app/(pannel)/petOwner/dashboard/page_client-reference-manifest.js"
         },
         {
           "path": ".open-next/server-functions/default/.next/server/app/(main)/(register)/vetregister/page_client-reference-manifest.js",
@@ -3608,6 +3763,21 @@
           "original": "/home/chinnu/projects/chipthem/.open-next/server-functions/default/.next/server/app/(main)/(auth)/alogin/page_client-reference-manifest.js"
         },
         {
+          "path": ".open-next/server-functions/default/.next/server/app/api/veterinary/[clinicId]/reset-password/route_client-reference-manifest.js",
+          "kind": "require-call",
+          "original": "/home/chinnu/projects/chipthem/.open-next/server-functions/default/.next/server/app/api/veterinary/[clinicId]/reset-password/route_client-reference-manifest.js"
+        },
+        {
+          "path": ".open-next/server-functions/default/.next/server/app/api/owner/[ownerId]/reset-password/route_client-reference-manifest.js",
+          "kind": "require-call",
+          "original": "/home/chinnu/projects/chipthem/.open-next/server-functions/default/.next/server/app/api/owner/[ownerId]/reset-password/route_client-reference-manifest.js"
+        },
+        {
+          "path": ".open-next/server-functions/default/.next/server/app/api/admin/users/[userId]/route_client-reference-manifest.js",
+          "kind": "require-call",
+          "original": "/home/chinnu/projects/chipthem/.open-next/server-functions/default/.next/server/app/api/admin/users/[userId]/route_client-reference-manifest.js"
+        },
+        {
           "path": ".open-next/server-functions/default/.next/server/app/api/admin/lost-reports/[id]/route_client-reference-manifest.js",
           "kind": "require-call",
           "original": "/home/chinnu/projects/chipthem/.open-next/server-functions/default/.next/server/app/api/admin/lost-reports/[id]/route_client-reference-manifest.js"
@@ -3638,6 +3808,16 @@
           "original": "/home/chinnu/projects/chipthem/.open-next/server-functions/default/.next/server/app/api/admin/veterinary/[vetId]/reject/route_client-reference-manifest.js"
         },
         {
+          "path": ".open-next/server-functions/default/.next/server/app/api/admin/users/pets/[petId]/route_client-reference-manifest.js",
+          "kind": "require-call",
+          "original": "/home/chinnu/projects/chipthem/.open-next/server-functions/default/.next/server/app/api/admin/users/pets/[petId]/route_client-reference-manifest.js"
+        },
+        {
+          "path": ".open-next/server-functions/default/.next/server/app/api/admin/users/clinics/[veterinaryId]/route_client-reference-manifest.js",
+          "kind": "require-call",
+          "original": "/home/chinnu/projects/chipthem/.open-next/server-functions/default/.next/server/app/api/admin/users/clinics/[veterinaryId]/route_client-reference-manifest.js"
+        },
+        {
           "path": ".open-next/server-functions/default/.next/server/app/api/admin/lost-reports/[id]/resolve/route_client-reference-manifest.js",
           "kind": "require-call",
           "original": "/home/chinnu/projects/chipthem/.open-next/server-functions/default/.next/server/app/api/admin/lost-reports/[id]/resolve/route_client-reference-manifest.js"
@@ -3648,14 +3828,14 @@
           "original": "/home/chinnu/projects/chipthem/.open-next/server-functions/default/.next/server/app/api/admin/found-reports/[id]/resolve/route_client-reference-manifest.js"
         },
         {
-          "path": ".open-next/server-functions/default/.next/server/app/api/admin/pets/[ownerId]/[petId]/verify/route_client-reference-manifest.js",
-          "kind": "require-call",
-          "original": "/home/chinnu/projects/chipthem/.open-next/server-functions/default/.next/server/app/api/admin/pets/[ownerId]/[petId]/verify/route_client-reference-manifest.js"
-        },
-        {
           "path": ".open-next/server-functions/default/.next/server/app/api/admin/pets/[ownerId]/[petId]/reject/route_client-reference-manifest.js",
           "kind": "require-call",
           "original": "/home/chinnu/projects/chipthem/.open-next/server-functions/default/.next/server/app/api/admin/pets/[ownerId]/[petId]/reject/route_client-reference-manifest.js"
+        },
+        {
+          "path": ".open-next/server-functions/default/.next/server/app/api/admin/pets/[ownerId]/[petId]/verify/route_client-reference-manifest.js",
+          "kind": "require-call",
+          "original": "/home/chinnu/projects/chipthem/.open-next/server-functions/default/.next/server/app/api/admin/pets/[ownerId]/[petId]/verify/route_client-reference-manifest.js"
         }
       ],
       "format": "cjs"
@@ -3682,13 +3862,8 @@
       ],
       "format": "cjs"
     },
-    ".open-next/server-functions/default/.next/server/chunks/2506.js": {
-      "bytes": 73365,
-      "imports": [],
-      "format": "cjs"
-    },
-    ".open-next/server-functions/default/.next/server/chunks/2671.js": {
-      "bytes": 40376,
+    ".open-next/server-functions/default/.next/server/chunks/2217.js": {
+      "bytes": 27738,
       "imports": [],
       "format": "cjs"
     },
@@ -3708,18 +3883,23 @@
       ],
       "format": "cjs"
     },
+    ".open-next/server-functions/default/.next/server/chunks/3268.js": {
+      "bytes": 30561,
+      "imports": [],
+      "format": "cjs"
+    },
+    ".open-next/server-functions/default/.next/server/chunks/3465.js": {
+      "bytes": 119108,
+      "imports": [],
+      "format": "cjs"
+    },
     ".open-next/server-functions/default/.next/server/chunks/3610.js": {
-      "bytes": 24083,
+      "bytes": 26034,
       "imports": [],
       "format": "cjs"
     },
     ".open-next/server-functions/default/.next/server/chunks/4069.js": {
       "bytes": 159123,
-      "imports": [],
-      "format": "cjs"
-    },
-    ".open-next/server-functions/default/.next/server/chunks/4141.js": {
-      "bytes": 121059,
       "imports": [],
       "format": "cjs"
     },
@@ -3734,7 +3914,7 @@
       "format": "cjs"
     },
     ".open-next/server-functions/default/.next/server/chunks/4954.js": {
-      "bytes": 18273,
+      "bytes": 19042,
       "imports": [],
       "format": "cjs"
     },
@@ -3744,7 +3924,7 @@
       "format": "cjs"
     },
     ".open-next/server-functions/default/.next/server/chunks/5580.js": {
-      "bytes": 455936,
+      "bytes": 459260,
       "imports": [
         {
           "path": "@emotion/is-prop-valid",
@@ -3759,23 +3939,28 @@
       "imports": [],
       "format": "cjs"
     },
+    ".open-next/server-functions/default/.next/server/chunks/7317.js": {
+      "bytes": 28280,
+      "imports": [],
+      "format": "cjs"
+    },
     ".open-next/server-functions/default/.next/server/chunks/7368.js": {
-      "bytes": 49807,
+      "bytes": 51458,
       "imports": [],
       "format": "cjs"
     },
     ".open-next/server-functions/default/.next/server/chunks/7552.js": {
-      "bytes": 72343,
+      "bytes": 74847,
       "imports": [],
       "format": "cjs"
     },
-    ".open-next/server-functions/default/.next/server/chunks/8340.js": {
-      "bytes": 27608,
+    ".open-next/server-functions/default/.next/server/chunks/7757.js": {
+      "bytes": 41017,
       "imports": [],
       "format": "cjs"
     },
-    ".open-next/server-functions/default/.next/server/chunks/8629.js": {
-      "bytes": 24260,
+    ".open-next/server-functions/default/.next/server/chunks/9060.js": {
+      "bytes": 88270,
       "imports": [],
       "format": "cjs"
     },
@@ -3794,18 +3979,18 @@
       "imports": [],
       "format": "cjs"
     },
+    ".open-next/server-functions/default/.next/server/chunks/937.js": {
+      "bytes": 72654,
+      "imports": [],
+      "format": "cjs"
+    },
     ".open-next/server-functions/default/.next/server/webpack-runtime.js": {
-      "bytes": 2710,
+      "bytes": 2834,
       "imports": [
         {
-          "path": ".open-next/server-functions/default/.next/server/chunks/2506.js",
+          "path": ".open-next/server-functions/default/.next/server/chunks/2217.js",
           "kind": "require-call",
-          "original": "./chunks/2506.js"
-        },
-        {
-          "path": ".open-next/server-functions/default/.next/server/chunks/2671.js",
-          "kind": "require-call",
-          "original": "./chunks/2671.js"
+          "original": "./chunks/2217.js"
         },
         {
           "path": ".open-next/server-functions/default/.next/server/chunks/2883.js",
@@ -3818,6 +4003,16 @@
           "original": "./chunks/3047.js"
         },
         {
+          "path": ".open-next/server-functions/default/.next/server/chunks/3268.js",
+          "kind": "require-call",
+          "original": "./chunks/3268.js"
+        },
+        {
+          "path": ".open-next/server-functions/default/.next/server/chunks/3465.js",
+          "kind": "require-call",
+          "original": "./chunks/3465.js"
+        },
+        {
           "path": ".open-next/server-functions/default/.next/server/chunks/3610.js",
           "kind": "require-call",
           "original": "./chunks/3610.js"
@@ -3826,11 +4021,6 @@
           "path": ".open-next/server-functions/default/.next/server/chunks/4069.js",
           "kind": "require-call",
           "original": "./chunks/4069.js"
-        },
-        {
-          "path": ".open-next/server-functions/default/.next/server/chunks/4141.js",
-          "kind": "require-call",
-          "original": "./chunks/4141.js"
         },
         {
           "path": ".open-next/server-functions/default/.next/server/chunks/4278.js",
@@ -3863,6 +4053,11 @@
           "original": "./chunks/5880.js"
         },
         {
+          "path": ".open-next/server-functions/default/.next/server/chunks/7317.js",
+          "kind": "require-call",
+          "original": "./chunks/7317.js"
+        },
+        {
           "path": ".open-next/server-functions/default/.next/server/chunks/7368.js",
           "kind": "require-call",
           "original": "./chunks/7368.js"
@@ -3873,14 +4068,14 @@
           "original": "./chunks/7552.js"
         },
         {
-          "path": ".open-next/server-functions/default/.next/server/chunks/8340.js",
+          "path": ".open-next/server-functions/default/.next/server/chunks/7757.js",
           "kind": "require-call",
-          "original": "./chunks/8340.js"
+          "original": "./chunks/7757.js"
         },
         {
-          "path": ".open-next/server-functions/default/.next/server/chunks/8629.js",
+          "path": ".open-next/server-functions/default/.next/server/chunks/9060.js",
           "kind": "require-call",
-          "original": "./chunks/8629.js"
+          "original": "./chunks/9060.js"
         },
         {
           "path": ".open-next/server-functions/default/.next/server/chunks/9103.js",
@@ -3896,6 +4091,11 @@
           "path": ".open-next/server-functions/default/.next/server/chunks/9233.js",
           "kind": "require-call",
           "original": "./chunks/9233.js"
+        },
+        {
+          "path": ".open-next/server-functions/default/.next/server/chunks/937.js",
+          "kind": "require-call",
+          "original": "./chunks/937.js"
         }
       ],
       "format": "cjs"
@@ -4390,8 +4590,85 @@
       ],
       "format": "cjs"
     },
+    ".open-next/server-functions/default/.next/server/app/api/admin/dashboard/route.js": {
+      "bytes": 2515,
+      "imports": [
+        {
+          "path": ".open-next/server-functions/default/node_modules/.pnpm/next@15.1.6_@babel+core@7.28.5_@opentelemetry+api@1.9.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js",
+          "kind": "require-call",
+          "original": "next/dist/compiled/next-server/app-page.runtime.prod.js"
+        },
+        {
+          "path": ".open-next/server-functions/default/node_modules/.pnpm/next@15.1.6_@babel+core@7.28.5_@opentelemetry+api@1.9.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/compiled/next-server/app-route.runtime.prod.js",
+          "kind": "require-call",
+          "original": "next/dist/compiled/next-server/app-route.runtime.prod.js"
+        },
+        {
+          "path": ".open-next/server-functions/default/node_modules/.pnpm/next@15.1.6_@babel+core@7.28.5_@opentelemetry+api@1.9.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/server/app-render/after-task-async-storage.external.js",
+          "kind": "require-call",
+          "original": "next/dist/server/app-render/after-task-async-storage.external.js"
+        },
+        {
+          "path": ".open-next/server-functions/default/node_modules/.pnpm/next@15.1.6_@babel+core@7.28.5_@opentelemetry+api@1.9.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/server/app-render/work-async-storage.external.js",
+          "kind": "require-call",
+          "original": "next/dist/server/app-render/work-async-storage.external.js"
+        },
+        {
+          "path": ".open-next/server-functions/default/node_modules/.pnpm/next@15.1.6_@babel+core@7.28.5_@opentelemetry+api@1.9.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/server/app-render/work-unit-async-storage.external.js",
+          "kind": "require-call",
+          "original": "next/dist/server/app-render/work-unit-async-storage.external.js"
+        },
+        {
+          "path": ".open-next/server-functions/default/.next/server/webpack-runtime.js",
+          "kind": "require-call",
+          "original": "../../../../webpack-runtime.js"
+        }
+      ],
+      "format": "cjs"
+    },
+    ".open-next/server-functions/default/.next/server/app/api/admin/login/route.js": {
+      "bytes": 5201,
+      "imports": [
+        {
+          "path": ".open-next/server-functions/default/node_modules/.pnpm/next@15.1.6_@babel+core@7.28.5_@opentelemetry+api@1.9.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js",
+          "kind": "require-call",
+          "original": "next/dist/compiled/next-server/app-page.runtime.prod.js"
+        },
+        {
+          "path": ".open-next/server-functions/default/node_modules/.pnpm/next@15.1.6_@babel+core@7.28.5_@opentelemetry+api@1.9.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/compiled/next-server/app-route.runtime.prod.js",
+          "kind": "require-call",
+          "original": "next/dist/compiled/next-server/app-route.runtime.prod.js"
+        },
+        {
+          "path": ".open-next/server-functions/default/node_modules/.pnpm/next@15.1.6_@babel+core@7.28.5_@opentelemetry+api@1.9.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/server/app-render/after-task-async-storage.external.js",
+          "kind": "require-call",
+          "original": "next/dist/server/app-render/after-task-async-storage.external.js"
+        },
+        {
+          "path": ".open-next/server-functions/default/node_modules/.pnpm/next@15.1.6_@babel+core@7.28.5_@opentelemetry+api@1.9.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/server/app-render/work-async-storage.external.js",
+          "kind": "require-call",
+          "original": "next/dist/server/app-render/work-async-storage.external.js"
+        },
+        {
+          "path": ".open-next/server-functions/default/node_modules/.pnpm/next@15.1.6_@babel+core@7.28.5_@opentelemetry+api@1.9.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/server/app-render/work-unit-async-storage.external.js",
+          "kind": "require-call",
+          "original": "next/dist/server/app-render/work-unit-async-storage.external.js"
+        },
+        {
+          "path": "crypto",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": ".open-next/server-functions/default/.next/server/webpack-runtime.js",
+          "kind": "require-call",
+          "original": "../../../../webpack-runtime.js"
+        }
+      ],
+      "format": "cjs"
+    },
     ".open-next/server-functions/default/.next/server/app/api/admin/found-reports/route.js": {
-      "bytes": 6107,
+      "bytes": 2055,
       "imports": [
         {
           "path": ".open-next/server-functions/default/node_modules/.pnpm/next@15.1.6_@babel+core@7.28.5_@opentelemetry+api@1.9.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js",
@@ -4463,7 +4740,7 @@
       "format": "cjs"
     },
     ".open-next/server-functions/default/.next/server/app/api/admin/lost-reports/route.js": {
-      "bytes": 6100,
+      "bytes": 2048,
       "imports": [
         {
           "path": ".open-next/server-functions/default/node_modules/.pnpm/next@15.1.6_@babel+core@7.28.5_@opentelemetry+api@1.9.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js",
@@ -4534,8 +4811,8 @@
       ],
       "format": "cjs"
     },
-    ".open-next/server-functions/default/.next/server/app/api/admin/pets/[ownerId]/[petId]/verify/route.js": {
-      "bytes": 7344,
+    ".open-next/server-functions/default/.next/server/app/api/admin/pets/[ownerId]/[petId]/reject/route.js": {
+      "bytes": 2956,
       "imports": [
         {
           "path": ".open-next/server-functions/default/node_modules/.pnpm/next@15.1.6_@babel+core@7.28.5_@opentelemetry+api@1.9.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js",
@@ -4570,8 +4847,39 @@
       ],
       "format": "cjs"
     },
-    ".open-next/server-functions/default/.next/server/app/api/admin/login/route.js": {
-      "bytes": 5201,
+    ".open-next/server-functions/default/.next/server/app/api/admin/analytics/route.js": {
+      "bytes": 2131,
+      "imports": [
+        {
+          "path": ".open-next/server-functions/default/node_modules/.pnpm/next@15.1.6_@babel+core@7.28.5_@opentelemetry+api@1.9.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js",
+          "kind": "require-call",
+          "original": "next/dist/compiled/next-server/app-page.runtime.prod.js"
+        },
+        {
+          "path": ".open-next/server-functions/default/node_modules/.pnpm/next@15.1.6_@babel+core@7.28.5_@opentelemetry+api@1.9.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/compiled/next-server/app-route.runtime.prod.js",
+          "kind": "require-call",
+          "original": "next/dist/compiled/next-server/app-route.runtime.prod.js"
+        },
+        {
+          "path": ".open-next/server-functions/default/node_modules/.pnpm/next@15.1.6_@babel+core@7.28.5_@opentelemetry+api@1.9.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/server/app-render/work-async-storage.external.js",
+          "kind": "require-call",
+          "original": "next/dist/server/app-render/work-async-storage.external.js"
+        },
+        {
+          "path": ".open-next/server-functions/default/node_modules/.pnpm/next@15.1.6_@babel+core@7.28.5_@opentelemetry+api@1.9.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/server/app-render/work-unit-async-storage.external.js",
+          "kind": "require-call",
+          "original": "next/dist/server/app-render/work-unit-async-storage.external.js"
+        },
+        {
+          "path": ".open-next/server-functions/default/.next/server/webpack-runtime.js",
+          "kind": "require-call",
+          "original": "../../../../webpack-runtime.js"
+        }
+      ],
+      "format": "cjs"
+    },
+    ".open-next/server-functions/default/.next/server/app/api/admin/pets/route.js": {
+      "bytes": 2308,
       "imports": [
         {
           "path": ".open-next/server-functions/default/node_modules/.pnpm/next@15.1.6_@babel+core@7.28.5_@opentelemetry+api@1.9.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js",
@@ -4599,56 +4907,56 @@
           "original": "next/dist/server/app-render/work-unit-async-storage.external.js"
         },
         {
-          "path": "crypto",
+          "path": ".open-next/server-functions/default/.next/server/webpack-runtime.js",
+          "kind": "require-call",
+          "original": "../../../../webpack-runtime.js"
+        }
+      ],
+      "format": "cjs"
+    },
+    ".open-next/server-functions/default/.next/server/app/api/admin/pets/[ownerId]/[petId]/verify/route.js": {
+      "bytes": 5706,
+      "imports": [
+        {
+          "path": ".open-next/server-functions/default/node_modules/.pnpm/next@15.1.6_@babel+core@7.28.5_@opentelemetry+api@1.9.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js",
+          "kind": "require-call",
+          "original": "next/dist/compiled/next-server/app-page.runtime.prod.js"
+        },
+        {
+          "path": ".open-next/server-functions/default/node_modules/.pnpm/next@15.1.6_@babel+core@7.28.5_@opentelemetry+api@1.9.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/compiled/next-server/app-route.runtime.prod.js",
+          "kind": "require-call",
+          "original": "next/dist/compiled/next-server/app-route.runtime.prod.js"
+        },
+        {
+          "path": ".open-next/server-functions/default/node_modules/.pnpm/next@15.1.6_@babel+core@7.28.5_@opentelemetry+api@1.9.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/server/app-render/after-task-async-storage.external.js",
+          "kind": "require-call",
+          "original": "next/dist/server/app-render/after-task-async-storage.external.js"
+        },
+        {
+          "path": ".open-next/server-functions/default/node_modules/.pnpm/next@15.1.6_@babel+core@7.28.5_@opentelemetry+api@1.9.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/server/app-render/work-async-storage.external.js",
+          "kind": "require-call",
+          "original": "next/dist/server/app-render/work-async-storage.external.js"
+        },
+        {
+          "path": ".open-next/server-functions/default/node_modules/.pnpm/next@15.1.6_@babel+core@7.28.5_@opentelemetry+api@1.9.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/server/app-render/work-unit-async-storage.external.js",
+          "kind": "require-call",
+          "original": "next/dist/server/app-render/work-unit-async-storage.external.js"
+        },
+        {
+          "path": "node:crypto",
           "kind": "require-call",
           "external": true
         },
         {
           "path": ".open-next/server-functions/default/.next/server/webpack-runtime.js",
           "kind": "require-call",
-          "original": "../../../../webpack-runtime.js"
-        }
-      ],
-      "format": "cjs"
-    },
-    ".open-next/server-functions/default/.next/server/app/api/admin/pets/[ownerId]/[petId]/reject/route.js": {
-      "bytes": 6938,
-      "imports": [
-        {
-          "path": ".open-next/server-functions/default/node_modules/.pnpm/next@15.1.6_@babel+core@7.28.5_@opentelemetry+api@1.9.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js",
-          "kind": "require-call",
-          "original": "next/dist/compiled/next-server/app-page.runtime.prod.js"
-        },
-        {
-          "path": ".open-next/server-functions/default/node_modules/.pnpm/next@15.1.6_@babel+core@7.28.5_@opentelemetry+api@1.9.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/compiled/next-server/app-route.runtime.prod.js",
-          "kind": "require-call",
-          "original": "next/dist/compiled/next-server/app-route.runtime.prod.js"
-        },
-        {
-          "path": ".open-next/server-functions/default/node_modules/.pnpm/next@15.1.6_@babel+core@7.28.5_@opentelemetry+api@1.9.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/server/app-render/after-task-async-storage.external.js",
-          "kind": "require-call",
-          "original": "next/dist/server/app-render/after-task-async-storage.external.js"
-        },
-        {
-          "path": ".open-next/server-functions/default/node_modules/.pnpm/next@15.1.6_@babel+core@7.28.5_@opentelemetry+api@1.9.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/server/app-render/work-async-storage.external.js",
-          "kind": "require-call",
-          "original": "next/dist/server/app-render/work-async-storage.external.js"
-        },
-        {
-          "path": ".open-next/server-functions/default/node_modules/.pnpm/next@15.1.6_@babel+core@7.28.5_@opentelemetry+api@1.9.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/server/app-render/work-unit-async-storage.external.js",
-          "kind": "require-call",
-          "original": "next/dist/server/app-render/work-unit-async-storage.external.js"
-        },
-        {
-          "path": ".open-next/server-functions/default/.next/server/webpack-runtime.js",
-          "kind": "require-call",
           "original": "../../../../../../../webpack-runtime.js"
         }
       ],
       "format": "cjs"
     },
-    ".open-next/server-functions/default/.next/server/app/api/admin/pets/route.js": {
-      "bytes": 6290,
+    ".open-next/server-functions/default/.next/server/app/api/admin/users/[userId]/route.js": {
+      "bytes": 2843,
       "imports": [
         {
           "path": ".open-next/server-functions/default/node_modules/.pnpm/next@15.1.6_@babel+core@7.28.5_@opentelemetry+api@1.9.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js",
@@ -4678,85 +4986,13 @@
         {
           "path": ".open-next/server-functions/default/.next/server/webpack-runtime.js",
           "kind": "require-call",
-          "original": "../../../../webpack-runtime.js"
+          "original": "../../../../../webpack-runtime.js"
         }
       ],
       "format": "cjs"
     },
-    ".open-next/server-functions/default/.next/server/app/api/admin/users/route.js": {
-      "bytes": 2039,
-      "imports": [
-        {
-          "path": ".open-next/server-functions/default/node_modules/.pnpm/next@15.1.6_@babel+core@7.28.5_@opentelemetry+api@1.9.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js",
-          "kind": "require-call",
-          "original": "next/dist/compiled/next-server/app-page.runtime.prod.js"
-        },
-        {
-          "path": ".open-next/server-functions/default/node_modules/.pnpm/next@15.1.6_@babel+core@7.28.5_@opentelemetry+api@1.9.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/compiled/next-server/app-route.runtime.prod.js",
-          "kind": "require-call",
-          "original": "next/dist/compiled/next-server/app-route.runtime.prod.js"
-        },
-        {
-          "path": ".open-next/server-functions/default/node_modules/.pnpm/next@15.1.6_@babel+core@7.28.5_@opentelemetry+api@1.9.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/server/app-render/after-task-async-storage.external.js",
-          "kind": "require-call",
-          "original": "next/dist/server/app-render/after-task-async-storage.external.js"
-        },
-        {
-          "path": ".open-next/server-functions/default/node_modules/.pnpm/next@15.1.6_@babel+core@7.28.5_@opentelemetry+api@1.9.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/server/app-render/work-async-storage.external.js",
-          "kind": "require-call",
-          "original": "next/dist/server/app-render/work-async-storage.external.js"
-        },
-        {
-          "path": ".open-next/server-functions/default/node_modules/.pnpm/next@15.1.6_@babel+core@7.28.5_@opentelemetry+api@1.9.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/server/app-render/work-unit-async-storage.external.js",
-          "kind": "require-call",
-          "original": "next/dist/server/app-render/work-unit-async-storage.external.js"
-        },
-        {
-          "path": ".open-next/server-functions/default/.next/server/webpack-runtime.js",
-          "kind": "require-call",
-          "original": "../../../../webpack-runtime.js"
-        }
-      ],
-      "format": "cjs"
-    },
-    ".open-next/server-functions/default/.next/server/app/api/admin/veterinary/route.js": {
-      "bytes": 6274,
-      "imports": [
-        {
-          "path": ".open-next/server-functions/default/node_modules/.pnpm/next@15.1.6_@babel+core@7.28.5_@opentelemetry+api@1.9.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js",
-          "kind": "require-call",
-          "original": "next/dist/compiled/next-server/app-page.runtime.prod.js"
-        },
-        {
-          "path": ".open-next/server-functions/default/node_modules/.pnpm/next@15.1.6_@babel+core@7.28.5_@opentelemetry+api@1.9.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/compiled/next-server/app-route.runtime.prod.js",
-          "kind": "require-call",
-          "original": "next/dist/compiled/next-server/app-route.runtime.prod.js"
-        },
-        {
-          "path": ".open-next/server-functions/default/node_modules/.pnpm/next@15.1.6_@babel+core@7.28.5_@opentelemetry+api@1.9.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/server/app-render/after-task-async-storage.external.js",
-          "kind": "require-call",
-          "original": "next/dist/server/app-render/after-task-async-storage.external.js"
-        },
-        {
-          "path": ".open-next/server-functions/default/node_modules/.pnpm/next@15.1.6_@babel+core@7.28.5_@opentelemetry+api@1.9.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/server/app-render/work-async-storage.external.js",
-          "kind": "require-call",
-          "original": "next/dist/server/app-render/work-async-storage.external.js"
-        },
-        {
-          "path": ".open-next/server-functions/default/node_modules/.pnpm/next@15.1.6_@babel+core@7.28.5_@opentelemetry+api@1.9.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/server/app-render/work-unit-async-storage.external.js",
-          "kind": "require-call",
-          "original": "next/dist/server/app-render/work-unit-async-storage.external.js"
-        },
-        {
-          "path": ".open-next/server-functions/default/.next/server/webpack-runtime.js",
-          "kind": "require-call",
-          "original": "../../../../webpack-runtime.js"
-        }
-      ],
-      "format": "cjs"
-    },
-    ".open-next/server-functions/default/.next/server/app/api/admin/veterinary/[vetId]/verify/route.js": {
-      "bytes": 6234,
+    ".open-next/server-functions/default/.next/server/app/api/admin/users/clinics/[veterinaryId]/route.js": {
+      "bytes": 3560,
       "imports": [
         {
           "path": ".open-next/server-functions/default/node_modules/.pnpm/next@15.1.6_@babel+core@7.28.5_@opentelemetry+api@1.9.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js",
@@ -4791,8 +5027,8 @@
       ],
       "format": "cjs"
     },
-    ".open-next/server-functions/default/.next/server/app/api/admin/veterinary/[vetId]/reject/route.js": {
-      "bytes": 6166,
+    ".open-next/server-functions/default/.next/server/app/api/admin/users/route.js": {
+      "bytes": 3997,
       "imports": [
         {
           "path": ".open-next/server-functions/default/node_modules/.pnpm/next@15.1.6_@babel+core@7.28.5_@opentelemetry+api@1.9.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js",
@@ -4818,6 +5054,155 @@
           "path": ".open-next/server-functions/default/node_modules/.pnpm/next@15.1.6_@babel+core@7.28.5_@opentelemetry+api@1.9.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/server/app-render/work-unit-async-storage.external.js",
           "kind": "require-call",
           "original": "next/dist/server/app-render/work-unit-async-storage.external.js"
+        },
+        {
+          "path": ".open-next/server-functions/default/.next/server/webpack-runtime.js",
+          "kind": "require-call",
+          "original": "../../../../webpack-runtime.js"
+        }
+      ],
+      "format": "cjs"
+    },
+    ".open-next/server-functions/default/.next/server/app/api/admin/users/pets/[petId]/route.js": {
+      "bytes": 4114,
+      "imports": [
+        {
+          "path": ".open-next/server-functions/default/node_modules/.pnpm/next@15.1.6_@babel+core@7.28.5_@opentelemetry+api@1.9.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js",
+          "kind": "require-call",
+          "original": "next/dist/compiled/next-server/app-page.runtime.prod.js"
+        },
+        {
+          "path": ".open-next/server-functions/default/node_modules/.pnpm/next@15.1.6_@babel+core@7.28.5_@opentelemetry+api@1.9.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/compiled/next-server/app-route.runtime.prod.js",
+          "kind": "require-call",
+          "original": "next/dist/compiled/next-server/app-route.runtime.prod.js"
+        },
+        {
+          "path": ".open-next/server-functions/default/node_modules/.pnpm/next@15.1.6_@babel+core@7.28.5_@opentelemetry+api@1.9.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/server/app-render/after-task-async-storage.external.js",
+          "kind": "require-call",
+          "original": "next/dist/server/app-render/after-task-async-storage.external.js"
+        },
+        {
+          "path": ".open-next/server-functions/default/node_modules/.pnpm/next@15.1.6_@babel+core@7.28.5_@opentelemetry+api@1.9.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/server/app-render/work-async-storage.external.js",
+          "kind": "require-call",
+          "original": "next/dist/server/app-render/work-async-storage.external.js"
+        },
+        {
+          "path": ".open-next/server-functions/default/node_modules/.pnpm/next@15.1.6_@babel+core@7.28.5_@opentelemetry+api@1.9.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/server/app-render/work-unit-async-storage.external.js",
+          "kind": "require-call",
+          "original": "next/dist/server/app-render/work-unit-async-storage.external.js"
+        },
+        {
+          "path": ".open-next/server-functions/default/.next/server/webpack-runtime.js",
+          "kind": "require-call",
+          "original": "../../../../../../webpack-runtime.js"
+        }
+      ],
+      "format": "cjs"
+    },
+    ".open-next/server-functions/default/.next/server/app/api/admin/veterinary/route.js": {
+      "bytes": 2292,
+      "imports": [
+        {
+          "path": ".open-next/server-functions/default/node_modules/.pnpm/next@15.1.6_@babel+core@7.28.5_@opentelemetry+api@1.9.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js",
+          "kind": "require-call",
+          "original": "next/dist/compiled/next-server/app-page.runtime.prod.js"
+        },
+        {
+          "path": ".open-next/server-functions/default/node_modules/.pnpm/next@15.1.6_@babel+core@7.28.5_@opentelemetry+api@1.9.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/compiled/next-server/app-route.runtime.prod.js",
+          "kind": "require-call",
+          "original": "next/dist/compiled/next-server/app-route.runtime.prod.js"
+        },
+        {
+          "path": ".open-next/server-functions/default/node_modules/.pnpm/next@15.1.6_@babel+core@7.28.5_@opentelemetry+api@1.9.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/server/app-render/after-task-async-storage.external.js",
+          "kind": "require-call",
+          "original": "next/dist/server/app-render/after-task-async-storage.external.js"
+        },
+        {
+          "path": ".open-next/server-functions/default/node_modules/.pnpm/next@15.1.6_@babel+core@7.28.5_@opentelemetry+api@1.9.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/server/app-render/work-async-storage.external.js",
+          "kind": "require-call",
+          "original": "next/dist/server/app-render/work-async-storage.external.js"
+        },
+        {
+          "path": ".open-next/server-functions/default/node_modules/.pnpm/next@15.1.6_@babel+core@7.28.5_@opentelemetry+api@1.9.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/server/app-render/work-unit-async-storage.external.js",
+          "kind": "require-call",
+          "original": "next/dist/server/app-render/work-unit-async-storage.external.js"
+        },
+        {
+          "path": ".open-next/server-functions/default/.next/server/webpack-runtime.js",
+          "kind": "require-call",
+          "original": "../../../../webpack-runtime.js"
+        }
+      ],
+      "format": "cjs"
+    },
+    ".open-next/server-functions/default/.next/server/app/api/admin/veterinary/[vetId]/reject/route.js": {
+      "bytes": 2184,
+      "imports": [
+        {
+          "path": ".open-next/server-functions/default/node_modules/.pnpm/next@15.1.6_@babel+core@7.28.5_@opentelemetry+api@1.9.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js",
+          "kind": "require-call",
+          "original": "next/dist/compiled/next-server/app-page.runtime.prod.js"
+        },
+        {
+          "path": ".open-next/server-functions/default/node_modules/.pnpm/next@15.1.6_@babel+core@7.28.5_@opentelemetry+api@1.9.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/compiled/next-server/app-route.runtime.prod.js",
+          "kind": "require-call",
+          "original": "next/dist/compiled/next-server/app-route.runtime.prod.js"
+        },
+        {
+          "path": ".open-next/server-functions/default/node_modules/.pnpm/next@15.1.6_@babel+core@7.28.5_@opentelemetry+api@1.9.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/server/app-render/after-task-async-storage.external.js",
+          "kind": "require-call",
+          "original": "next/dist/server/app-render/after-task-async-storage.external.js"
+        },
+        {
+          "path": ".open-next/server-functions/default/node_modules/.pnpm/next@15.1.6_@babel+core@7.28.5_@opentelemetry+api@1.9.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/server/app-render/work-async-storage.external.js",
+          "kind": "require-call",
+          "original": "next/dist/server/app-render/work-async-storage.external.js"
+        },
+        {
+          "path": ".open-next/server-functions/default/node_modules/.pnpm/next@15.1.6_@babel+core@7.28.5_@opentelemetry+api@1.9.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/server/app-render/work-unit-async-storage.external.js",
+          "kind": "require-call",
+          "original": "next/dist/server/app-render/work-unit-async-storage.external.js"
+        },
+        {
+          "path": ".open-next/server-functions/default/.next/server/webpack-runtime.js",
+          "kind": "require-call",
+          "original": "../../../../../../webpack-runtime.js"
+        }
+      ],
+      "format": "cjs"
+    },
+    ".open-next/server-functions/default/.next/server/app/api/admin/veterinary/[vetId]/verify/route.js": {
+      "bytes": 5886,
+      "imports": [
+        {
+          "path": ".open-next/server-functions/default/node_modules/.pnpm/next@15.1.6_@babel+core@7.28.5_@opentelemetry+api@1.9.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js",
+          "kind": "require-call",
+          "original": "next/dist/compiled/next-server/app-page.runtime.prod.js"
+        },
+        {
+          "path": ".open-next/server-functions/default/node_modules/.pnpm/next@15.1.6_@babel+core@7.28.5_@opentelemetry+api@1.9.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/compiled/next-server/app-route.runtime.prod.js",
+          "kind": "require-call",
+          "original": "next/dist/compiled/next-server/app-route.runtime.prod.js"
+        },
+        {
+          "path": ".open-next/server-functions/default/node_modules/.pnpm/next@15.1.6_@babel+core@7.28.5_@opentelemetry+api@1.9.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/server/app-render/after-task-async-storage.external.js",
+          "kind": "require-call",
+          "original": "next/dist/server/app-render/after-task-async-storage.external.js"
+        },
+        {
+          "path": ".open-next/server-functions/default/node_modules/.pnpm/next@15.1.6_@babel+core@7.28.5_@opentelemetry+api@1.9.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/server/app-render/work-async-storage.external.js",
+          "kind": "require-call",
+          "original": "next/dist/server/app-render/work-async-storage.external.js"
+        },
+        {
+          "path": ".open-next/server-functions/default/node_modules/.pnpm/next@15.1.6_@babel+core@7.28.5_@opentelemetry+api@1.9.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/server/app-render/work-unit-async-storage.external.js",
+          "kind": "require-call",
+          "original": "next/dist/server/app-render/work-unit-async-storage.external.js"
+        },
+        {
+          "path": "node:crypto",
+          "kind": "require-call",
+          "external": true
         },
         {
           "path": ".open-next/server-functions/default/.next/server/webpack-runtime.js",
@@ -4945,6 +5330,42 @@
       ],
       "format": "cjs"
     },
+    ".open-next/server-functions/default/.next/server/app/api/clinics/route.js": {
+      "bytes": 2888,
+      "imports": [
+        {
+          "path": ".open-next/server-functions/default/node_modules/.pnpm/next@15.1.6_@babel+core@7.28.5_@opentelemetry+api@1.9.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js",
+          "kind": "require-call",
+          "original": "next/dist/compiled/next-server/app-page.runtime.prod.js"
+        },
+        {
+          "path": ".open-next/server-functions/default/node_modules/.pnpm/next@15.1.6_@babel+core@7.28.5_@opentelemetry+api@1.9.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/compiled/next-server/app-route.runtime.prod.js",
+          "kind": "require-call",
+          "original": "next/dist/compiled/next-server/app-route.runtime.prod.js"
+        },
+        {
+          "path": ".open-next/server-functions/default/node_modules/.pnpm/next@15.1.6_@babel+core@7.28.5_@opentelemetry+api@1.9.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/server/app-render/after-task-async-storage.external.js",
+          "kind": "require-call",
+          "original": "next/dist/server/app-render/after-task-async-storage.external.js"
+        },
+        {
+          "path": ".open-next/server-functions/default/node_modules/.pnpm/next@15.1.6_@babel+core@7.28.5_@opentelemetry+api@1.9.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/server/app-render/work-async-storage.external.js",
+          "kind": "require-call",
+          "original": "next/dist/server/app-render/work-async-storage.external.js"
+        },
+        {
+          "path": ".open-next/server-functions/default/node_modules/.pnpm/next@15.1.6_@babel+core@7.28.5_@opentelemetry+api@1.9.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/server/app-render/work-unit-async-storage.external.js",
+          "kind": "require-call",
+          "original": "next/dist/server/app-render/work-unit-async-storage.external.js"
+        },
+        {
+          "path": ".open-next/server-functions/default/.next/server/webpack-runtime.js",
+          "kind": "require-call",
+          "original": "../../../webpack-runtime.js"
+        }
+      ],
+      "format": "cjs"
+    },
     ".open-next/server-functions/default/.next/server/app/api/contacts/route.js": {
       "bytes": 3899,
       "imports": [
@@ -5022,8 +5443,44 @@
       ],
       "format": "cjs"
     },
-    ".open-next/server-functions/default/.next/server/app/api/pet/login/route.js": {
-      "bytes": 5345,
+    ".open-next/server-functions/default/.next/server/app/api/maps-coords/route.js": {
+      "bytes": 2237,
+      "imports": [
+        {
+          "path": ".open-next/server-functions/default/node_modules/.pnpm/next@15.1.6_@babel+core@7.28.5_@opentelemetry+api@1.9.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js",
+          "kind": "require-call",
+          "original": "next/dist/compiled/next-server/app-page.runtime.prod.js"
+        },
+        {
+          "path": ".open-next/server-functions/default/node_modules/.pnpm/next@15.1.6_@babel+core@7.28.5_@opentelemetry+api@1.9.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/compiled/next-server/app-route.runtime.prod.js",
+          "kind": "require-call",
+          "original": "next/dist/compiled/next-server/app-route.runtime.prod.js"
+        },
+        {
+          "path": ".open-next/server-functions/default/node_modules/.pnpm/next@15.1.6_@babel+core@7.28.5_@opentelemetry+api@1.9.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/server/app-render/after-task-async-storage.external.js",
+          "kind": "require-call",
+          "original": "next/dist/server/app-render/after-task-async-storage.external.js"
+        },
+        {
+          "path": ".open-next/server-functions/default/node_modules/.pnpm/next@15.1.6_@babel+core@7.28.5_@opentelemetry+api@1.9.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/server/app-render/work-async-storage.external.js",
+          "kind": "require-call",
+          "original": "next/dist/server/app-render/work-async-storage.external.js"
+        },
+        {
+          "path": ".open-next/server-functions/default/node_modules/.pnpm/next@15.1.6_@babel+core@7.28.5_@opentelemetry+api@1.9.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/server/app-render/work-unit-async-storage.external.js",
+          "kind": "require-call",
+          "original": "next/dist/server/app-render/work-unit-async-storage.external.js"
+        },
+        {
+          "path": ".open-next/server-functions/default/.next/server/webpack-runtime.js",
+          "kind": "require-call",
+          "original": "../../../webpack-runtime.js"
+        }
+      ],
+      "format": "cjs"
+    },
+    ".open-next/server-functions/default/.next/server/app/api/owner/[ownerId]/reset-password/route.js": {
+      "bytes": 2881,
       "imports": [
         {
           "path": ".open-next/server-functions/default/node_modules/.pnpm/next@15.1.6_@babel+core@7.28.5_@opentelemetry+api@1.9.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js",
@@ -5054,6 +5511,42 @@
           "path": "crypto",
           "kind": "require-call",
           "external": true
+        },
+        {
+          "path": ".open-next/server-functions/default/.next/server/webpack-runtime.js",
+          "kind": "require-call",
+          "original": "../../../../../webpack-runtime.js"
+        }
+      ],
+      "format": "cjs"
+    },
+    ".open-next/server-functions/default/.next/server/app/api/owner/[ownerId]/route.js": {
+      "bytes": 2284,
+      "imports": [
+        {
+          "path": ".open-next/server-functions/default/node_modules/.pnpm/next@15.1.6_@babel+core@7.28.5_@opentelemetry+api@1.9.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js",
+          "kind": "require-call",
+          "original": "next/dist/compiled/next-server/app-page.runtime.prod.js"
+        },
+        {
+          "path": ".open-next/server-functions/default/node_modules/.pnpm/next@15.1.6_@babel+core@7.28.5_@opentelemetry+api@1.9.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/compiled/next-server/app-route.runtime.prod.js",
+          "kind": "require-call",
+          "original": "next/dist/compiled/next-server/app-route.runtime.prod.js"
+        },
+        {
+          "path": ".open-next/server-functions/default/node_modules/.pnpm/next@15.1.6_@babel+core@7.28.5_@opentelemetry+api@1.9.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/server/app-render/after-task-async-storage.external.js",
+          "kind": "require-call",
+          "original": "next/dist/server/app-render/after-task-async-storage.external.js"
+        },
+        {
+          "path": ".open-next/server-functions/default/node_modules/.pnpm/next@15.1.6_@babel+core@7.28.5_@opentelemetry+api@1.9.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/server/app-render/work-async-storage.external.js",
+          "kind": "require-call",
+          "original": "next/dist/server/app-render/work-async-storage.external.js"
+        },
+        {
+          "path": ".open-next/server-functions/default/node_modules/.pnpm/next@15.1.6_@babel+core@7.28.5_@opentelemetry+api@1.9.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/server/app-render/work-unit-async-storage.external.js",
+          "kind": "require-call",
+          "original": "next/dist/server/app-render/work-unit-async-storage.external.js"
         },
         {
           "path": ".open-next/server-functions/default/.next/server/webpack-runtime.js",
@@ -5099,8 +5592,85 @@
       ],
       "format": "cjs"
     },
+    ".open-next/server-functions/default/.next/server/app/api/pet/[petId]/route.js": {
+      "bytes": 2184,
+      "imports": [
+        {
+          "path": ".open-next/server-functions/default/node_modules/.pnpm/next@15.1.6_@babel+core@7.28.5_@opentelemetry+api@1.9.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js",
+          "kind": "require-call",
+          "original": "next/dist/compiled/next-server/app-page.runtime.prod.js"
+        },
+        {
+          "path": ".open-next/server-functions/default/node_modules/.pnpm/next@15.1.6_@babel+core@7.28.5_@opentelemetry+api@1.9.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/compiled/next-server/app-route.runtime.prod.js",
+          "kind": "require-call",
+          "original": "next/dist/compiled/next-server/app-route.runtime.prod.js"
+        },
+        {
+          "path": ".open-next/server-functions/default/node_modules/.pnpm/next@15.1.6_@babel+core@7.28.5_@opentelemetry+api@1.9.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/server/app-render/after-task-async-storage.external.js",
+          "kind": "require-call",
+          "original": "next/dist/server/app-render/after-task-async-storage.external.js"
+        },
+        {
+          "path": ".open-next/server-functions/default/node_modules/.pnpm/next@15.1.6_@babel+core@7.28.5_@opentelemetry+api@1.9.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/server/app-render/work-async-storage.external.js",
+          "kind": "require-call",
+          "original": "next/dist/server/app-render/work-async-storage.external.js"
+        },
+        {
+          "path": ".open-next/server-functions/default/node_modules/.pnpm/next@15.1.6_@babel+core@7.28.5_@opentelemetry+api@1.9.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/server/app-render/work-unit-async-storage.external.js",
+          "kind": "require-call",
+          "original": "next/dist/server/app-render/work-unit-async-storage.external.js"
+        },
+        {
+          "path": ".open-next/server-functions/default/.next/server/webpack-runtime.js",
+          "kind": "require-call",
+          "original": "../../../../webpack-runtime.js"
+        }
+      ],
+      "format": "cjs"
+    },
+    ".open-next/server-functions/default/.next/server/app/api/pet/login/route.js": {
+      "bytes": 5345,
+      "imports": [
+        {
+          "path": ".open-next/server-functions/default/node_modules/.pnpm/next@15.1.6_@babel+core@7.28.5_@opentelemetry+api@1.9.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js",
+          "kind": "require-call",
+          "original": "next/dist/compiled/next-server/app-page.runtime.prod.js"
+        },
+        {
+          "path": ".open-next/server-functions/default/node_modules/.pnpm/next@15.1.6_@babel+core@7.28.5_@opentelemetry+api@1.9.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/compiled/next-server/app-route.runtime.prod.js",
+          "kind": "require-call",
+          "original": "next/dist/compiled/next-server/app-route.runtime.prod.js"
+        },
+        {
+          "path": ".open-next/server-functions/default/node_modules/.pnpm/next@15.1.6_@babel+core@7.28.5_@opentelemetry+api@1.9.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/server/app-render/after-task-async-storage.external.js",
+          "kind": "require-call",
+          "original": "next/dist/server/app-render/after-task-async-storage.external.js"
+        },
+        {
+          "path": ".open-next/server-functions/default/node_modules/.pnpm/next@15.1.6_@babel+core@7.28.5_@opentelemetry+api@1.9.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/server/app-render/work-async-storage.external.js",
+          "kind": "require-call",
+          "original": "next/dist/server/app-render/work-async-storage.external.js"
+        },
+        {
+          "path": ".open-next/server-functions/default/node_modules/.pnpm/next@15.1.6_@babel+core@7.28.5_@opentelemetry+api@1.9.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/server/app-render/work-unit-async-storage.external.js",
+          "kind": "require-call",
+          "original": "next/dist/server/app-render/work-unit-async-storage.external.js"
+        },
+        {
+          "path": "crypto",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": ".open-next/server-functions/default/.next/server/webpack-runtime.js",
+          "kind": "require-call",
+          "original": "../../../../webpack-runtime.js"
+        }
+      ],
+      "format": "cjs"
+    },
     ".open-next/server-functions/default/.next/server/app/api/pet/register/route.js": {
-      "bytes": 8591,
+      "bytes": 9129,
       "imports": [
         {
           "path": ".open-next/server-functions/default/node_modules/.pnpm/next@15.1.6_@babel+core@7.28.5_@opentelemetry+api@1.9.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js",
@@ -5146,7 +5716,48 @@
       "format": "cjs"
     },
     ".open-next/server-functions/default/.next/server/app/api/reportFound/route.js": {
-      "bytes": 4917,
+      "bytes": 5111,
+      "imports": [
+        {
+          "path": ".open-next/server-functions/default/node_modules/.pnpm/next@15.1.6_@babel+core@7.28.5_@opentelemetry+api@1.9.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js",
+          "kind": "require-call",
+          "original": "next/dist/compiled/next-server/app-page.runtime.prod.js"
+        },
+        {
+          "path": ".open-next/server-functions/default/node_modules/.pnpm/next@15.1.6_@babel+core@7.28.5_@opentelemetry+api@1.9.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/compiled/next-server/app-route.runtime.prod.js",
+          "kind": "require-call",
+          "original": "next/dist/compiled/next-server/app-route.runtime.prod.js"
+        },
+        {
+          "path": ".open-next/server-functions/default/node_modules/.pnpm/next@15.1.6_@babel+core@7.28.5_@opentelemetry+api@1.9.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/server/app-render/after-task-async-storage.external.js",
+          "kind": "require-call",
+          "original": "next/dist/server/app-render/after-task-async-storage.external.js"
+        },
+        {
+          "path": ".open-next/server-functions/default/node_modules/.pnpm/next@15.1.6_@babel+core@7.28.5_@opentelemetry+api@1.9.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/server/app-render/work-async-storage.external.js",
+          "kind": "require-call",
+          "original": "next/dist/server/app-render/work-async-storage.external.js"
+        },
+        {
+          "path": ".open-next/server-functions/default/node_modules/.pnpm/next@15.1.6_@babel+core@7.28.5_@opentelemetry+api@1.9.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/server/app-render/work-unit-async-storage.external.js",
+          "kind": "require-call",
+          "original": "next/dist/server/app-render/work-unit-async-storage.external.js"
+        },
+        {
+          "path": "node:crypto",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": ".open-next/server-functions/default/.next/server/webpack-runtime.js",
+          "kind": "require-call",
+          "original": "../../../webpack-runtime.js"
+        }
+      ],
+      "format": "cjs"
+    },
+    ".open-next/server-functions/default/.next/server/app/api/reportLost/route.js": {
+      "bytes": 5247,
       "imports": [
         {
           "path": ".open-next/server-functions/default/node_modules/.pnpm/next@15.1.6_@babel+core@7.28.5_@opentelemetry+api@1.9.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js",
@@ -5222,8 +5833,85 @@
       ],
       "format": "cjs"
     },
+    ".open-next/server-functions/default/.next/server/app/api/veterinary/[clinicId]/route.js": {
+      "bytes": 2649,
+      "imports": [
+        {
+          "path": ".open-next/server-functions/default/node_modules/.pnpm/next@15.1.6_@babel+core@7.28.5_@opentelemetry+api@1.9.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js",
+          "kind": "require-call",
+          "original": "next/dist/compiled/next-server/app-page.runtime.prod.js"
+        },
+        {
+          "path": ".open-next/server-functions/default/node_modules/.pnpm/next@15.1.6_@babel+core@7.28.5_@opentelemetry+api@1.9.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/compiled/next-server/app-route.runtime.prod.js",
+          "kind": "require-call",
+          "original": "next/dist/compiled/next-server/app-route.runtime.prod.js"
+        },
+        {
+          "path": ".open-next/server-functions/default/node_modules/.pnpm/next@15.1.6_@babel+core@7.28.5_@opentelemetry+api@1.9.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/server/app-render/after-task-async-storage.external.js",
+          "kind": "require-call",
+          "original": "next/dist/server/app-render/after-task-async-storage.external.js"
+        },
+        {
+          "path": ".open-next/server-functions/default/node_modules/.pnpm/next@15.1.6_@babel+core@7.28.5_@opentelemetry+api@1.9.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/server/app-render/work-async-storage.external.js",
+          "kind": "require-call",
+          "original": "next/dist/server/app-render/work-async-storage.external.js"
+        },
+        {
+          "path": ".open-next/server-functions/default/node_modules/.pnpm/next@15.1.6_@babel+core@7.28.5_@opentelemetry+api@1.9.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/server/app-render/work-unit-async-storage.external.js",
+          "kind": "require-call",
+          "original": "next/dist/server/app-render/work-unit-async-storage.external.js"
+        },
+        {
+          "path": ".open-next/server-functions/default/.next/server/webpack-runtime.js",
+          "kind": "require-call",
+          "original": "../../../../webpack-runtime.js"
+        }
+      ],
+      "format": "cjs"
+    },
+    ".open-next/server-functions/default/.next/server/app/api/veterinary/[clinicId]/reset-password/route.js": {
+      "bytes": 2974,
+      "imports": [
+        {
+          "path": ".open-next/server-functions/default/node_modules/.pnpm/next@15.1.6_@babel+core@7.28.5_@opentelemetry+api@1.9.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js",
+          "kind": "require-call",
+          "original": "next/dist/compiled/next-server/app-page.runtime.prod.js"
+        },
+        {
+          "path": ".open-next/server-functions/default/node_modules/.pnpm/next@15.1.6_@babel+core@7.28.5_@opentelemetry+api@1.9.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/compiled/next-server/app-route.runtime.prod.js",
+          "kind": "require-call",
+          "original": "next/dist/compiled/next-server/app-route.runtime.prod.js"
+        },
+        {
+          "path": ".open-next/server-functions/default/node_modules/.pnpm/next@15.1.6_@babel+core@7.28.5_@opentelemetry+api@1.9.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/server/app-render/after-task-async-storage.external.js",
+          "kind": "require-call",
+          "original": "next/dist/server/app-render/after-task-async-storage.external.js"
+        },
+        {
+          "path": ".open-next/server-functions/default/node_modules/.pnpm/next@15.1.6_@babel+core@7.28.5_@opentelemetry+api@1.9.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/server/app-render/work-async-storage.external.js",
+          "kind": "require-call",
+          "original": "next/dist/server/app-render/work-async-storage.external.js"
+        },
+        {
+          "path": ".open-next/server-functions/default/node_modules/.pnpm/next@15.1.6_@babel+core@7.28.5_@opentelemetry+api@1.9.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/server/app-render/work-unit-async-storage.external.js",
+          "kind": "require-call",
+          "original": "next/dist/server/app-render/work-unit-async-storage.external.js"
+        },
+        {
+          "path": "crypto",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": ".open-next/server-functions/default/.next/server/webpack-runtime.js",
+          "kind": "require-call",
+          "original": "../../../../../webpack-runtime.js"
+        }
+      ],
+      "format": "cjs"
+    },
     ".open-next/server-functions/default/.next/server/app/api/veterinary/login/route.js": {
-      "bytes": 5286,
+      "bytes": 5370,
       "imports": [
         {
           "path": ".open-next/server-functions/default/node_modules/.pnpm/next@15.1.6_@babel+core@7.28.5_@opentelemetry+api@1.9.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js",
@@ -5264,7 +5952,7 @@
       "format": "cjs"
     },
     ".open-next/server-functions/default/.next/server/app/api/veterinary/me/route.js": {
-      "bytes": 5996,
+      "bytes": 5995,
       "imports": [
         {
           "path": ".open-next/server-functions/default/node_modules/.pnpm/next@15.1.6_@babel+core@7.28.5_@opentelemetry+api@1.9.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js",
@@ -5290,6 +5978,52 @@
           "path": ".open-next/server-functions/default/node_modules/.pnpm/next@15.1.6_@babel+core@7.28.5_@opentelemetry+api@1.9.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/server/app-render/work-unit-async-storage.external.js",
           "kind": "require-call",
           "original": "next/dist/server/app-render/work-unit-async-storage.external.js"
+        },
+        {
+          "path": ".open-next/server-functions/default/.next/server/webpack-runtime.js",
+          "kind": "require-call",
+          "original": "../../../../webpack-runtime.js"
+        }
+      ],
+      "format": "cjs"
+    },
+    ".open-next/server-functions/default/.next/server/app/api/veterinary/register/route.js": {
+      "bytes": 7981,
+      "imports": [
+        {
+          "path": ".open-next/server-functions/default/node_modules/.pnpm/next@15.1.6_@babel+core@7.28.5_@opentelemetry+api@1.9.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js",
+          "kind": "require-call",
+          "original": "next/dist/compiled/next-server/app-page.runtime.prod.js"
+        },
+        {
+          "path": ".open-next/server-functions/default/node_modules/.pnpm/next@15.1.6_@babel+core@7.28.5_@opentelemetry+api@1.9.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/compiled/next-server/app-route.runtime.prod.js",
+          "kind": "require-call",
+          "original": "next/dist/compiled/next-server/app-route.runtime.prod.js"
+        },
+        {
+          "path": ".open-next/server-functions/default/node_modules/.pnpm/next@15.1.6_@babel+core@7.28.5_@opentelemetry+api@1.9.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/server/app-render/after-task-async-storage.external.js",
+          "kind": "require-call",
+          "original": "next/dist/server/app-render/after-task-async-storage.external.js"
+        },
+        {
+          "path": ".open-next/server-functions/default/node_modules/.pnpm/next@15.1.6_@babel+core@7.28.5_@opentelemetry+api@1.9.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/server/app-render/work-async-storage.external.js",
+          "kind": "require-call",
+          "original": "next/dist/server/app-render/work-async-storage.external.js"
+        },
+        {
+          "path": ".open-next/server-functions/default/node_modules/.pnpm/next@15.1.6_@babel+core@7.28.5_@opentelemetry+api@1.9.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/server/app-render/work-unit-async-storage.external.js",
+          "kind": "require-call",
+          "original": "next/dist/server/app-render/work-unit-async-storage.external.js"
+        },
+        {
+          "path": "crypto",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": "node:crypto",
+          "kind": "require-call",
+          "external": true
         },
         {
           "path": ".open-next/server-functions/default/.next/server/webpack-runtime.js",
@@ -5335,95 +6069,8 @@
       ],
       "format": "cjs"
     },
-    ".open-next/server-functions/default/.next/server/app/api/reportLost/route.js": {
-      "bytes": 5147,
-      "imports": [
-        {
-          "path": ".open-next/server-functions/default/node_modules/.pnpm/next@15.1.6_@babel+core@7.28.5_@opentelemetry+api@1.9.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js",
-          "kind": "require-call",
-          "original": "next/dist/compiled/next-server/app-page.runtime.prod.js"
-        },
-        {
-          "path": ".open-next/server-functions/default/node_modules/.pnpm/next@15.1.6_@babel+core@7.28.5_@opentelemetry+api@1.9.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/compiled/next-server/app-route.runtime.prod.js",
-          "kind": "require-call",
-          "original": "next/dist/compiled/next-server/app-route.runtime.prod.js"
-        },
-        {
-          "path": ".open-next/server-functions/default/node_modules/.pnpm/next@15.1.6_@babel+core@7.28.5_@opentelemetry+api@1.9.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/server/app-render/after-task-async-storage.external.js",
-          "kind": "require-call",
-          "original": "next/dist/server/app-render/after-task-async-storage.external.js"
-        },
-        {
-          "path": ".open-next/server-functions/default/node_modules/.pnpm/next@15.1.6_@babel+core@7.28.5_@opentelemetry+api@1.9.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/server/app-render/work-async-storage.external.js",
-          "kind": "require-call",
-          "original": "next/dist/server/app-render/work-async-storage.external.js"
-        },
-        {
-          "path": ".open-next/server-functions/default/node_modules/.pnpm/next@15.1.6_@babel+core@7.28.5_@opentelemetry+api@1.9.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/server/app-render/work-unit-async-storage.external.js",
-          "kind": "require-call",
-          "original": "next/dist/server/app-render/work-unit-async-storage.external.js"
-        },
-        {
-          "path": "node:crypto",
-          "kind": "require-call",
-          "external": true
-        },
-        {
-          "path": ".open-next/server-functions/default/.next/server/webpack-runtime.js",
-          "kind": "require-call",
-          "original": "../../../webpack-runtime.js"
-        }
-      ],
-      "format": "cjs"
-    },
-    ".open-next/server-functions/default/.next/server/app/api/veterinary/register/route.js": {
-      "bytes": 7655,
-      "imports": [
-        {
-          "path": ".open-next/server-functions/default/node_modules/.pnpm/next@15.1.6_@babel+core@7.28.5_@opentelemetry+api@1.9.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js",
-          "kind": "require-call",
-          "original": "next/dist/compiled/next-server/app-page.runtime.prod.js"
-        },
-        {
-          "path": ".open-next/server-functions/default/node_modules/.pnpm/next@15.1.6_@babel+core@7.28.5_@opentelemetry+api@1.9.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/compiled/next-server/app-route.runtime.prod.js",
-          "kind": "require-call",
-          "original": "next/dist/compiled/next-server/app-route.runtime.prod.js"
-        },
-        {
-          "path": ".open-next/server-functions/default/node_modules/.pnpm/next@15.1.6_@babel+core@7.28.5_@opentelemetry+api@1.9.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/server/app-render/after-task-async-storage.external.js",
-          "kind": "require-call",
-          "original": "next/dist/server/app-render/after-task-async-storage.external.js"
-        },
-        {
-          "path": ".open-next/server-functions/default/node_modules/.pnpm/next@15.1.6_@babel+core@7.28.5_@opentelemetry+api@1.9.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/server/app-render/work-async-storage.external.js",
-          "kind": "require-call",
-          "original": "next/dist/server/app-render/work-async-storage.external.js"
-        },
-        {
-          "path": ".open-next/server-functions/default/node_modules/.pnpm/next@15.1.6_@babel+core@7.28.5_@opentelemetry+api@1.9.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/server/app-render/work-unit-async-storage.external.js",
-          "kind": "require-call",
-          "original": "next/dist/server/app-render/work-unit-async-storage.external.js"
-        },
-        {
-          "path": "crypto",
-          "kind": "require-call",
-          "external": true
-        },
-        {
-          "path": "node:crypto",
-          "kind": "require-call",
-          "external": true
-        },
-        {
-          "path": ".open-next/server-functions/default/.next/server/webpack-runtime.js",
-          "kind": "require-call",
-          "original": "../../../../webpack-runtime.js"
-        }
-      ],
-      "format": "cjs"
-    },
     ".open-next/server-functions/default/.next/server/app/(main)/(auth)/alogin/page.js": {
-      "bytes": 8791,
+      "bytes": 8778,
       "imports": [
         {
           "path": ".open-next/server-functions/default/node_modules/.pnpm/next@15.1.6_@babel+core@7.28.5_@opentelemetry+api@1.9.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js",
@@ -5515,7 +6162,7 @@
       "format": "cjs"
     },
     ".open-next/server-functions/default/.next/server/app/(main)/(auth)/vlogin/page.js": {
-      "bytes": 17602,
+      "bytes": 16800,
       "imports": [
         {
           "path": ".open-next/server-functions/default/node_modules/.pnpm/next@15.1.6_@babel+core@7.28.5_@opentelemetry+api@1.9.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js",
@@ -5606,8 +6253,8 @@
       ],
       "format": "cjs"
     },
-    ".open-next/server-functions/default/.next/server/app/(main)/(register)/registerpet/page.js": {
-      "bytes": 14755,
+    ".open-next/server-functions/default/.next/server/app/(main)/(forgot-reset)/reset-password/page.js": {
+      "bytes": 6502,
       "imports": [
         {
           "path": ".open-next/server-functions/default/node_modules/.pnpm/next@15.1.6_@babel+core@7.28.5_@opentelemetry+api@1.9.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js",
@@ -5652,8 +6299,54 @@
       ],
       "format": "cjs"
     },
-    ".open-next/server-functions/default/.next/server/app/(main)/(forgot-reset)/reset-password/page.js": {
-      "bytes": 6502,
+    ".open-next/server-functions/default/.next/server/app/(main)/(register)/registerpet/page.js": {
+      "bytes": 15791,
+      "imports": [
+        {
+          "path": ".open-next/server-functions/default/node_modules/.pnpm/next@15.1.6_@babel+core@7.28.5_@opentelemetry+api@1.9.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js",
+          "kind": "require-call",
+          "original": "next/dist/compiled/next-server/app-page.runtime.prod.js"
+        },
+        {
+          "path": ".open-next/server-functions/default/node_modules/.pnpm/next@15.1.6_@babel+core@7.28.5_@opentelemetry+api@1.9.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/server/app-render/action-async-storage.external.js",
+          "kind": "require-call",
+          "original": "next/dist/server/app-render/action-async-storage.external.js"
+        },
+        {
+          "path": ".open-next/server-functions/default/node_modules/.pnpm/next@15.1.6_@babel+core@7.28.5_@opentelemetry+api@1.9.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/server/app-render/after-task-async-storage.external.js",
+          "kind": "require-call",
+          "original": "next/dist/server/app-render/after-task-async-storage.external.js"
+        },
+        {
+          "path": ".open-next/server-functions/default/node_modules/.pnpm/next@15.1.6_@babel+core@7.28.5_@opentelemetry+api@1.9.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/server/app-render/work-async-storage.external.js",
+          "kind": "require-call",
+          "original": "next/dist/server/app-render/work-async-storage.external.js"
+        },
+        {
+          "path": ".open-next/server-functions/default/node_modules/.pnpm/next@15.1.6_@babel+core@7.28.5_@opentelemetry+api@1.9.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/server/app-render/work-unit-async-storage.external.js",
+          "kind": "require-call",
+          "original": "next/dist/server/app-render/work-unit-async-storage.external.js"
+        },
+        {
+          "path": "path",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": "url",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": ".open-next/server-functions/default/.next/server/webpack-runtime.js",
+          "kind": "require-call",
+          "original": "../../../../webpack-runtime.js"
+        }
+      ],
+      "format": "cjs"
+    },
+    ".open-next/server-functions/default/.next/server/app/(main)/(register)/vetregister/page.js": {
+      "bytes": 25472,
       "imports": [
         {
           "path": ".open-next/server-functions/default/node_modules/.pnpm/next@15.1.6_@babel+core@7.28.5_@opentelemetry+api@1.9.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js",
@@ -5790,8 +6483,8 @@
       ],
       "format": "cjs"
     },
-    ".open-next/server-functions/default/.next/server/app/(main)/(register)/vetregister/page.js": {
-      "bytes": 26961,
+    ".open-next/server-functions/default/.next/server/app/(main)/findclinic/page.js": {
+      "bytes": 16274,
       "imports": [
         {
           "path": ".open-next/server-functions/default/node_modules/.pnpm/next@15.1.6_@babel+core@7.28.5_@opentelemetry+api@1.9.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js",
@@ -5831,13 +6524,13 @@
         {
           "path": ".open-next/server-functions/default/.next/server/webpack-runtime.js",
           "kind": "require-call",
-          "original": "../../../../webpack-runtime.js"
+          "original": "../../../webpack-runtime.js"
         }
       ],
       "format": "cjs"
     },
-    ".open-next/server-functions/default/.next/server/app/(main)/findclinic/page.js": {
-      "bytes": 16231,
+    ".open-next/server-functions/default/.next/server/app/(main)/lostfound/page.js": {
+      "bytes": 31088,
       "imports": [
         {
           "path": ".open-next/server-functions/default/node_modules/.pnpm/next@15.1.6_@babel+core@7.28.5_@opentelemetry+api@1.9.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js",
@@ -5884,52 +6577,6 @@
     },
     ".open-next/server-functions/default/.next/server/app/(main)/getpetmicrochipped/page.js": {
       "bytes": 6098,
-      "imports": [
-        {
-          "path": ".open-next/server-functions/default/node_modules/.pnpm/next@15.1.6_@babel+core@7.28.5_@opentelemetry+api@1.9.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js",
-          "kind": "require-call",
-          "original": "next/dist/compiled/next-server/app-page.runtime.prod.js"
-        },
-        {
-          "path": ".open-next/server-functions/default/node_modules/.pnpm/next@15.1.6_@babel+core@7.28.5_@opentelemetry+api@1.9.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/server/app-render/action-async-storage.external.js",
-          "kind": "require-call",
-          "original": "next/dist/server/app-render/action-async-storage.external.js"
-        },
-        {
-          "path": ".open-next/server-functions/default/node_modules/.pnpm/next@15.1.6_@babel+core@7.28.5_@opentelemetry+api@1.9.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/server/app-render/after-task-async-storage.external.js",
-          "kind": "require-call",
-          "original": "next/dist/server/app-render/after-task-async-storage.external.js"
-        },
-        {
-          "path": ".open-next/server-functions/default/node_modules/.pnpm/next@15.1.6_@babel+core@7.28.5_@opentelemetry+api@1.9.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/server/app-render/work-async-storage.external.js",
-          "kind": "require-call",
-          "original": "next/dist/server/app-render/work-async-storage.external.js"
-        },
-        {
-          "path": ".open-next/server-functions/default/node_modules/.pnpm/next@15.1.6_@babel+core@7.28.5_@opentelemetry+api@1.9.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/server/app-render/work-unit-async-storage.external.js",
-          "kind": "require-call",
-          "original": "next/dist/server/app-render/work-unit-async-storage.external.js"
-        },
-        {
-          "path": "path",
-          "kind": "require-call",
-          "external": true
-        },
-        {
-          "path": "url",
-          "kind": "require-call",
-          "external": true
-        },
-        {
-          "path": ".open-next/server-functions/default/.next/server/webpack-runtime.js",
-          "kind": "require-call",
-          "original": "../../../webpack-runtime.js"
-        }
-      ],
-      "format": "cjs"
-    },
-    ".open-next/server-functions/default/.next/server/app/(main)/lostfound/page.js": {
-      "bytes": 26743,
       "imports": [
         {
           "path": ".open-next/server-functions/default/node_modules/.pnpm/next@15.1.6_@babel+core@7.28.5_@opentelemetry+api@1.9.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js",
@@ -6113,7 +6760,7 @@
       "format": "cjs"
     },
     ".open-next/server-functions/default/.next/server/app/(main)/registersuccesspet/page.js": {
-      "bytes": 8163,
+      "bytes": 8084,
       "imports": [
         {
           "path": ".open-next/server-functions/default/node_modules/.pnpm/next@15.1.6_@babel+core@7.28.5_@opentelemetry+api@1.9.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js",
@@ -6159,7 +6806,53 @@
       "format": "cjs"
     },
     ".open-next/server-functions/default/.next/server/app/(main)/registersuccessvet/page.js": {
-      "bytes": 8161,
+      "bytes": 8082,
+      "imports": [
+        {
+          "path": ".open-next/server-functions/default/node_modules/.pnpm/next@15.1.6_@babel+core@7.28.5_@opentelemetry+api@1.9.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js",
+          "kind": "require-call",
+          "original": "next/dist/compiled/next-server/app-page.runtime.prod.js"
+        },
+        {
+          "path": ".open-next/server-functions/default/node_modules/.pnpm/next@15.1.6_@babel+core@7.28.5_@opentelemetry+api@1.9.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/server/app-render/action-async-storage.external.js",
+          "kind": "require-call",
+          "original": "next/dist/server/app-render/action-async-storage.external.js"
+        },
+        {
+          "path": ".open-next/server-functions/default/node_modules/.pnpm/next@15.1.6_@babel+core@7.28.5_@opentelemetry+api@1.9.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/server/app-render/after-task-async-storage.external.js",
+          "kind": "require-call",
+          "original": "next/dist/server/app-render/after-task-async-storage.external.js"
+        },
+        {
+          "path": ".open-next/server-functions/default/node_modules/.pnpm/next@15.1.6_@babel+core@7.28.5_@opentelemetry+api@1.9.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/server/app-render/work-async-storage.external.js",
+          "kind": "require-call",
+          "original": "next/dist/server/app-render/work-async-storage.external.js"
+        },
+        {
+          "path": ".open-next/server-functions/default/node_modules/.pnpm/next@15.1.6_@babel+core@7.28.5_@opentelemetry+api@1.9.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/server/app-render/work-unit-async-storage.external.js",
+          "kind": "require-call",
+          "original": "next/dist/server/app-render/work-unit-async-storage.external.js"
+        },
+        {
+          "path": "path",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": "url",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": ".open-next/server-functions/default/.next/server/webpack-runtime.js",
+          "kind": "require-call",
+          "original": "../../../webpack-runtime.js"
+        }
+      ],
+      "format": "cjs"
+    },
+    ".open-next/server-functions/default/.next/server/app/(main)/search/page.js": {
+      "bytes": 13635,
       "imports": [
         {
           "path": ".open-next/server-functions/default/node_modules/.pnpm/next@15.1.6_@babel+core@7.28.5_@opentelemetry+api@1.9.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js",
@@ -6250,54 +6943,8 @@
       ],
       "format": "cjs"
     },
-    ".open-next/server-functions/default/.next/server/app/(main)/search/page.js": {
-      "bytes": 13467,
-      "imports": [
-        {
-          "path": ".open-next/server-functions/default/node_modules/.pnpm/next@15.1.6_@babel+core@7.28.5_@opentelemetry+api@1.9.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js",
-          "kind": "require-call",
-          "original": "next/dist/compiled/next-server/app-page.runtime.prod.js"
-        },
-        {
-          "path": ".open-next/server-functions/default/node_modules/.pnpm/next@15.1.6_@babel+core@7.28.5_@opentelemetry+api@1.9.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/server/app-render/action-async-storage.external.js",
-          "kind": "require-call",
-          "original": "next/dist/server/app-render/action-async-storage.external.js"
-        },
-        {
-          "path": ".open-next/server-functions/default/node_modules/.pnpm/next@15.1.6_@babel+core@7.28.5_@opentelemetry+api@1.9.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/server/app-render/after-task-async-storage.external.js",
-          "kind": "require-call",
-          "original": "next/dist/server/app-render/after-task-async-storage.external.js"
-        },
-        {
-          "path": ".open-next/server-functions/default/node_modules/.pnpm/next@15.1.6_@babel+core@7.28.5_@opentelemetry+api@1.9.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/server/app-render/work-async-storage.external.js",
-          "kind": "require-call",
-          "original": "next/dist/server/app-render/work-async-storage.external.js"
-        },
-        {
-          "path": ".open-next/server-functions/default/node_modules/.pnpm/next@15.1.6_@babel+core@7.28.5_@opentelemetry+api@1.9.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/server/app-render/work-unit-async-storage.external.js",
-          "kind": "require-call",
-          "original": "next/dist/server/app-render/work-unit-async-storage.external.js"
-        },
-        {
-          "path": "path",
-          "kind": "require-call",
-          "external": true
-        },
-        {
-          "path": "url",
-          "kind": "require-call",
-          "external": true
-        },
-        {
-          "path": ".open-next/server-functions/default/.next/server/webpack-runtime.js",
-          "kind": "require-call",
-          "original": "../../../webpack-runtime.js"
-        }
-      ],
-      "format": "cjs"
-    },
-    ".open-next/server-functions/default/.next/server/app/(pannel)/admin/lost-found/page.js": {
-      "bytes": 10472,
+    ".open-next/server-functions/default/.next/server/app/(pannel)/admin/analytics/page.js": {
+      "bytes": 366181,
       "imports": [
         {
           "path": ".open-next/server-functions/default/node_modules/.pnpm/next@15.1.6_@babel+core@7.28.5_@opentelemetry+api@1.9.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js",
@@ -6388,8 +7035,100 @@
       ],
       "format": "cjs"
     },
+    ".open-next/server-functions/default/.next/server/app/(pannel)/admin/dashboard/page.js": {
+      "bytes": 6920,
+      "imports": [
+        {
+          "path": ".open-next/server-functions/default/node_modules/.pnpm/next@15.1.6_@babel+core@7.28.5_@opentelemetry+api@1.9.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js",
+          "kind": "require-call",
+          "original": "next/dist/compiled/next-server/app-page.runtime.prod.js"
+        },
+        {
+          "path": ".open-next/server-functions/default/node_modules/.pnpm/next@15.1.6_@babel+core@7.28.5_@opentelemetry+api@1.9.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/server/app-render/action-async-storage.external.js",
+          "kind": "require-call",
+          "original": "next/dist/server/app-render/action-async-storage.external.js"
+        },
+        {
+          "path": ".open-next/server-functions/default/node_modules/.pnpm/next@15.1.6_@babel+core@7.28.5_@opentelemetry+api@1.9.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/server/app-render/after-task-async-storage.external.js",
+          "kind": "require-call",
+          "original": "next/dist/server/app-render/after-task-async-storage.external.js"
+        },
+        {
+          "path": ".open-next/server-functions/default/node_modules/.pnpm/next@15.1.6_@babel+core@7.28.5_@opentelemetry+api@1.9.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/server/app-render/work-async-storage.external.js",
+          "kind": "require-call",
+          "original": "next/dist/server/app-render/work-async-storage.external.js"
+        },
+        {
+          "path": ".open-next/server-functions/default/node_modules/.pnpm/next@15.1.6_@babel+core@7.28.5_@opentelemetry+api@1.9.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/server/app-render/work-unit-async-storage.external.js",
+          "kind": "require-call",
+          "original": "next/dist/server/app-render/work-unit-async-storage.external.js"
+        },
+        {
+          "path": "path",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": "url",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": ".open-next/server-functions/default/.next/server/webpack-runtime.js",
+          "kind": "require-call",
+          "original": "../../../../webpack-runtime.js"
+        }
+      ],
+      "format": "cjs"
+    },
+    ".open-next/server-functions/default/.next/server/app/(pannel)/admin/lost-found/page.js": {
+      "bytes": 13399,
+      "imports": [
+        {
+          "path": ".open-next/server-functions/default/node_modules/.pnpm/next@15.1.6_@babel+core@7.28.5_@opentelemetry+api@1.9.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js",
+          "kind": "require-call",
+          "original": "next/dist/compiled/next-server/app-page.runtime.prod.js"
+        },
+        {
+          "path": ".open-next/server-functions/default/node_modules/.pnpm/next@15.1.6_@babel+core@7.28.5_@opentelemetry+api@1.9.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/server/app-render/action-async-storage.external.js",
+          "kind": "require-call",
+          "original": "next/dist/server/app-render/action-async-storage.external.js"
+        },
+        {
+          "path": ".open-next/server-functions/default/node_modules/.pnpm/next@15.1.6_@babel+core@7.28.5_@opentelemetry+api@1.9.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/server/app-render/after-task-async-storage.external.js",
+          "kind": "require-call",
+          "original": "next/dist/server/app-render/after-task-async-storage.external.js"
+        },
+        {
+          "path": ".open-next/server-functions/default/node_modules/.pnpm/next@15.1.6_@babel+core@7.28.5_@opentelemetry+api@1.9.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/server/app-render/work-async-storage.external.js",
+          "kind": "require-call",
+          "original": "next/dist/server/app-render/work-async-storage.external.js"
+        },
+        {
+          "path": ".open-next/server-functions/default/node_modules/.pnpm/next@15.1.6_@babel+core@7.28.5_@opentelemetry+api@1.9.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/server/app-render/work-unit-async-storage.external.js",
+          "kind": "require-call",
+          "original": "next/dist/server/app-render/work-unit-async-storage.external.js"
+        },
+        {
+          "path": "path",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": "url",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": ".open-next/server-functions/default/.next/server/webpack-runtime.js",
+          "kind": "require-call",
+          "original": "../../../../webpack-runtime.js"
+        }
+      ],
+      "format": "cjs"
+    },
     ".open-next/server-functions/default/.next/server/app/(pannel)/admin/manage-users/page.js": {
-      "bytes": 6622,
+      "bytes": 27637,
       "imports": [
         {
           "path": ".open-next/server-functions/default/node_modules/.pnpm/next@15.1.6_@babel+core@7.28.5_@opentelemetry+api@1.9.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js",
@@ -6435,7 +7174,7 @@
       "format": "cjs"
     },
     ".open-next/server-functions/default/.next/server/app/(pannel)/admin/profile/page.js": {
-      "bytes": 6195,
+      "bytes": 6194,
       "imports": [
         {
           "path": ".open-next/server-functions/default/node_modules/.pnpm/next@15.1.6_@babel+core@7.28.5_@opentelemetry+api@1.9.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js",
@@ -6481,7 +7220,7 @@
       "format": "cjs"
     },
     ".open-next/server-functions/default/.next/server/app/(pannel)/admin/verifications/petOwner/page.js": {
-      "bytes": 12114,
+      "bytes": 12112,
       "imports": [
         {
           "path": ".open-next/server-functions/default/node_modules/.pnpm/next@15.1.6_@babel+core@7.28.5_@opentelemetry+api@1.9.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js",
@@ -6527,7 +7266,7 @@
       "format": "cjs"
     },
     ".open-next/server-functions/default/.next/server/app/(pannel)/admin/verifications/veterinary/page.js": {
-      "bytes": 13543,
+      "bytes": 13852,
       "imports": [
         {
           "path": ".open-next/server-functions/default/node_modules/.pnpm/next@15.1.6_@babel+core@7.28.5_@opentelemetry+api@1.9.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js",
@@ -6573,7 +7312,53 @@
       "format": "cjs"
     },
     ".open-next/server-functions/default/.next/server/app/(pannel)/petOwner/dashboard/page.js": {
-      "bytes": 6524,
+      "bytes": 11480,
+      "imports": [
+        {
+          "path": ".open-next/server-functions/default/node_modules/.pnpm/next@15.1.6_@babel+core@7.28.5_@opentelemetry+api@1.9.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js",
+          "kind": "require-call",
+          "original": "next/dist/compiled/next-server/app-page.runtime.prod.js"
+        },
+        {
+          "path": ".open-next/server-functions/default/node_modules/.pnpm/next@15.1.6_@babel+core@7.28.5_@opentelemetry+api@1.9.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/server/app-render/action-async-storage.external.js",
+          "kind": "require-call",
+          "original": "next/dist/server/app-render/action-async-storage.external.js"
+        },
+        {
+          "path": ".open-next/server-functions/default/node_modules/.pnpm/next@15.1.6_@babel+core@7.28.5_@opentelemetry+api@1.9.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/server/app-render/after-task-async-storage.external.js",
+          "kind": "require-call",
+          "original": "next/dist/server/app-render/after-task-async-storage.external.js"
+        },
+        {
+          "path": ".open-next/server-functions/default/node_modules/.pnpm/next@15.1.6_@babel+core@7.28.5_@opentelemetry+api@1.9.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/server/app-render/work-async-storage.external.js",
+          "kind": "require-call",
+          "original": "next/dist/server/app-render/work-async-storage.external.js"
+        },
+        {
+          "path": ".open-next/server-functions/default/node_modules/.pnpm/next@15.1.6_@babel+core@7.28.5_@opentelemetry+api@1.9.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/server/app-render/work-unit-async-storage.external.js",
+          "kind": "require-call",
+          "original": "next/dist/server/app-render/work-unit-async-storage.external.js"
+        },
+        {
+          "path": "path",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": "url",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": ".open-next/server-functions/default/.next/server/webpack-runtime.js",
+          "kind": "require-call",
+          "original": "../../../../webpack-runtime.js"
+        }
+      ],
+      "format": "cjs"
+    },
+    ".open-next/server-functions/default/.next/server/app/(pannel)/petOwner/my-pets/page.js": {
+      "bytes": 15785,
       "imports": [
         {
           "path": ".open-next/server-functions/default/node_modules/.pnpm/next@15.1.6_@babel+core@7.28.5_@opentelemetry+api@1.9.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js",
@@ -6619,7 +7404,7 @@
       "format": "cjs"
     },
     ".open-next/server-functions/default/.next/server/app/(pannel)/petOwner/profile/page.js": {
-      "bytes": 7350,
+      "bytes": 11230,
       "imports": [
         {
           "path": ".open-next/server-functions/default/node_modules/.pnpm/next@15.1.6_@babel+core@7.28.5_@opentelemetry+api@1.9.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js",
@@ -6664,8 +7449,8 @@
       ],
       "format": "cjs"
     },
-    ".open-next/server-functions/default/.next/server/app/(pannel)/veterinary/profile/page.js": {
-      "bytes": 6230,
+    ".open-next/server-functions/default/.next/server/app/(pannel)/petOwner/settings/page.js": {
+      "bytes": 10649,
       "imports": [
         {
           "path": ".open-next/server-functions/default/node_modules/.pnpm/next@15.1.6_@babel+core@7.28.5_@opentelemetry+api@1.9.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js",
@@ -6711,7 +7496,145 @@
       "format": "cjs"
     },
     ".open-next/server-functions/default/.next/server/app/(pannel)/veterinary/dashboard/page.js": {
-      "bytes": 7448,
+      "bytes": 11637,
+      "imports": [
+        {
+          "path": ".open-next/server-functions/default/node_modules/.pnpm/next@15.1.6_@babel+core@7.28.5_@opentelemetry+api@1.9.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js",
+          "kind": "require-call",
+          "original": "next/dist/compiled/next-server/app-page.runtime.prod.js"
+        },
+        {
+          "path": ".open-next/server-functions/default/node_modules/.pnpm/next@15.1.6_@babel+core@7.28.5_@opentelemetry+api@1.9.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/server/app-render/action-async-storage.external.js",
+          "kind": "require-call",
+          "original": "next/dist/server/app-render/action-async-storage.external.js"
+        },
+        {
+          "path": ".open-next/server-functions/default/node_modules/.pnpm/next@15.1.6_@babel+core@7.28.5_@opentelemetry+api@1.9.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/server/app-render/after-task-async-storage.external.js",
+          "kind": "require-call",
+          "original": "next/dist/server/app-render/after-task-async-storage.external.js"
+        },
+        {
+          "path": ".open-next/server-functions/default/node_modules/.pnpm/next@15.1.6_@babel+core@7.28.5_@opentelemetry+api@1.9.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/server/app-render/work-async-storage.external.js",
+          "kind": "require-call",
+          "original": "next/dist/server/app-render/work-async-storage.external.js"
+        },
+        {
+          "path": ".open-next/server-functions/default/node_modules/.pnpm/next@15.1.6_@babel+core@7.28.5_@opentelemetry+api@1.9.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/server/app-render/work-unit-async-storage.external.js",
+          "kind": "require-call",
+          "original": "next/dist/server/app-render/work-unit-async-storage.external.js"
+        },
+        {
+          "path": "path",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": "url",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": ".open-next/server-functions/default/.next/server/webpack-runtime.js",
+          "kind": "require-call",
+          "original": "../../../../webpack-runtime.js"
+        }
+      ],
+      "format": "cjs"
+    },
+    ".open-next/server-functions/default/.next/server/app/(pannel)/veterinary/my-clinic/page.js": {
+      "bytes": 20315,
+      "imports": [
+        {
+          "path": ".open-next/server-functions/default/node_modules/.pnpm/next@15.1.6_@babel+core@7.28.5_@opentelemetry+api@1.9.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js",
+          "kind": "require-call",
+          "original": "next/dist/compiled/next-server/app-page.runtime.prod.js"
+        },
+        {
+          "path": ".open-next/server-functions/default/node_modules/.pnpm/next@15.1.6_@babel+core@7.28.5_@opentelemetry+api@1.9.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/server/app-render/action-async-storage.external.js",
+          "kind": "require-call",
+          "original": "next/dist/server/app-render/action-async-storage.external.js"
+        },
+        {
+          "path": ".open-next/server-functions/default/node_modules/.pnpm/next@15.1.6_@babel+core@7.28.5_@opentelemetry+api@1.9.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/server/app-render/after-task-async-storage.external.js",
+          "kind": "require-call",
+          "original": "next/dist/server/app-render/after-task-async-storage.external.js"
+        },
+        {
+          "path": ".open-next/server-functions/default/node_modules/.pnpm/next@15.1.6_@babel+core@7.28.5_@opentelemetry+api@1.9.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/server/app-render/work-async-storage.external.js",
+          "kind": "require-call",
+          "original": "next/dist/server/app-render/work-async-storage.external.js"
+        },
+        {
+          "path": ".open-next/server-functions/default/node_modules/.pnpm/next@15.1.6_@babel+core@7.28.5_@opentelemetry+api@1.9.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/server/app-render/work-unit-async-storage.external.js",
+          "kind": "require-call",
+          "original": "next/dist/server/app-render/work-unit-async-storage.external.js"
+        },
+        {
+          "path": "path",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": "url",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": ".open-next/server-functions/default/.next/server/webpack-runtime.js",
+          "kind": "require-call",
+          "original": "../../../../webpack-runtime.js"
+        }
+      ],
+      "format": "cjs"
+    },
+    ".open-next/server-functions/default/.next/server/app/(pannel)/veterinary/profile/page.js": {
+      "bytes": 10686,
+      "imports": [
+        {
+          "path": ".open-next/server-functions/default/node_modules/.pnpm/next@15.1.6_@babel+core@7.28.5_@opentelemetry+api@1.9.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js",
+          "kind": "require-call",
+          "original": "next/dist/compiled/next-server/app-page.runtime.prod.js"
+        },
+        {
+          "path": ".open-next/server-functions/default/node_modules/.pnpm/next@15.1.6_@babel+core@7.28.5_@opentelemetry+api@1.9.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/server/app-render/action-async-storage.external.js",
+          "kind": "require-call",
+          "original": "next/dist/server/app-render/action-async-storage.external.js"
+        },
+        {
+          "path": ".open-next/server-functions/default/node_modules/.pnpm/next@15.1.6_@babel+core@7.28.5_@opentelemetry+api@1.9.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/server/app-render/after-task-async-storage.external.js",
+          "kind": "require-call",
+          "original": "next/dist/server/app-render/after-task-async-storage.external.js"
+        },
+        {
+          "path": ".open-next/server-functions/default/node_modules/.pnpm/next@15.1.6_@babel+core@7.28.5_@opentelemetry+api@1.9.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/server/app-render/work-async-storage.external.js",
+          "kind": "require-call",
+          "original": "next/dist/server/app-render/work-async-storage.external.js"
+        },
+        {
+          "path": ".open-next/server-functions/default/node_modules/.pnpm/next@15.1.6_@babel+core@7.28.5_@opentelemetry+api@1.9.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/server/app-render/work-unit-async-storage.external.js",
+          "kind": "require-call",
+          "original": "next/dist/server/app-render/work-unit-async-storage.external.js"
+        },
+        {
+          "path": "path",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": "url",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": ".open-next/server-functions/default/.next/server/webpack-runtime.js",
+          "kind": "require-call",
+          "original": "../../../../webpack-runtime.js"
+        }
+      ],
+      "format": "cjs"
+    },
+    ".open-next/server-functions/default/.next/server/app/(pannel)/veterinary/settings/page.js": {
+      "bytes": 11465,
       "imports": [
         {
           "path": ".open-next/server-functions/default/node_modules/.pnpm/next@15.1.6_@babel+core@7.28.5_@opentelemetry+api@1.9.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js",
@@ -6757,7 +7680,7 @@
       "format": "cjs"
     },
     ".open-next/server-functions/default/node_modules/.pnpm/next@15.1.6_@babel+core@7.28.5_@opentelemetry+api@1.9.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/server/require.js": {
-      "bytes": 18271,
+      "bytes": 22619,
       "imports": [
         {
           "path": "path",
@@ -6835,6 +7758,16 @@
           "original": "/home/chinnu/projects/chipthem/.open-next/server-functions/default/.next/server/app/api/admin/found-reports/[id]/route.js"
         },
         {
+          "path": ".open-next/server-functions/default/.next/server/app/api/admin/dashboard/route.js",
+          "kind": "require-call",
+          "original": "/home/chinnu/projects/chipthem/.open-next/server-functions/default/.next/server/app/api/admin/dashboard/route.js"
+        },
+        {
+          "path": ".open-next/server-functions/default/.next/server/app/api/admin/login/route.js",
+          "kind": "require-call",
+          "original": "/home/chinnu/projects/chipthem/.open-next/server-functions/default/.next/server/app/api/admin/login/route.js"
+        },
+        {
           "path": ".open-next/server-functions/default/.next/server/app/api/admin/found-reports/route.js",
           "kind": "require-call",
           "original": "/home/chinnu/projects/chipthem/.open-next/server-functions/default/.next/server/app/api/admin/found-reports/route.js"
@@ -6855,19 +7788,14 @@
           "original": "/home/chinnu/projects/chipthem/.open-next/server-functions/default/.next/server/app/api/admin/lost-reports/[id]/route.js"
         },
         {
-          "path": ".open-next/server-functions/default/.next/server/app/api/admin/pets/[ownerId]/[petId]/verify/route.js",
-          "kind": "require-call",
-          "original": "/home/chinnu/projects/chipthem/.open-next/server-functions/default/.next/server/app/api/admin/pets/[ownerId]/[petId]/verify/route.js"
-        },
-        {
-          "path": ".open-next/server-functions/default/.next/server/app/api/admin/login/route.js",
-          "kind": "require-call",
-          "original": "/home/chinnu/projects/chipthem/.open-next/server-functions/default/.next/server/app/api/admin/login/route.js"
-        },
-        {
           "path": ".open-next/server-functions/default/.next/server/app/api/admin/pets/[ownerId]/[petId]/reject/route.js",
           "kind": "require-call",
           "original": "/home/chinnu/projects/chipthem/.open-next/server-functions/default/.next/server/app/api/admin/pets/[ownerId]/[petId]/reject/route.js"
+        },
+        {
+          "path": ".open-next/server-functions/default/.next/server/app/api/admin/analytics/route.js",
+          "kind": "require-call",
+          "original": "/home/chinnu/projects/chipthem/.open-next/server-functions/default/.next/server/app/api/admin/analytics/route.js"
         },
         {
           "path": ".open-next/server-functions/default/.next/server/app/api/admin/pets/route.js",
@@ -6875,9 +7803,29 @@
           "original": "/home/chinnu/projects/chipthem/.open-next/server-functions/default/.next/server/app/api/admin/pets/route.js"
         },
         {
+          "path": ".open-next/server-functions/default/.next/server/app/api/admin/pets/[ownerId]/[petId]/verify/route.js",
+          "kind": "require-call",
+          "original": "/home/chinnu/projects/chipthem/.open-next/server-functions/default/.next/server/app/api/admin/pets/[ownerId]/[petId]/verify/route.js"
+        },
+        {
+          "path": ".open-next/server-functions/default/.next/server/app/api/admin/users/[userId]/route.js",
+          "kind": "require-call",
+          "original": "/home/chinnu/projects/chipthem/.open-next/server-functions/default/.next/server/app/api/admin/users/[userId]/route.js"
+        },
+        {
+          "path": ".open-next/server-functions/default/.next/server/app/api/admin/users/clinics/[veterinaryId]/route.js",
+          "kind": "require-call",
+          "original": "/home/chinnu/projects/chipthem/.open-next/server-functions/default/.next/server/app/api/admin/users/clinics/[veterinaryId]/route.js"
+        },
+        {
           "path": ".open-next/server-functions/default/.next/server/app/api/admin/users/route.js",
           "kind": "require-call",
           "original": "/home/chinnu/projects/chipthem/.open-next/server-functions/default/.next/server/app/api/admin/users/route.js"
+        },
+        {
+          "path": ".open-next/server-functions/default/.next/server/app/api/admin/users/pets/[petId]/route.js",
+          "kind": "require-call",
+          "original": "/home/chinnu/projects/chipthem/.open-next/server-functions/default/.next/server/app/api/admin/users/pets/[petId]/route.js"
         },
         {
           "path": ".open-next/server-functions/default/.next/server/app/api/admin/veterinary/route.js",
@@ -6885,14 +7833,14 @@
           "original": "/home/chinnu/projects/chipthem/.open-next/server-functions/default/.next/server/app/api/admin/veterinary/route.js"
         },
         {
-          "path": ".open-next/server-functions/default/.next/server/app/api/admin/veterinary/[vetId]/verify/route.js",
-          "kind": "require-call",
-          "original": "/home/chinnu/projects/chipthem/.open-next/server-functions/default/.next/server/app/api/admin/veterinary/[vetId]/verify/route.js"
-        },
-        {
           "path": ".open-next/server-functions/default/.next/server/app/api/admin/veterinary/[vetId]/reject/route.js",
           "kind": "require-call",
           "original": "/home/chinnu/projects/chipthem/.open-next/server-functions/default/.next/server/app/api/admin/veterinary/[vetId]/reject/route.js"
+        },
+        {
+          "path": ".open-next/server-functions/default/.next/server/app/api/admin/veterinary/[vetId]/verify/route.js",
+          "kind": "require-call",
+          "original": "/home/chinnu/projects/chipthem/.open-next/server-functions/default/.next/server/app/api/admin/veterinary/[vetId]/verify/route.js"
         },
         {
           "path": ".open-next/server-functions/default/.next/server/app/api/auth/forgot-password/route.js",
@@ -6910,6 +7858,11 @@
           "original": "/home/chinnu/projects/chipthem/.open-next/server-functions/default/.next/server/app/api/auth/reset-password/route.js"
         },
         {
+          "path": ".open-next/server-functions/default/.next/server/app/api/clinics/route.js",
+          "kind": "require-call",
+          "original": "/home/chinnu/projects/chipthem/.open-next/server-functions/default/.next/server/app/api/clinics/route.js"
+        },
+        {
           "path": ".open-next/server-functions/default/.next/server/app/api/contacts/route.js",
           "kind": "require-call",
           "original": "/home/chinnu/projects/chipthem/.open-next/server-functions/default/.next/server/app/api/contacts/route.js"
@@ -6920,14 +7873,34 @@
           "original": "/home/chinnu/projects/chipthem/.open-next/server-functions/default/.next/server/app/api/logout/route.js"
         },
         {
-          "path": ".open-next/server-functions/default/.next/server/app/api/pet/login/route.js",
+          "path": ".open-next/server-functions/default/.next/server/app/api/maps-coords/route.js",
           "kind": "require-call",
-          "original": "/home/chinnu/projects/chipthem/.open-next/server-functions/default/.next/server/app/api/pet/login/route.js"
+          "original": "/home/chinnu/projects/chipthem/.open-next/server-functions/default/.next/server/app/api/maps-coords/route.js"
+        },
+        {
+          "path": ".open-next/server-functions/default/.next/server/app/api/owner/[ownerId]/reset-password/route.js",
+          "kind": "require-call",
+          "original": "/home/chinnu/projects/chipthem/.open-next/server-functions/default/.next/server/app/api/owner/[ownerId]/reset-password/route.js"
+        },
+        {
+          "path": ".open-next/server-functions/default/.next/server/app/api/owner/[ownerId]/route.js",
+          "kind": "require-call",
+          "original": "/home/chinnu/projects/chipthem/.open-next/server-functions/default/.next/server/app/api/owner/[ownerId]/route.js"
         },
         {
           "path": ".open-next/server-functions/default/.next/server/app/api/owner/me/route.js",
           "kind": "require-call",
           "original": "/home/chinnu/projects/chipthem/.open-next/server-functions/default/.next/server/app/api/owner/me/route.js"
+        },
+        {
+          "path": ".open-next/server-functions/default/.next/server/app/api/pet/[petId]/route.js",
+          "kind": "require-call",
+          "original": "/home/chinnu/projects/chipthem/.open-next/server-functions/default/.next/server/app/api/pet/[petId]/route.js"
+        },
+        {
+          "path": ".open-next/server-functions/default/.next/server/app/api/pet/login/route.js",
+          "kind": "require-call",
+          "original": "/home/chinnu/projects/chipthem/.open-next/server-functions/default/.next/server/app/api/pet/login/route.js"
         },
         {
           "path": ".open-next/server-functions/default/.next/server/app/api/pet/register/route.js",
@@ -6940,9 +7913,24 @@
           "original": "/home/chinnu/projects/chipthem/.open-next/server-functions/default/.next/server/app/api/reportFound/route.js"
         },
         {
+          "path": ".open-next/server-functions/default/.next/server/app/api/reportLost/route.js",
+          "kind": "require-call",
+          "original": "/home/chinnu/projects/chipthem/.open-next/server-functions/default/.next/server/app/api/reportLost/route.js"
+        },
+        {
           "path": ".open-next/server-functions/default/.next/server/app/api/search/route.js",
           "kind": "require-call",
           "original": "/home/chinnu/projects/chipthem/.open-next/server-functions/default/.next/server/app/api/search/route.js"
+        },
+        {
+          "path": ".open-next/server-functions/default/.next/server/app/api/veterinary/[clinicId]/route.js",
+          "kind": "require-call",
+          "original": "/home/chinnu/projects/chipthem/.open-next/server-functions/default/.next/server/app/api/veterinary/[clinicId]/route.js"
+        },
+        {
+          "path": ".open-next/server-functions/default/.next/server/app/api/veterinary/[clinicId]/reset-password/route.js",
+          "kind": "require-call",
+          "original": "/home/chinnu/projects/chipthem/.open-next/server-functions/default/.next/server/app/api/veterinary/[clinicId]/reset-password/route.js"
         },
         {
           "path": ".open-next/server-functions/default/.next/server/app/api/veterinary/login/route.js",
@@ -6955,19 +7943,14 @@
           "original": "/home/chinnu/projects/chipthem/.open-next/server-functions/default/.next/server/app/api/veterinary/me/route.js"
         },
         {
-          "path": ".open-next/server-functions/default/.next/server/app/favicon.ico/route.js",
-          "kind": "require-call",
-          "original": "/home/chinnu/projects/chipthem/.open-next/server-functions/default/.next/server/app/favicon.ico/route.js"
-        },
-        {
-          "path": ".open-next/server-functions/default/.next/server/app/api/reportLost/route.js",
-          "kind": "require-call",
-          "original": "/home/chinnu/projects/chipthem/.open-next/server-functions/default/.next/server/app/api/reportLost/route.js"
-        },
-        {
           "path": ".open-next/server-functions/default/.next/server/app/api/veterinary/register/route.js",
           "kind": "require-call",
           "original": "/home/chinnu/projects/chipthem/.open-next/server-functions/default/.next/server/app/api/veterinary/register/route.js"
+        },
+        {
+          "path": ".open-next/server-functions/default/.next/server/app/favicon.ico/route.js",
+          "kind": "require-call",
+          "original": "/home/chinnu/projects/chipthem/.open-next/server-functions/default/.next/server/app/favicon.ico/route.js"
         },
         {
           "path": ".open-next/server-functions/default/.next/server/app/(main)/(auth)/alogin/page.js",
@@ -6990,14 +7973,19 @@
           "original": "/home/chinnu/projects/chipthem/.open-next/server-functions/default/.next/server/app/(main)/(forgot-reset)/forgot-password/page.js"
         },
         {
+          "path": ".open-next/server-functions/default/.next/server/app/(main)/(forgot-reset)/reset-password/page.js",
+          "kind": "require-call",
+          "original": "/home/chinnu/projects/chipthem/.open-next/server-functions/default/.next/server/app/(main)/(forgot-reset)/reset-password/page.js"
+        },
+        {
           "path": ".open-next/server-functions/default/.next/server/app/(main)/(register)/registerpet/page.js",
           "kind": "require-call",
           "original": "/home/chinnu/projects/chipthem/.open-next/server-functions/default/.next/server/app/(main)/(register)/registerpet/page.js"
         },
         {
-          "path": ".open-next/server-functions/default/.next/server/app/(main)/(forgot-reset)/reset-password/page.js",
+          "path": ".open-next/server-functions/default/.next/server/app/(main)/(register)/vetregister/page.js",
           "kind": "require-call",
-          "original": "/home/chinnu/projects/chipthem/.open-next/server-functions/default/.next/server/app/(main)/(forgot-reset)/reset-password/page.js"
+          "original": "/home/chinnu/projects/chipthem/.open-next/server-functions/default/.next/server/app/(main)/(register)/vetregister/page.js"
         },
         {
           "path": ".open-next/server-functions/default/.next/server/app/(main)/about/page.js",
@@ -7010,24 +7998,19 @@
           "original": "/home/chinnu/projects/chipthem/.open-next/server-functions/default/.next/server/app/(main)/contact/page.js"
         },
         {
-          "path": ".open-next/server-functions/default/.next/server/app/(main)/(register)/vetregister/page.js",
-          "kind": "require-call",
-          "original": "/home/chinnu/projects/chipthem/.open-next/server-functions/default/.next/server/app/(main)/(register)/vetregister/page.js"
-        },
-        {
           "path": ".open-next/server-functions/default/.next/server/app/(main)/findclinic/page.js",
           "kind": "require-call",
           "original": "/home/chinnu/projects/chipthem/.open-next/server-functions/default/.next/server/app/(main)/findclinic/page.js"
         },
         {
-          "path": ".open-next/server-functions/default/.next/server/app/(main)/getpetmicrochipped/page.js",
-          "kind": "require-call",
-          "original": "/home/chinnu/projects/chipthem/.open-next/server-functions/default/.next/server/app/(main)/getpetmicrochipped/page.js"
-        },
-        {
           "path": ".open-next/server-functions/default/.next/server/app/(main)/lostfound/page.js",
           "kind": "require-call",
           "original": "/home/chinnu/projects/chipthem/.open-next/server-functions/default/.next/server/app/(main)/lostfound/page.js"
+        },
+        {
+          "path": ".open-next/server-functions/default/.next/server/app/(main)/getpetmicrochipped/page.js",
+          "kind": "require-call",
+          "original": "/home/chinnu/projects/chipthem/.open-next/server-functions/default/.next/server/app/(main)/getpetmicrochipped/page.js"
         },
         {
           "path": ".open-next/server-functions/default/.next/server/app/(main)/page.js",
@@ -7055,24 +8038,34 @@
           "original": "/home/chinnu/projects/chipthem/.open-next/server-functions/default/.next/server/app/(main)/registersuccessvet/page.js"
         },
         {
-          "path": ".open-next/server-functions/default/.next/server/app/(main)/successstories/page.js",
-          "kind": "require-call",
-          "original": "/home/chinnu/projects/chipthem/.open-next/server-functions/default/.next/server/app/(main)/successstories/page.js"
-        },
-        {
           "path": ".open-next/server-functions/default/.next/server/app/(main)/search/page.js",
           "kind": "require-call",
           "original": "/home/chinnu/projects/chipthem/.open-next/server-functions/default/.next/server/app/(main)/search/page.js"
         },
         {
-          "path": ".open-next/server-functions/default/.next/server/app/(pannel)/admin/lost-found/page.js",
+          "path": ".open-next/server-functions/default/.next/server/app/(main)/successstories/page.js",
           "kind": "require-call",
-          "original": "/home/chinnu/projects/chipthem/.open-next/server-functions/default/.next/server/app/(pannel)/admin/lost-found/page.js"
+          "original": "/home/chinnu/projects/chipthem/.open-next/server-functions/default/.next/server/app/(main)/successstories/page.js"
+        },
+        {
+          "path": ".open-next/server-functions/default/.next/server/app/(pannel)/admin/analytics/page.js",
+          "kind": "require-call",
+          "original": "/home/chinnu/projects/chipthem/.open-next/server-functions/default/.next/server/app/(pannel)/admin/analytics/page.js"
         },
         {
           "path": ".open-next/server-functions/default/.next/server/app/(main)/terms/page.js",
           "kind": "require-call",
           "original": "/home/chinnu/projects/chipthem/.open-next/server-functions/default/.next/server/app/(main)/terms/page.js"
+        },
+        {
+          "path": ".open-next/server-functions/default/.next/server/app/(pannel)/admin/dashboard/page.js",
+          "kind": "require-call",
+          "original": "/home/chinnu/projects/chipthem/.open-next/server-functions/default/.next/server/app/(pannel)/admin/dashboard/page.js"
+        },
+        {
+          "path": ".open-next/server-functions/default/.next/server/app/(pannel)/admin/lost-found/page.js",
+          "kind": "require-call",
+          "original": "/home/chinnu/projects/chipthem/.open-next/server-functions/default/.next/server/app/(pannel)/admin/lost-found/page.js"
         },
         {
           "path": ".open-next/server-functions/default/.next/server/app/(pannel)/admin/manage-users/page.js",
@@ -7100,9 +8093,29 @@
           "original": "/home/chinnu/projects/chipthem/.open-next/server-functions/default/.next/server/app/(pannel)/petOwner/dashboard/page.js"
         },
         {
+          "path": ".open-next/server-functions/default/.next/server/app/(pannel)/petOwner/my-pets/page.js",
+          "kind": "require-call",
+          "original": "/home/chinnu/projects/chipthem/.open-next/server-functions/default/.next/server/app/(pannel)/petOwner/my-pets/page.js"
+        },
+        {
           "path": ".open-next/server-functions/default/.next/server/app/(pannel)/petOwner/profile/page.js",
           "kind": "require-call",
           "original": "/home/chinnu/projects/chipthem/.open-next/server-functions/default/.next/server/app/(pannel)/petOwner/profile/page.js"
+        },
+        {
+          "path": ".open-next/server-functions/default/.next/server/app/(pannel)/petOwner/settings/page.js",
+          "kind": "require-call",
+          "original": "/home/chinnu/projects/chipthem/.open-next/server-functions/default/.next/server/app/(pannel)/petOwner/settings/page.js"
+        },
+        {
+          "path": ".open-next/server-functions/default/.next/server/app/(pannel)/veterinary/dashboard/page.js",
+          "kind": "require-call",
+          "original": "/home/chinnu/projects/chipthem/.open-next/server-functions/default/.next/server/app/(pannel)/veterinary/dashboard/page.js"
+        },
+        {
+          "path": ".open-next/server-functions/default/.next/server/app/(pannel)/veterinary/my-clinic/page.js",
+          "kind": "require-call",
+          "original": "/home/chinnu/projects/chipthem/.open-next/server-functions/default/.next/server/app/(pannel)/veterinary/my-clinic/page.js"
         },
         {
           "path": ".open-next/server-functions/default/.next/server/app/(pannel)/veterinary/profile/page.js",
@@ -7110,9 +8123,9 @@
           "original": "/home/chinnu/projects/chipthem/.open-next/server-functions/default/.next/server/app/(pannel)/veterinary/profile/page.js"
         },
         {
-          "path": ".open-next/server-functions/default/.next/server/app/(pannel)/veterinary/dashboard/page.js",
+          "path": ".open-next/server-functions/default/.next/server/app/(pannel)/veterinary/settings/page.js",
           "kind": "require-call",
-          "original": "/home/chinnu/projects/chipthem/.open-next/server-functions/default/.next/server/app/(pannel)/veterinary/dashboard/page.js"
+          "original": "/home/chinnu/projects/chipthem/.open-next/server-functions/default/.next/server/app/(pannel)/veterinary/settings/page.js"
         }
       ],
       "format": "cjs"
@@ -8242,7 +9255,7 @@
       "format": "esm"
     },
     ".open-next/server-functions/default/index.mjs": {
-      "bytes": 105001,
+      "bytes": 109271,
       "imports": [
         {
           "path": "node:process",
@@ -8507,26 +9520,6 @@
           "external": true
         },
         {
-          "path": "crypto",
-          "kind": "require-call",
-          "external": true
-        },
-        {
-          "path": "node:crypto",
-          "kind": "require-call",
-          "external": true
-        },
-        {
-          "path": "crypto",
-          "kind": "require-call",
-          "external": true
-        },
-        {
-          "path": "crypto",
-          "kind": "require-call",
-          "external": true
-        },
-        {
           "path": "node:crypto",
           "kind": "require-call",
           "external": true
@@ -8552,7 +9545,107 @@
           "external": true
         },
         {
+          "path": "crypto",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": "crypto",
+          "kind": "require-call",
+          "external": true
+        },
+        {
           "path": "node:crypto",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": "node:crypto",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": "node:crypto",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": "crypto",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": "crypto",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": "crypto",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": "node:crypto",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": "path",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": "url",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": "path",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": "url",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": "path",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": "url",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": "path",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": "url",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": "path",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": "url",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": "path",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": "url",
           "kind": "require-call",
           "external": true
         },
@@ -9707,181 +10800,235 @@
           "bytesInOutput": 705
         },
         ".open-next/server-functions/default/.next/server/app/_not-found/page_client-reference-manifest.js": {
-          "bytesInOutput": 55105
+          "bytesInOutput": 56343
         },
         ".open-next/server-functions/default/.next/server/app/(main)/page_client-reference-manifest.js": {
-          "bytesInOutput": 55038
+          "bytesInOutput": 56276
         },
         ".open-next/server-functions/default/.next/server/app/api/search/route_client-reference-manifest.js": {
-          "bytesInOutput": 55109
+          "bytesInOutput": 56347
         },
         ".open-next/server-functions/default/.next/server/app/api/reportLost/route_client-reference-manifest.js": {
-          "bytesInOutput": 55122
+          "bytesInOutput": 56360
         },
         ".open-next/server-functions/default/.next/server/app/api/reportFound/route_client-reference-manifest.js": {
-          "bytesInOutput": 55125
+          "bytesInOutput": 56363
+        },
+        ".open-next/server-functions/default/.next/server/app/api/maps-coords/route_client-reference-manifest.js": {
+          "bytesInOutput": 56363
         },
         ".open-next/server-functions/default/.next/server/app/api/logout/route_client-reference-manifest.js": {
-          "bytesInOutput": 55110
+          "bytesInOutput": 56348
         },
         ".open-next/server-functions/default/.next/server/app/api/contacts/route_client-reference-manifest.js": {
-          "bytesInOutput": 55116
+          "bytesInOutput": 56354
+        },
+        ".open-next/server-functions/default/.next/server/app/api/clinics/route_client-reference-manifest.js": {
+          "bytesInOutput": 56351
         },
         ".open-next/server-functions/default/.next/server/app/(main)/terms/page_client-reference-manifest.js": {
-          "bytesInOutput": 54927
+          "bytesInOutput": 56165
         },
         ".open-next/server-functions/default/.next/server/app/(main)/successstories/page_client-reference-manifest.js": {
-          "bytesInOutput": 55856
+          "bytesInOutput": 57094
         },
         ".open-next/server-functions/default/.next/server/app/(main)/search/page_client-reference-manifest.js": {
-          "bytesInOutput": 55598
+          "bytesInOutput": 56836
         },
         ".open-next/server-functions/default/.next/server/app/(main)/registersuccessvet/page_client-reference-manifest.js": {
-          "bytesInOutput": 55324
+          "bytesInOutput": 56562
         },
         ".open-next/server-functions/default/.next/server/app/(main)/registersuccesspet/page_client-reference-manifest.js": {
-          "bytesInOutput": 55324
+          "bytesInOutput": 56562
         },
         ".open-next/server-functions/default/.next/server/app/(main)/privacy/page_client-reference-manifest.js": {
-          "bytesInOutput": 54935
+          "bytesInOutput": 56173
         },
         ".open-next/server-functions/default/.next/server/app/(main)/practice/page_client-reference-manifest.js": {
-          "bytesInOutput": 55121
+          "bytesInOutput": 56359
         },
         ".open-next/server-functions/default/.next/server/app/(main)/lostfound/page_client-reference-manifest.js": {
-          "bytesInOutput": 55589
+          "bytesInOutput": 57019
         },
         ".open-next/server-functions/default/.next/server/app/(main)/getpetmicrochipped/page_client-reference-manifest.js": {
-          "bytesInOutput": 55277
+          "bytesInOutput": 56515
         },
         ".open-next/server-functions/default/.next/server/app/(main)/findclinic/page_client-reference-manifest.js": {
-          "bytesInOutput": 55377
+          "bytesInOutput": 56615
         },
         ".open-next/server-functions/default/.next/server/app/(main)/contact/page_client-reference-manifest.js": {
-          "bytesInOutput": 55605
+          "bytesInOutput": 56843
         },
         ".open-next/server-functions/default/.next/server/app/(main)/about/page_client-reference-manifest.js": {
-          "bytesInOutput": 57102
+          "bytesInOutput": 58358
         },
         ".open-next/server-functions/default/.next/server/app/api/veterinary/register/route_client-reference-manifest.js": {
-          "bytesInOutput": 55149
+          "bytesInOutput": 56387
         },
         ".open-next/server-functions/default/.next/server/app/api/veterinary/me/route_client-reference-manifest.js": {
-          "bytesInOutput": 55131
+          "bytesInOutput": 56369
         },
         ".open-next/server-functions/default/.next/server/app/api/veterinary/login/route_client-reference-manifest.js": {
-          "bytesInOutput": 55140
+          "bytesInOutput": 56379
+        },
+        ".open-next/server-functions/default/.next/server/app/api/veterinary/[clinicId]/route_client-reference-manifest.js": {
+          "bytesInOutput": 56394
         },
         ".open-next/server-functions/default/.next/server/app/api/pet/register/route_client-reference-manifest.js": {
-          "bytesInOutput": 55128
+          "bytesInOutput": 56367
         },
         ".open-next/server-functions/default/.next/server/app/api/pet/login/route_client-reference-manifest.js": {
-          "bytesInOutput": 55120
+          "bytesInOutput": 56358
+        },
+        ".open-next/server-functions/default/.next/server/app/api/pet/[petId]/route_client-reference-manifest.js": {
+          "bytesInOutput": 56364
         },
         ".open-next/server-functions/default/.next/server/app/api/owner/me/route_client-reference-manifest.js": {
-          "bytesInOutput": 55117
+          "bytesInOutput": 56355
+        },
+        ".open-next/server-functions/default/.next/server/app/api/owner/[ownerId]/route_client-reference-manifest.js": {
+          "bytesInOutput": 56376
         },
         ".open-next/server-functions/default/.next/server/app/api/auth/reset-password/route_client-reference-manifest.js": {
-          "bytesInOutput": 55150
-        },
-        ".open-next/server-functions/default/.next/server/app/api/auth/me/route_client-reference-manifest.js": {
-          "bytesInOutput": 55114
+          "bytesInOutput": 56388
         },
         ".open-next/server-functions/default/.next/server/app/api/auth/forgot-password/route_client-reference-manifest.js": {
-          "bytesInOutput": 55153
+          "bytesInOutput": 56391
+        },
+        ".open-next/server-functions/default/.next/server/app/api/auth/me/route_client-reference-manifest.js": {
+          "bytesInOutput": 56352
         },
         ".open-next/server-functions/default/.next/server/app/api/admin/veterinary/route_client-reference-manifest.js": {
-          "bytesInOutput": 55141
+          "bytesInOutput": 56379
         },
         ".open-next/server-functions/default/.next/server/app/api/admin/users/route_client-reference-manifest.js": {
-          "bytesInOutput": 55126
-        },
-        ".open-next/server-functions/default/.next/server/app/api/admin/pets/route_client-reference-manifest.js": {
-          "bytesInOutput": 55123
+          "bytesInOutput": 56364
         },
         ".open-next/server-functions/default/.next/server/app/api/admin/lost-reports/route_client-reference-manifest.js": {
-          "bytesInOutput": 55147
+          "bytesInOutput": 56385
         },
-        ".open-next/server-functions/default/.next/server/app/api/admin/login/route_client-reference-manifest.js": {
-          "bytesInOutput": 55126
+        ".open-next/server-functions/default/.next/server/app/api/admin/pets/route_client-reference-manifest.js": {
+          "bytesInOutput": 56361
         },
         ".open-next/server-functions/default/.next/server/app/api/admin/found-reports/route_client-reference-manifest.js": {
-          "bytesInOutput": 55150
+          "bytesInOutput": 56388
+        },
+        ".open-next/server-functions/default/.next/server/app/api/admin/dashboard/route_client-reference-manifest.js": {
+          "bytesInOutput": 56376
+        },
+        ".open-next/server-functions/default/.next/server/app/api/admin/analytics/route_client-reference-manifest.js": {
+          "bytesInOutput": 56376
+        },
+        ".open-next/server-functions/default/.next/server/app/api/admin/login/route_client-reference-manifest.js": {
+          "bytesInOutput": 56364
+        },
+        ".open-next/server-functions/default/.next/server/app/(pannel)/veterinary/settings/page_client-reference-manifest.js": {
+          "bytesInOutput": 56479
         },
         ".open-next/server-functions/default/.next/server/app/(pannel)/veterinary/profile/page_client-reference-manifest.js": {
-          "bytesInOutput": 55337
+          "bytesInOutput": 56475
+        },
+        ".open-next/server-functions/default/.next/server/app/(pannel)/veterinary/my-clinic/page_client-reference-manifest.js": {
+          "bytesInOutput": 56483
         },
         ".open-next/server-functions/default/.next/server/app/(pannel)/veterinary/dashboard/page_client-reference-manifest.js": {
-          "bytesInOutput": 55297
-        },
-        ".open-next/server-functions/default/.next/server/app/(pannel)/petOwner/profile/page_client-reference-manifest.js": {
-          "bytesInOutput": 55329
-        },
-        ".open-next/server-functions/default/.next/server/app/(pannel)/petOwner/dashboard/page_client-reference-manifest.js": {
-          "bytesInOutput": 55237
+          "bytesInOutput": 56531
         },
         ".open-next/server-functions/default/.next/server/app/(pannel)/admin/profile/page_client-reference-manifest.js": {
-          "bytesInOutput": 55317
+          "bytesInOutput": 56555
         },
         ".open-next/server-functions/default/.next/server/app/(pannel)/admin/manage-users/page_client-reference-manifest.js": {
-          "bytesInOutput": 55237
+          "bytesInOutput": 56571
         },
         ".open-next/server-functions/default/.next/server/app/(pannel)/admin/lost-found/page_client-reference-manifest.js": {
-          "bytesInOutput": 55329
+          "bytesInOutput": 56615
+        },
+        ".open-next/server-functions/default/.next/server/app/(pannel)/admin/dashboard/page_client-reference-manifest.js": {
+          "bytesInOutput": 56511
+        },
+        ".open-next/server-functions/default/.next/server/app/(pannel)/admin/analytics/page_client-reference-manifest.js": {
+          "bytesInOutput": 56607
+        },
+        ".open-next/server-functions/default/.next/server/app/(pannel)/petOwner/settings/page_client-reference-manifest.js": {
+          "bytesInOutput": 56519
+        },
+        ".open-next/server-functions/default/.next/server/app/(pannel)/petOwner/profile/page_client-reference-manifest.js": {
+          "bytesInOutput": 56515
+        },
+        ".open-next/server-functions/default/.next/server/app/(pannel)/petOwner/my-pets/page_client-reference-manifest.js": {
+          "bytesInOutput": 56615
+        },
+        ".open-next/server-functions/default/.next/server/app/(pannel)/petOwner/dashboard/page_client-reference-manifest.js": {
+          "bytesInOutput": 56623
         },
         ".open-next/server-functions/default/.next/server/app/(main)/(register)/vetregister/page_client-reference-manifest.js": {
-          "bytesInOutput": 55518
+          "bytesInOutput": 56852
         },
         ".open-next/server-functions/default/.next/server/app/(main)/(register)/registerpet/page_client-reference-manifest.js": {
-          "bytesInOutput": 55614
+          "bytesInOutput": 56948
         },
         ".open-next/server-functions/default/.next/server/app/(main)/(forgot-reset)/reset-password/page_client-reference-manifest.js": {
-          "bytesInOutput": 55369
+          "bytesInOutput": 56607
         },
         ".open-next/server-functions/default/.next/server/app/(main)/(forgot-reset)/forgot-password/page_client-reference-manifest.js": {
-          "bytesInOutput": 55373
+          "bytesInOutput": 56611
         },
         ".open-next/server-functions/default/.next/server/app/(main)/(auth)/vlogin/page_client-reference-manifest.js": {
-          "bytesInOutput": 55272
+          "bytesInOutput": 56510
         },
         ".open-next/server-functions/default/.next/server/app/(main)/(auth)/pologin/page_client-reference-manifest.js": {
-          "bytesInOutput": 55494
+          "bytesInOutput": 56732
         },
         ".open-next/server-functions/default/.next/server/app/(main)/(auth)/alogin/page_client-reference-manifest.js": {
-          "bytesInOutput": 55353
+          "bytesInOutput": 56591
+        },
+        ".open-next/server-functions/default/.next/server/app/api/veterinary/[clinicId]/reset-password/route_client-reference-manifest.js": {
+          "bytesInOutput": 56515
+        },
+        ".open-next/server-functions/default/.next/server/app/api/owner/[ownerId]/reset-password/route_client-reference-manifest.js": {
+          "bytesInOutput": 56491
+        },
+        ".open-next/server-functions/default/.next/server/app/api/admin/users/[userId]/route_client-reference-manifest.js": {
+          "bytesInOutput": 56457
         },
         ".open-next/server-functions/default/.next/server/app/api/admin/lost-reports/[id]/route_client-reference-manifest.js": {
-          "bytesInOutput": 55235
+          "bytesInOutput": 56473
         },
         ".open-next/server-functions/default/.next/server/app/api/admin/found-reports/[id]/route_client-reference-manifest.js": {
-          "bytesInOutput": 55239
+          "bytesInOutput": 56477
         },
         ".open-next/server-functions/default/.next/server/app/(pannel)/admin/verifications/veterinary/page_client-reference-manifest.js": {
-          "bytesInOutput": 55479
+          "bytesInOutput": 56815
         },
         ".open-next/server-functions/default/.next/server/app/(pannel)/admin/verifications/petOwner/page_client-reference-manifest.js": {
-          "bytesInOutput": 55471
+          "bytesInOutput": 56807
         },
         ".open-next/server-functions/default/.next/server/app/api/admin/veterinary/[vetId]/verify/route_client-reference-manifest.js": {
-          "bytesInOutput": 55257
+          "bytesInOutput": 56495
         },
         ".open-next/server-functions/default/.next/server/app/api/admin/veterinary/[vetId]/reject/route_client-reference-manifest.js": {
-          "bytesInOutput": 55257
+          "bytesInOutput": 56495
+        },
+        ".open-next/server-functions/default/.next/server/app/api/admin/users/pets/[petId]/route_client-reference-manifest.js": {
+          "bytesInOutput": 56469
+        },
+        ".open-next/server-functions/default/.next/server/app/api/admin/users/clinics/[veterinaryId]/route_client-reference-manifest.js": {
+          "bytesInOutput": 56499
         },
         ".open-next/server-functions/default/.next/server/app/api/admin/lost-reports/[id]/resolve/route_client-reference-manifest.js": {
-          "bytesInOutput": 55337
+          "bytesInOutput": 56575
         },
         ".open-next/server-functions/default/.next/server/app/api/admin/found-reports/[id]/resolve/route_client-reference-manifest.js": {
-          "bytesInOutput": 55342
-        },
-        ".open-next/server-functions/default/.next/server/app/api/admin/pets/[ownerId]/[petId]/verify/route_client-reference-manifest.js": {
-          "bytesInOutput": 55263
+          "bytesInOutput": 56580
         },
         ".open-next/server-functions/default/.next/server/app/api/admin/pets/[ownerId]/[petId]/reject/route_client-reference-manifest.js": {
-          "bytesInOutput": 55263
+          "bytesInOutput": 56501
+        },
+        ".open-next/server-functions/default/.next/server/app/api/admin/pets/[ownerId]/[petId]/verify/route_client-reference-manifest.js": {
+          "bytesInOutput": 56501
         },
         ".open-next/server-functions/default/node_modules/.pnpm/next@15.1.6_@babel+core@7.28.5_@opentelemetry+api@1.9.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/server/load-manifest.js": {
-          "bytesInOutput": 57773
+          "bytesInOutput": 73644
         },
         ".open-next/server-functions/default/node_modules/.pnpm/react@18.3.1/node_modules/react/cjs/react-jsx-runtime.production.min.js": {
           "bytesInOutput": 805
@@ -9889,11 +11036,8 @@
         ".open-next/server-functions/default/node_modules/.pnpm/react@18.3.1/node_modules/react/jsx-runtime.js": {
           "bytesInOutput": 230
         },
-        ".open-next/server-functions/default/.next/server/chunks/2506.js": {
-          "bytesInOutput": 75895
-        },
-        ".open-next/server-functions/default/.next/server/chunks/2671.js": {
-          "bytesInOutput": 42315
+        ".open-next/server-functions/default/.next/server/chunks/2217.js": {
+          "bytesInOutput": 28764
         },
         ".open-next/server-functions/default/.next/server/chunks/2883.js": {
           "bytesInOutput": 20649
@@ -9901,14 +11045,17 @@
         ".open-next/server-functions/default/.next/server/chunks/3047.js": {
           "bytesInOutput": 69868
         },
+        ".open-next/server-functions/default/.next/server/chunks/3268.js": {
+          "bytesInOutput": 33168
+        },
+        ".open-next/server-functions/default/.next/server/chunks/3465.js": {
+          "bytesInOutput": 124039
+        },
         ".open-next/server-functions/default/.next/server/chunks/3610.js": {
-          "bytesInOutput": 24582
+          "bytesInOutput": 26573
         },
         ".open-next/server-functions/default/.next/server/chunks/4069.js": {
           "bytesInOutput": 165724
-        },
-        ".open-next/server-functions/default/.next/server/chunks/4141.js": {
-          "bytesInOutput": 126030
         },
         ".open-next/server-functions/default/.next/server/chunks/4278.js": {
           "bytesInOutput": 6126
@@ -9917,28 +11064,31 @@
           "bytesInOutput": 135419
         },
         ".open-next/server-functions/default/.next/server/chunks/4954.js": {
-          "bytesInOutput": 18513
+          "bytesInOutput": 19282
         },
         ".open-next/server-functions/default/.next/server/chunks/5457.js": {
           "bytesInOutput": 19831
         },
         ".open-next/server-functions/default/.next/server/chunks/5580.js": {
-          "bytesInOutput": 476428
+          "bytesInOutput": 479798
         },
         ".open-next/server-functions/default/.next/server/chunks/5880.js": {
           "bytesInOutput": 185
         },
+        ".open-next/server-functions/default/.next/server/chunks/7317.js": {
+          "bytesInOutput": 28588
+        },
         ".open-next/server-functions/default/.next/server/chunks/7368.js": {
-          "bytesInOutput": 49900
+          "bytesInOutput": 51463
         },
         ".open-next/server-functions/default/.next/server/chunks/7552.js": {
-          "bytesInOutput": 170174
+          "bytesInOutput": 176396
         },
-        ".open-next/server-functions/default/.next/server/chunks/8340.js": {
-          "bytesInOutput": 28633
+        ".open-next/server-functions/default/.next/server/chunks/7757.js": {
+          "bytesInOutput": 43021
         },
-        ".open-next/server-functions/default/.next/server/chunks/8629.js": {
-          "bytesInOutput": 24573
+        ".open-next/server-functions/default/.next/server/chunks/9060.js": {
+          "bytesInOutput": 96584
         },
         ".open-next/server-functions/default/.next/server/chunks/9103.js": {
           "bytesInOutput": 177189
@@ -9949,8 +11099,11 @@
         ".open-next/server-functions/default/.next/server/chunks/9233.js": {
           "bytesInOutput": 18463
         },
+        ".open-next/server-functions/default/.next/server/chunks/937.js": {
+          "bytesInOutput": 75111
+        },
         ".open-next/server-functions/default/.next/server/webpack-runtime.js": {
-          "bytesInOutput": 2388
+          "bytesInOutput": 2467
         },
         ".open-next/server-functions/default/.next/server/pages/_app.js": {
           "bytesInOutput": 3497
@@ -10018,41 +11171,56 @@
         ".open-next/server-functions/default/.next/server/app/api/admin/found-reports/[id]/route.js": {
           "bytesInOutput": 2723
         },
+        ".open-next/server-functions/default/.next/server/app/api/admin/dashboard/route.js": {
+          "bytesInOutput": 2542
+        },
+        ".open-next/server-functions/default/.next/server/app/api/admin/login/route.js": {
+          "bytesInOutput": 5336
+        },
         ".open-next/server-functions/default/.next/server/app/api/admin/found-reports/route.js": {
-          "bytesInOutput": 6297
+          "bytesInOutput": 2076
         },
         ".open-next/server-functions/default/.next/server/app/api/admin/lost-reports/[id]/resolve/route.js": {
           "bytesInOutput": 2259
         },
         ".open-next/server-functions/default/.next/server/app/api/admin/lost-reports/route.js": {
-          "bytesInOutput": 6289
+          "bytesInOutput": 2068
         },
         ".open-next/server-functions/default/.next/server/app/api/admin/lost-reports/[id]/route.js": {
           "bytesInOutput": 2712
         },
-        ".open-next/server-functions/default/.next/server/app/api/admin/pets/[ownerId]/[petId]/verify/route.js": {
-          "bytesInOutput": 7600
-        },
-        ".open-next/server-functions/default/.next/server/app/api/admin/login/route.js": {
-          "bytesInOutput": 5336
-        },
         ".open-next/server-functions/default/.next/server/app/api/admin/pets/[ownerId]/[petId]/reject/route.js": {
-          "bytesInOutput": 7139
+          "bytesInOutput": 2981
+        },
+        ".open-next/server-functions/default/.next/server/app/api/admin/analytics/route.js": {
+          "bytesInOutput": 2185
         },
         ".open-next/server-functions/default/.next/server/app/api/admin/pets/route.js": {
-          "bytesInOutput": 6481
+          "bytesInOutput": 2323
+        },
+        ".open-next/server-functions/default/.next/server/app/api/admin/pets/[ownerId]/[petId]/verify/route.js": {
+          "bytesInOutput": 5837
+        },
+        ".open-next/server-functions/default/.next/server/app/api/admin/users/[userId]/route.js": {
+          "bytesInOutput": 2900
+        },
+        ".open-next/server-functions/default/.next/server/app/api/admin/users/clinics/[veterinaryId]/route.js": {
+          "bytesInOutput": 3634
         },
         ".open-next/server-functions/default/.next/server/app/api/admin/users/route.js": {
-          "bytesInOutput": 2055
+          "bytesInOutput": 4070
+        },
+        ".open-next/server-functions/default/.next/server/app/api/admin/users/pets/[petId]/route.js": {
+          "bytesInOutput": 4210
         },
         ".open-next/server-functions/default/.next/server/app/api/admin/veterinary/route.js": {
-          "bytesInOutput": 6471
-        },
-        ".open-next/server-functions/default/.next/server/app/api/admin/veterinary/[vetId]/verify/route.js": {
-          "bytesInOutput": 6426
+          "bytesInOutput": 2313
         },
         ".open-next/server-functions/default/.next/server/app/api/admin/veterinary/[vetId]/reject/route.js": {
-          "bytesInOutput": 6358
+          "bytesInOutput": 2200
+        },
+        ".open-next/server-functions/default/.next/server/app/api/admin/veterinary/[vetId]/verify/route.js": {
+          "bytesInOutput": 6047
         },
         ".open-next/server-functions/default/.next/server/app/api/auth/forgot-password/route.js": {
           "bytesInOutput": 6288
@@ -10063,77 +11231,98 @@
         ".open-next/server-functions/default/.next/server/app/api/auth/reset-password/route.js": {
           "bytesInOutput": 6323
         },
+        ".open-next/server-functions/default/.next/server/app/api/clinics/route.js": {
+          "bytesInOutput": 2930
+        },
         ".open-next/server-functions/default/.next/server/app/api/contacts/route.js": {
           "bytesInOutput": 3949
         },
         ".open-next/server-functions/default/.next/server/app/api/logout/route.js": {
           "bytesInOutput": 1604
         },
-        ".open-next/server-functions/default/.next/server/app/api/pet/login/route.js": {
-          "bytesInOutput": 5488
+        ".open-next/server-functions/default/.next/server/app/api/maps-coords/route.js": {
+          "bytesInOutput": 2271
+        },
+        ".open-next/server-functions/default/.next/server/app/api/owner/[ownerId]/reset-password/route.js": {
+          "bytesInOutput": 2922
+        },
+        ".open-next/server-functions/default/.next/server/app/api/owner/[ownerId]/route.js": {
+          "bytesInOutput": 2302
         },
         ".open-next/server-functions/default/.next/server/app/api/owner/me/route.js": {
           "bytesInOutput": 6333
         },
+        ".open-next/server-functions/default/.next/server/app/api/pet/[petId]/route.js": {
+          "bytesInOutput": 2197
+        },
+        ".open-next/server-functions/default/.next/server/app/api/pet/login/route.js": {
+          "bytesInOutput": 5488
+        },
         ".open-next/server-functions/default/.next/server/app/api/pet/register/route.js": {
-          "bytesInOutput": 8782
+          "bytesInOutput": 9321
         },
         ".open-next/server-functions/default/.next/server/app/api/reportFound/route.js": {
-          "bytesInOutput": 5021
+          "bytesInOutput": 5225
+        },
+        ".open-next/server-functions/default/.next/server/app/api/reportLost/route.js": {
+          "bytesInOutput": 5366
         },
         ".open-next/server-functions/default/.next/server/app/api/search/route.js": {
           "bytesInOutput": 2694
         },
+        ".open-next/server-functions/default/.next/server/app/api/veterinary/[clinicId]/route.js": {
+          "bytesInOutput": 2672
+        },
+        ".open-next/server-functions/default/.next/server/app/api/veterinary/[clinicId]/reset-password/route.js": {
+          "bytesInOutput": 3021
+        },
         ".open-next/server-functions/default/.next/server/app/api/veterinary/login/route.js": {
-          "bytesInOutput": 5433
+          "bytesInOutput": 5520
         },
         ".open-next/server-functions/default/.next/server/app/api/veterinary/me/route.js": {
-          "bytesInOutput": 6177
+          "bytesInOutput": 6176
+        },
+        ".open-next/server-functions/default/.next/server/app/api/veterinary/register/route.js": {
+          "bytesInOutput": 8130
         },
         ".open-next/server-functions/default/.next/server/app/favicon.ico/route.js": {
           "bytesInOutput": 9760
         },
-        ".open-next/server-functions/default/.next/server/app/api/reportLost/route.js": {
-          "bytesInOutput": 5242
-        },
-        ".open-next/server-functions/default/.next/server/app/api/veterinary/register/route.js": {
-          "bytesInOutput": 7799
-        },
         ".open-next/server-functions/default/.next/server/app/(main)/(auth)/alogin/page.js": {
-          "bytesInOutput": 8939
+          "bytesInOutput": 8926
         },
         ".open-next/server-functions/default/.next/server/app/(main)/(auth)/pologin/page.js": {
           "bytesInOutput": 15241
         },
         ".open-next/server-functions/default/.next/server/app/(main)/(auth)/vlogin/page.js": {
-          "bytesInOutput": 17925
+          "bytesInOutput": 17113
         },
         ".open-next/server-functions/default/.next/server/app/(main)/(forgot-reset)/forgot-password/page.js": {
           "bytesInOutput": 5384
         },
-        ".open-next/server-functions/default/.next/server/app/(main)/(register)/registerpet/page.js": {
-          "bytesInOutput": 15146
-        },
         ".open-next/server-functions/default/.next/server/app/(main)/(forgot-reset)/reset-password/page.js": {
           "bytesInOutput": 6643
+        },
+        ".open-next/server-functions/default/.next/server/app/(main)/(register)/registerpet/page.js": {
+          "bytesInOutput": 16234
+        },
+        ".open-next/server-functions/default/.next/server/app/(main)/(register)/vetregister/page.js": {
+          "bytesInOutput": 25954
         },
         ".open-next/server-functions/default/.next/server/app/(main)/about/page.js": {
           "bytesInOutput": 33413
         },
         ".open-next/server-functions/default/.next/server/app/(main)/contact/page.js": {
-          "bytesInOutput": 17290
-        },
-        ".open-next/server-functions/default/.next/server/app/(main)/(register)/vetregister/page.js": {
-          "bytesInOutput": 27428
+          "bytesInOutput": 17291
         },
         ".open-next/server-functions/default/.next/server/app/(main)/findclinic/page.js": {
-          "bytesInOutput": 16773
+          "bytesInOutput": 16828
+        },
+        ".open-next/server-functions/default/.next/server/app/(main)/lostfound/page.js": {
+          "bytesInOutput": 31691
         },
         ".open-next/server-functions/default/.next/server/app/(main)/getpetmicrochipped/page.js": {
           "bytesInOutput": 6213
-        },
-        ".open-next/server-functions/default/.next/server/app/(main)/lostfound/page.js": {
-          "bytesInOutput": 27276
         },
         ".open-next/server-functions/default/.next/server/app/(main)/page.js": {
           "bytesInOutput": 30488
@@ -10145,49 +11334,67 @@
           "bytesInOutput": 5522
         },
         ".open-next/server-functions/default/.next/server/app/(main)/registersuccesspet/page.js": {
-          "bytesInOutput": 8334
+          "bytesInOutput": 8254
         },
         ".open-next/server-functions/default/.next/server/app/(main)/registersuccessvet/page.js": {
-          "bytesInOutput": 8332
+          "bytesInOutput": 8252
+        },
+        ".open-next/server-functions/default/.next/server/app/(main)/search/page.js": {
+          "bytesInOutput": 13876
         },
         ".open-next/server-functions/default/.next/server/app/(main)/successstories/page.js": {
           "bytesInOutput": 28240
         },
-        ".open-next/server-functions/default/.next/server/app/(main)/search/page.js": {
-          "bytesInOutput": 13705
-        },
-        ".open-next/server-functions/default/.next/server/app/(pannel)/admin/lost-found/page.js": {
-          "bytesInOutput": 10778
+        ".open-next/server-functions/default/.next/server/app/(pannel)/admin/analytics/page.js": {
+          "bytesInOutput": 422858
         },
         ".open-next/server-functions/default/.next/server/app/(main)/terms/page.js": {
           "bytesInOutput": 5555
         },
+        ".open-next/server-functions/default/.next/server/app/(pannel)/admin/dashboard/page.js": {
+          "bytesInOutput": 7071
+        },
+        ".open-next/server-functions/default/.next/server/app/(pannel)/admin/lost-found/page.js": {
+          "bytesInOutput": 13774
+        },
         ".open-next/server-functions/default/.next/server/app/(pannel)/admin/manage-users/page.js": {
-          "bytesInOutput": 6776
+          "bytesInOutput": 28457
         },
         ".open-next/server-functions/default/.next/server/app/(pannel)/admin/profile/page.js": {
-          "bytesInOutput": 6309
+          "bytesInOutput": 6308
         },
         ".open-next/server-functions/default/.next/server/app/(pannel)/admin/verifications/petOwner/page.js": {
-          "bytesInOutput": 12536
+          "bytesInOutput": 12534
         },
         ".open-next/server-functions/default/.next/server/app/(pannel)/admin/verifications/veterinary/page.js": {
-          "bytesInOutput": 13936
+          "bytesInOutput": 14250
         },
         ".open-next/server-functions/default/.next/server/app/(pannel)/petOwner/dashboard/page.js": {
-          "bytesInOutput": 6676
+          "bytesInOutput": 11753
+        },
+        ".open-next/server-functions/default/.next/server/app/(pannel)/petOwner/my-pets/page.js": {
+          "bytesInOutput": 16102
         },
         ".open-next/server-functions/default/.next/server/app/(pannel)/petOwner/profile/page.js": {
-          "bytesInOutput": 7514
+          "bytesInOutput": 11450
         },
-        ".open-next/server-functions/default/.next/server/app/(pannel)/veterinary/profile/page.js": {
-          "bytesInOutput": 6349
+        ".open-next/server-functions/default/.next/server/app/(pannel)/petOwner/settings/page.js": {
+          "bytesInOutput": 10876
         },
         ".open-next/server-functions/default/.next/server/app/(pannel)/veterinary/dashboard/page.js": {
-          "bytesInOutput": 7612
+          "bytesInOutput": 11874
+        },
+        ".open-next/server-functions/default/.next/server/app/(pannel)/veterinary/my-clinic/page.js": {
+          "bytesInOutput": 20754
+        },
+        ".open-next/server-functions/default/.next/server/app/(pannel)/veterinary/profile/page.js": {
+          "bytesInOutput": 10948
+        },
+        ".open-next/server-functions/default/.next/server/app/(pannel)/veterinary/settings/page.js": {
+          "bytesInOutput": 11701
         },
         ".open-next/server-functions/default/node_modules/.pnpm/next@15.1.6_@babel+core@7.28.5_@opentelemetry+api@1.9.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/server/require.js": {
-          "bytesInOutput": 9146
+          "bytesInOutput": 11071
         },
         ".open-next/server-functions/default/node_modules/.pnpm/next@15.1.6_@babel+core@7.28.5_@opentelemetry+api@1.9.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/lib/interop-default.js": {
           "bytesInOutput": 482
@@ -10331,10 +11538,10 @@
           "bytesInOutput": 4981
         },
         ".open-next/server-functions/default/index.mjs": {
-          "bytesInOutput": 72939
+          "bytesInOutput": 76834
         }
       },
-      "bytes": 7153814
+      "bytes": 8955477
     }
   }
 }

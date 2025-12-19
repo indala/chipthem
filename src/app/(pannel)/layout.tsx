@@ -41,11 +41,7 @@ export default function AdminLayout({
         {/* MAIN CONTENT (scrollable area) */}
         {/* Replaced: flex-grow-1 p-3 overflow-auto mb-5 */}
         <main 
-          className="flex-grow overflow-y-auto p-4 md:p-6" 
-          // The height logic is handled by 'h-screen' on the root div and 'flex-grow' here.
-          // The fixed header is handled by setting the header as 'fixed' and starting content below it, 
-          // or by letting the content scroll under the header (which is common for full-height layouts).
-          // Given the previous Header was converted to 'fixed top-0', we adjust the padding/margin as needed.
+          className="flex-grow overflow-y-auto p-4 md:p-6 mb-14 md:pb-6" 
         >
           <AnimatePresence mode="wait">
             <SwipeWrapper>{children}</SwipeWrapper>

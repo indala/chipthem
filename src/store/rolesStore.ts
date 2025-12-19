@@ -1,11 +1,11 @@
 // store/rolesStore.ts
 import { create } from "zustand";
-
+import type { UserRole } from "@/types/types";
 interface RoleUser {
   id: string;
   username: string;
   email: string;
-  role: "admin" | "veterinary" | "petOwner" | "guest";
+  role:UserRole;
 }
 
 interface RolesStore {

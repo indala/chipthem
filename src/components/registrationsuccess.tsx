@@ -12,17 +12,15 @@ interface RegistrationSuccessProps {
 
 export default function RegistrationSuccess({ type }: RegistrationSuccessProps) {
   const router = useRouter();
-  const namespace = type === "pet" ? "PetRegistrationSuccess" : "VetRegistrationSuccess";
+  const namespace =
+    type === "pet" ? "PetRegistrationSuccess" : "VetRegistrationSuccess";
+
   const t = useTranslations(namespace);
 
   return (
     <main className="min-h-screen bg-gray-50 flex flex-col">
       {/* Hero Section */}
-      {type !== "pet" ? (
-        <VetVerificationHero />
-      ) : (
-        <RegisterHero />
-      )}
+      {type === "vet" ? <VetVerificationHero /> : <RegisterHero />}
 
       {/* Confirmation Content */}
       <motion.section
@@ -38,10 +36,7 @@ export default function RegistrationSuccess({ type }: RegistrationSuccessProps) 
 
           <p className="text-gray-600 mb-6">
             {t("description1")} <strong>ChipThem</strong>.<br />
-            {t("description2")}{" "}
-            <span className="text-blue-600 font-medium">
-              {t("underVerification")}
-            </span>{" "}
+            {t("description2")}<br />
             {t("description3")}
           </p>
 

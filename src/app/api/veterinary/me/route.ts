@@ -6,12 +6,15 @@ import { verifyTokenAndGetPayload } from '@/lib/auth';
 export async function GET() {
   try {
     const payload = await verifyTokenAndGetPayload();
+    
+    
 
     if (!payload || payload.role !== 'veterinary') {
       return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
     }
 
-    const userId = payload.sub;
+    const userId = payload.id;
+    
 
     const { data: veterinaryData, error: veterinaryError } = await supabaseServerClient
       .from('veterinary_clinics')

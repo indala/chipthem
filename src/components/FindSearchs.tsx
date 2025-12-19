@@ -52,6 +52,7 @@ const FindSearchs: React.FC<FindSearchsProps> = ({
                 onChange={(e) => onRadiusChange(e.target.value)}
                 className="border border-gray-300 rounded-lg px-3 py-2 text-sm"
               >
+                <option value="">{t("noRadius")}</option> 
                 <option value="5">5 km</option>
                 <option value="10">10 km</option>
                 <option value="25">25 km</option>

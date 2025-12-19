@@ -4,11 +4,16 @@ import { useEffect, useState } from 'react'; // <-- Added useState
 import { useReportStore } from '@/store/useReportStore';
 import LostPetsGrid from '../../components/LostPetsGrid';
 import FoundPetsGrid from '../../components/FoundPetsGrid';
+import { useSearchParams } from "next/navigation";
+
 // Removed: Tabs, Tab, Container imports from 'react-bootstrap'
 
 export default function LostFoundPage() {
+  const searchParams=useSearchParams();
+
+  const urlTab = searchParams.get("tab");
   const { fetchLostReports, fetchFoundReports } = useReportStore();
-  const [activeTab, setActiveTab] = useState('lost'); // State to manage active tab
+  const [activeTab, setActiveTab] = useState(urlTab==='found'? 'found': 'lost'); // State to manage active tab
 
   useEffect(() => {
     fetchLostReports();

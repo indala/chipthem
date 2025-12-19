@@ -9,6 +9,12 @@ export interface Pet {
   status: string | null;
   owner?:Owner | null;
   microchip_number?: string | null;
+  subscription_status?:string | null;
+  subscribed_at?: string | null;          
+  subscription_expires_at?: string | null; 
+  verified_at?: string | null; 
+  created_at?: string ;
+  updated_at?:string ;
 
 }
 
@@ -25,4 +31,5 @@ export interface Owner {
   created_at: string;
   pets?: Pet[];
   verified_at?: string | null; 
+  password_hash?:string | null;
 }

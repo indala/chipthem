@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 import bcrypt from "bcryptjs";
 import { sendEmail } from "@/utils/sendEmail";
 import { supabaseServerClient } from "@/lib/supabaseServerClient";
+import type {  PostgrestSingleResponse } from '@supabase/supabase-js';
 
 export async function POST(req: Request) {
   try {
@@ -15,37 +16,67 @@ export async function POST(req: Request) {
       );
     }
 
-    // --- NEW STEP: 2.5 Check Email Uniqueness ---
-    const { data: existingClinic, error: checkError } =
-      await supabaseServerClient
+    // ✅ FIXED: Proper typing for Promise.allSettled results
+    type EmailCheckResult = PostgrestSingleResponse<{ id: string } | null>;
+    const emailChecks = await Promise.allSettled<EmailCheckResult>([
+      supabaseServerClient
+        .from("owners")
+        .select("id")
+        .eq("email", formData.email.trim().toLowerCase())
+        .maybeSingle(),
+      
+      supabaseServerClient
+        .from("admins")
+        .select("id")
+        .eq("email", formData.email.trim().toLowerCase())
+        .maybeSingle(),
+      
+      supabaseServerClient
         .from("veterinary_clinics")
         .select("id")
         .eq("email", formData.email.trim().toLowerCase())
-        .maybeSingle();
+        .maybeSingle()
+    ]);
 
-    if (checkError) {
-      console.error("Email check error:", checkError);
-      return NextResponse.json(
-        { success: false, message: "Server error while checking email uniqueness." },
-        { status: 500 }
-      );
+    // ✅ FIXED: Proper loop structure with correct scoping
+    for (let i = 0; i < emailChecks.length; i++) {
+      const checkResult = emailChecks[i];
+      
+      if (checkResult.status === 'rejected') {
+        console.error(`Email check error in table ${i}:`, (checkResult as PromiseRejectedResult).reason);
+        return NextResponse.json(
+          { success: false, message: "Server error while checking email uniqueness." },
+          { status: 500 }
+        );
+      }
+      
+      const result = checkResult as PromiseFulfilledResult<EmailCheckResult>;
+      if (result.value.error) {
+        console.error(`Email check error in table ${i}:`, result.value.error);
+        return NextResponse.json(
+          { success: false, message: "Server error while checking email uniqueness." },
+          { status: 500 }
+        );
+      }
+      
+      if (result.value.data) {
+        const tableNames = ['owners', 'admins', 'veterinary_clinics'];
+        return NextResponse.json(
+          { 
+            success: false, 
+            message: `Registration Error: Email already registered in ${tableNames[i]}.` 
+          },
+          { status: 400 }
+        );
+      }
     }
-
-    if (existingClinic) {
-      // ❌ Critical fix: Prevent duplicate registration
-      return NextResponse.json(
-        { success: false, message: "Registration Error: This email is already registered." },
-        { status: 400 }
-      );
-    }
-    // ---------------------------------------------
 
     // ✅ 2️⃣ Hash Password
     const hashedPassword = await bcrypt.hash(formData.password, 12);
 
     // ✅ 3️⃣ Normalize data for Supabase
     const cleanData = {
-      email: formData.email.trim().toLowerCase(), // Use trimmed/lowercase email for consistency
+      email: formData.email.trim().toLowerCase(),
       password_hash: hashedPassword,
       clinic_name: formData.clinicName,
       contact_person: formData.contact_person || null,
@@ -53,9 +84,7 @@ export async function POST(req: Request) {
       phone: formData.phone || null,
       alt_phone: formData.alt_phone || null,
       website: formData.website || null,
-      years_in_practice: formData.yearsInPractice
-        ? Number(formData.yearsInPractice)
-        : null,
+      years_in_practice: formData.yearsInPractice ?? null,
       street_address: formData.streetAddress || null,
       city: formData.city || null,
       state_province: formData.stateProvince || null,
@@ -65,6 +94,7 @@ export async function POST(req: Request) {
       provides_24h_emergency: !!formData.provides24HourEmergency,
       microchip_services: !!formData.microchip_services,
       has_microchip_scanners: !!formData.hasMicrochipScanners,
+      
 
       // ✅ Convert single text → array if needed
       scanner_types: Array.isArray(formData.scannerTypes)
@@ -91,6 +121,7 @@ export async function POST(req: Request) {
       professional_confirmation: !!formData.professionalConfirmation,
       consent_for_referrals: !!formData.consentForReferrals,
       email_updates_opt_in: !!formData.emailUpdatesOptIn,
+      google_maps_url: formData.googleMapsUrl || null,
 
       // ✅ Default verification fields
       is_verified: false,
@@ -113,81 +144,70 @@ export async function POST(req: Request) {
     }
 
     // ✅ 5️⃣ Send Notification Email to Admin
-    // ✅ 5️⃣ Send Notification Email to Admin
-await sendEmail({
- to: "info@chipthem.com",
- subject: "🐶 New Veterinary Clinic Registration",
- html: `
-  <h2>New Veterinary Clinic Registration</h2>
- 
-  <hr/>
-  <h3>Primary Details</h3>
-  <p><strong>Clinic Name:</strong> ${formData.clinicName}</p>
-  <p><strong>Contact Person:</strong> ${formData.contact_person || 'N/A'}</p>
-  <p><strong>Email:</strong> ${formData.email}</p>
-  <p><strong>Phone:</strong> ${formData.phone || 'N/A'}</p>
-  <p><strong>Alt. Phone:</strong> ${formData.alt_phone || 'N/A'}</p>
-  <p><strong>Website:</strong> ${formData.website || 'N/A'}</p>
-  <p><strong>License Number:</strong> ${formData.veterinaryLicenseNumber || 'N/A'}</p>
-  <p><strong>Years in Practice:</strong> ${formData.yearsInPractice || 'N/A'}</p>
+    await sendEmail({
+      to: "info@chipthem.com",
+      subject: "🐶 New Veterinary Clinic Registration",
+      html: `
+        <div style="font-family: Arial, sans-serif; padding: 16px; border: 1px solid #ddd;">
+          <h2>🚨 New Veterinary Clinic Registration for Verification</h2>
+          <p>A new veterinary clinic has registered and requires <strong>manual verification</strong>.</p>
+          <hr style="border: 0; border-top: 1px solid #eee; margin: 15px 0;">
 
-  <hr/>
-  <h3>Location</h3>
-  <p><strong>Street Address:</strong> ${formData.streetAddress || 'N/A'}</p>
-  <p><strong>City:</strong> ${formData.city || 'N/A'}</p>
-  <p><strong>State/Province:</strong> ${formData.stateProvince || 'N/A'}</p>
-  <p><strong>Postal Code:</strong> ${formData.postalCode || 'N/A'}</p>
-  <p><strong>Country:</strong> ${formData.country || 'N/A'}</p>
+          <h3>🏥 Clinic Details (DB ID: ${data.id})</h3>
+          <p><strong>Clinic Name:</strong> ${formData.clinicName}</p>
+          <p><strong>Contact Person:</strong> ${formData.contact_person || 'N/A'}</p>
+          <p><strong>Email:</strong> ${formData.email}</p>
+          <p><strong>Phone:</strong> ${formData.phone || 'N/A'}</p>
+          <p><strong>License Number:</strong> ${formData.veterinaryLicenseNumber || 'N/A'}</p>
 
-  <hr/>
-  <h3>Services & Operations</h3>
-  <p><strong>Operating Hours:</strong> ${formData.operatingHours || 'N/A'}</p>
-  <p><strong>24H Emergency:</strong> ${formData.provides24HourEmergency ? 'Yes' : 'No'}</p>
-  <p><strong>Microchip Services:</strong> ${formData.microchip_services ? 'Yes' : 'No'}</p>
-  <p><strong>Has Microchip Scanners:</strong> ${formData.hasMicrochipScanners ? 'Yes' : 'No'}</p>
-  <p><strong>Scanner Types:</strong> ${Array.isArray(formData.scannerTypes) ? formData.scannerTypes.join(', ') : (formData.scannerTypes || 'N/A')}</p>
-  <p><strong>Specializations:</strong> ${Array.isArray(formData.specializations) ? formData.specializations.join(', ') : (formData.specializations || 'N/A')}</p>
-  <p><strong>Additional Services:</strong> ${Array.isArray(formData.additionalServices) ? formData.additionalServices.join(', ') : (formData.additionalServices || 'N/A')}</p>
+          <hr style="border: 0; border-top: 1px solid #eee; margin: 15px 0;">
+          <h3>Location</h3>
+          <p><strong>Address:</strong> ${formData.streetAddress || 'N/A'}, ${formData.city || 'N/A'}</p>
+          <p><strong>Country:</strong> ${formData.country || 'N/A'}</p>
 
-  <hr/>
-  <h3>Legal Confirmations</h3>
-  <p><strong>Terms Accepted:</strong> ${formData.termsAccepted ? 'Yes' : 'No'}</p>
-  <p><strong>Data Accuracy Confirmed:</strong> ${formData.dataAccuracyConfirmed ? 'Yes' : 'No'}</p>
-  <p><strong>Professional Confirmation:</strong> ${formData.professionalConfirmation ? 'Yes' : 'No'}</p>
-  <p><strong>Consent for Referrals:</strong> ${formData.consentForReferrals ? 'Yes' : 'No'}</p>
-  <p><strong>Email Updates Opt-in:</strong> ${formData.emailUpdatesOptIn ? 'Yes' : 'No'}</p>
+          <hr style="border: 0; border-top: 1px solid #eee; margin: 15px 0;">
+          <h3>Services</h3>
+          <p><strong>Microchip Services:</strong> ${formData.microchip_services ? 'Yes' : 'No'}</p>
+          <p><strong>Has Scanners:</strong> ${formData.hasMicrochipScanners ? 'Yes' : 'No'}</p>
 
-  <hr/>
-  <p style="font-weight: bold; color: red;">ACTION REQUIRED:</p>
-  <p>
-   Please review and approve this clinic in your admin panel:
-   <a 
-    href="https://chipthem.com/admin/verifications/veterinary" 
-    target="_blank" 
-    style="
-     display: inline-block; 
-     padding: 8px 16px; 
-     background-color: #007bff; 
-     color: white !important; 
-     text-decoration: none; 
-     border-radius: 4px;
-    "
-   >
-    Go to Veterinary Verifications
-   </a>
-  </p>
- `,
-});
+          <hr style="border: 0; border-top: 1px solid #eee; margin: 15px 0;">
+          <p style="font-weight: bold; color: red;">ACTION REQUIRED:</p>
+          <p>
+            Please review and approve this clinic in your admin panel:
+            <a 
+              href="https://chipthem.com/admin/verifications/veterinary" 
+              target="_blank" 
+              style="
+                display: inline-block; 
+                padding: 10px 20px; 
+                background-color: #007bff; 
+                color: white !important; 
+                text-decoration: none; 
+                border-radius: 5px; 
+                font-weight: bold;
+              "
+            >
+              Go to Veterinary Verifications
+            </a>
+          </p>
+        </div>
+      `,
+    });
 
     // ✅ 6️⃣ Send Confirmation Email to the User
     await sendEmail({
       to: formData.email,
       subject: "✅ Thank you for registering your veterinary clinic",
       html: `
-        <h2>Thank you, ${formData.contact_person || "Doctor"}!</h2>
-        <p>We’ve received your clinic registration for <strong>${formData.clinicName}</strong>.</p>
-        <p>Our team will review your details and get back to you shortly.</p>
-        <p>— ChipThem Team 🐾</p>
+        <div style="font-family: Arial, sans-serif; padding: 16px; color: #333;">
+          <h2>Thank you, ${formData.contact_person || "Doctor"}!</h2>
+          <p>We've received your clinic registration for <strong>${formData.clinicName}</strong>.</p>
+          <p>Your submission is currently <strong>pending verification</strong> by our admin team.</p>
+          <p>Once verified, you'll receive a confirmation email and your clinic will become active.</p>
+          <p>This review process typically takes <strong>24–48 hours</strong>.</p>
+          <br/>
+          <p>— ChipThem Team 🐾</p>
+        </div>
       `,
     });
 
@@ -197,6 +217,7 @@ await sendEmail({
       message: "Clinic registered successfully and notification emails sent.",
       data,
     });
+
   } catch (err) {
     console.error("Veterinary register error:", err);
     return NextResponse.json(

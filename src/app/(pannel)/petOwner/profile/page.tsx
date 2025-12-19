@@ -1,134 +1,229 @@
 "use client";
 
-import { useEffect } from "react";
-import { motion } from "framer-motion";
-import { FaUserCircle, FaUserTag, FaCalendarAlt } from "react-icons/fa";
+import { useEffect, useState } from "react";
 import { useOwnerStore } from "@/store/useOwnerStore";
+import type { Owner } from "@/types/owners";
+import { motion } from "framer-motion";
 
+export default function MyProfilePage() {
+  const { owner, isLoading, error, fetchOwnerData, updateOwner } = useOwnerStore();
 
-// Generate color from string (consistent for same username)
-function stringToColor(str: string) {
-  let hash = 0;
-  for (let i = 0; i < str.length; i++) {
-    hash = str.charCodeAt(i) + ((hash << 5) - hash);
-  }
-  const hue = Math.abs(hash) % 360;
-  return `hsl(${hue}, 65%, 55%)`;
-}
+  // FIX: Initialize state using a function (lazy initialization)
+  // This runs only once on mount and uses the initial value of 'owner' if available.
+  // This replaces the useEffect that was causing the cascading render warning.
+  const [form, setForm] = useState<Partial<Owner>>(() => {
+    if (owner) {
+      return {
+        full_name: owner.full_name,
+        email: owner.email,
+        phone_number: owner.phone_number,
+        street_address: owner.street_address,
+        city: owner.city,
+        country: owner.country,
+      };
+    }
+    return {};
+  });
 
-// Avatar component
-const ProfileAvatar = ({ username }: { username: string }) => {
-  const initials = username
-    .split(" ")
-    .map((n) => n[0])
-    .join("")
-    .toUpperCase()
-    .slice(0, 2);
+  const [saving, setSaving] = useState(false);
 
-  const bgColor = stringToColor(username);
-
-  return (
-    <motion.div
-      whileHover={{ scale: 1.05 }}
-      className="w-32 h-32 rounded-full flex items-center justify-center text-white text-4xl font-bold mx-auto shadow-md transition"
-      style={{ backgroundColor: bgColor }}
-    >
-      {initials}
-    </motion.div>
-  );
-};
-
-export default function PetOwnerProfilePage() {
-  const { owner, pets, fetchOwnerData, isLoading, error } = useOwnerStore();
-
+  // Effect to fetch owner data on component mount
   useEffect(() => {
-    fetchOwnerData();
-  }, [fetchOwnerData]);
+    if (!owner) fetchOwnerData();
+  }, [owner, fetchOwnerData]);
+  
+  // NOTE: The problematic useEffect that called setForm based on 'owner' has been removed.
+  // The state is now initialized above.
 
-  if (isLoading) {
-    return <div className="p-4 text-center">Loading...</div>;
+  if (isLoading && !owner) {
+    return (
+      <div className="min-h-[60vh] flex items-center justify-center bg-gradient-to-br from-sky-50 via-slate-50 to-emerald-50">
+        <div className="text-lg font-semibold text-slate-700">
+          Loading your profile...
+        </div>
+      </div>
+    );
   }
 
-  if (error) {
-    return <div className="p-4 text-center text-red-600">{error}</div>;
+  if (error && !owner) {
+    return (
+      <div className="min-h-[60vh] flex items-center justify-center bg-gradient-to-br from-rose-50 via-amber-50 to-slate-50">
+        <div className="text-center px-8 py-6 rounded-3xl bg-white/95 border border-rose-200 shadow-lg">
+          <p className="text-rose-600 font-semibold mb-2">
+            Error loading profile: {error}
+          </p>
+          <p className="text-sm text-slate-600">Please try again later.</p>
+        </div>
+      </div>
+    );
   }
 
   if (!owner) {
-    return <div className="p-4 text-center text-gray-600">Owner not found</div>;
+    return (
+      <div className="min-h-[60vh] flex items-center justify-center bg-gradient-to-br from-sky-50 via-slate-50 to-emerald-50">
+        <p className="text-gray-700 text-lg font-medium">
+          No profile found.
+        </p>
+      </div>
+    );
   }
 
+  const handleChange =
+    (field: keyof Owner) =>
+    (e: React.ChangeEvent<HTMLInputElement>) => {
+      setForm((prev) => ({ ...prev, [field]: e.target.value }));
+    };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setSaving(true);
+    // Assuming updateOwner updates the 'owner' in the store on success.
+    await updateOwner(owner.id, form);
+    setSaving(false);
+    
+    // Optional: Re-sync form with the latest owner state from the store after update.
+    // This is good practice to ensure the form reflects the officially saved data.
+    if (owner) {
+       setForm({
+         full_name: owner.full_name,
+         email: owner.email,
+         phone_number: owner.phone_number,
+         street_address: owner.street_address,
+         city: owner.city,
+         country: owner.country,
+       });
+    }
+  };
+
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5 }}
-      className="p-4 max-w-4xl mx-auto"
-    >
-      <div className="bg-white shadow-xl border border-gray-100 rounded-xl overflow-hidden">
-        <div className="bg-gray-50 p-4 border-b border-gray-200">
-          <h4 className="text-lg font-semibold text-gray-800 flex items-center mb-0">
-            <FaUserCircle className="mr-2 text-indigo-600" /> Profile
-          </h4>
-        </div>
-
-        <div className="p-6">
-          <div className="flex flex-col md:flex-row items-center mb-6 md:space-x-8">
-            {/* Left: Avatar */}
-            <div className="w-full md:w-1/4 text-center mb-4 md:mb-0">
-              <ProfileAvatar username={owner.full_name} />
-              <h5 className="mt-3 text-xl font-semibold text-gray-900">{owner.full_name}</h5>
-              <span className="inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium uppercase text-white bg-indigo-500">
-                Pet Owner
-              </span>
-            </div>
-
-            {/* Right side info */}
-            <div className="w-full md:w-3/4">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
-                <div>
-                  <p className="mb-1 text-sm font-medium text-gray-500 flex items-center">
-                    <FaUserTag className="mr-2 text-gray-400" />
-                    Owner ID
-                  </p>
-                  <p className="font-bold text-lg text-gray-900">{owner.id}</p>
-                </div>
-
-                <div>
-                  <p className="mb-1 text-sm font-medium text-gray-500 flex items-center">
-                    <FaCalendarAlt className="mr-2 text-gray-400" />
-                    Verified At
-                  </p>
-                  <p className="font-bold text-lg text-gray-900">
-                    {owner.verified_at ? new Date(owner.verified_at).toLocaleDateString() : "Not verified"}
-                  </p>
-                </div>
-              </div>
-
-              {/* Pets List */}
-              <div>
-                <h5 className="text-lg font-semibold text-gray-800 mb-3">My Pets</h5>
-                {pets.length === 0 ? (
-                  <p className="text-gray-600">No pets found.</p>
-                ) : (
-                  <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-                    {pets.map((pet) => (
-                      <div key={pet.id} className="border border-gray-200 rounded-lg p-4 shadow-sm">
-                        <h6 className="font-semibold text-lg mb-1">{pet.pet_name}</h6>
-                        <p className="text-gray-500 mb-1">
-                          <strong>Type:</strong> {pet.pet_type || "Unknown"}
-                        </p>
-                        <p className="text-gray-500">
-                          <strong>Microchip:</strong> {pet.microchip_number || "N/A"}
-                        </p>
-                      </div>
-                    ))}
-                  </div>
-                )}
-              </div>
-            </div>
+    <div className="min-h-[100vh] bg-gradient-to-br from-sky-50 via-slate-50 to-emerald-50 flex items-center">
+      <div className="max-w-3xl mx-auto w-full px-4 py-10 " >
+        <motion.div
+          initial={{ opacity: 0, y: 12 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="relative overflow-hidden rounded-3xl border border-slate-200/80 bg-gradient-to-br from-white via-sky-50/70 to-emerald-50/70 shadow-xl border border-yellow-500"
+        >
+          {/* Soft gradient accents */}
+          <div className="pointer-events-none absolute inset-0">
+            <div className="absolute -top-16 -right-10 h-32 w-32 bg-sky-200/60 blur-3xl" />
+            <div className="absolute -bottom-16 -left-10 h-32 w-32 bg-emerald-200/60 blur-3xl" />
           </div>
-        </div>
+
+          <div className="relative p-8 sm:p-10 space-y-6">
+            {/* Header */}
+            <div className="text-center space-y-2">
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-sky-500">
+                Account
+              </p>
+              <h1 className="text-3xl font-extrabold text-slate-900 tracking-tight">
+                My Profile
+              </h1>
+              <p className="text-sm text-slate-600">
+                Manage your contact information and address.
+              </p>
+            </div>
+
+            <form onSubmit={handleSubmit} className="space-y-5">
+              {/* Full Name */}
+              <div className="space-y-1.5">
+                <label className="block text-sm font-semibold text-slate-700">
+                  Full name
+                </label>
+                <input
+                  type="text"
+                  className="mt-1 block w-full rounded-xl border border-slate-200 bg-white/80 px-3 py-2.5 text-sm text-slate-900 shadow-sm focus:outline-none focus:ring-2 focus:ring-sky-400 focus:border-sky-400"
+                  value={form.full_name ?? ""}
+                  onChange={handleChange("full_name")}
+                  placeholder="Your full name"
+                />
+              </div>
+
+              {/* Email (Read-only) */}
+              <div className="space-y-1.5">
+                <label className="block text-sm font-semibold text-slate-700">
+                  Email
+                </label>
+                <input
+                  type="email"
+                  className="mt-1 block w-full rounded-xl border border-slate-200 bg-slate-100/80 px-3 py-2.5 text-sm text-slate-500 cursor-not-allowed"
+                  value={form.email ?? ""}
+                  readOnly
+                />
+                <p className="text-[11px] text-slate-500">
+                  Your email is managed by the system and cannot be changed here.
+                </p>
+              </div>
+
+              {/* Phone Number */}
+              <div className="space-y-1.5">
+                <label className="block text-sm font-semibold text-slate-700">
+                  Phone number
+                </label>
+                <input
+                  type="text"
+                  className="mt-1 block w-full rounded-xl border border-slate-200 bg-white/80 px-3 py-2.5 text-sm text-slate-900 shadow-sm focus:outline-none focus:ring-2 focus:ring-sky-400 focus:border-sky-400"
+                  value={form.phone_number ?? ""}
+                  onChange={handleChange("phone_number")}
+                  placeholder="+91 98765 43210"
+                />
+              </div>
+
+              {/* Street Address */}
+              <div className="space-y-1.5">
+                <label className="block text-sm font-semibold text-slate-700">
+                  Street address
+                </label>
+                <input
+                  type="text"
+                  className="mt-1 block w-full rounded-xl border border-slate-200 bg-white/80 px-3 py-2.5 text-sm text-slate-900 shadow-sm focus:outline-none focus:ring-2 focus:ring-sky-400 focus:border-sky-400"
+                  value={form.street_address ?? ""}
+                  onChange={handleChange("street_address")}
+                  placeholder="House / Apartment, Street, Area"
+                />
+              </div>
+
+              {/* City & Country */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div className="space-y-1.5">
+                  <label className="block text-sm font-semibold text-slate-700">
+                    City
+                  </label>
+                  <input
+                    type="text"
+                    className="mt-1 block w-full rounded-xl border border-slate-200 bg-white/80 px-3 py-2.5 text-sm text-slate-900 shadow-sm focus:outline-none focus:ring-2 focus:ring-sky-400 focus:border-sky-400"
+                    value={form.city ?? ""}
+                    onChange={handleChange("city")}
+                    placeholder="Your city"
+                  />
+                </div>
+                <div className="space-y-1.5">
+                  <label className="block text-sm font-semibold text-slate-700">
+                    Country
+                  </label>
+                  <input
+                    type="text"
+                    className="mt-1 block w-full rounded-xl border border-slate-200 bg-white/80 px-3 py-2.5 text-sm text-slate-900 shadow-sm focus:outline-none focus:ring-2 focus:ring-sky-400 focus:border-sky-400"
+                    value={form.country ?? ""}
+                    onChange={handleChange("country")}
+                    placeholder="Your country"
+                  />
+                </div>
+              </div>
+
+              {/* Save Button */}
+              <div className="pt-2 flex justify-center">
+                <button
+                  type="submit"
+                  disabled={saving}
+                  className="inline-flex items-center justify-center gap-2 px-6 py-2.5 rounded-xl bg-gradient-to-r from-sky-500 via-cyan-500 to-emerald-500 text-white text-sm font-semibold shadow-md hover:shadow-lg hover:brightness-105 active:scale-[0.98] transition disabled:opacity-70 disabled:cursor-not-allowed"
+                >
+                  {saving ? "Saving..." : "Save changes"}
+                </button>
+              </div>
+            </form>
+          </div>
+        </motion.div>
       </div>
-    </motion.div>
+    </div>
   );
 }

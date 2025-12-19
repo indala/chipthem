@@ -65,13 +65,13 @@ const SearchNeed: React.FC = () => {
             </div>
 
             <div className="mt-6">
-              <a
-                href="tel:+1-800-CHIP-PET"
-                aria-label={t('callSupport')}
-                className="w-full md:w-auto inline-flex items-center justify-center px-6 py-3 rounded-full bg-sky-500 text-white text-sm font-semibold hover:bg-sky-600 transition-colors shadow-md"
-              >
-                {t('callSupport')}
-              </a>
+              <Link
+                href="tel:+962798980504"
+                aria-label={t('callSupportText')}
+                className="w-full  md:w-auto inline-flex items-center justify-center px-6 py-3 rounded-full bg-sky-500 text-white text-sm font-semibold hover:bg-sky-600 transition-colors shadow-md"
+              ><span className="me-2">  {t('callSupportText')}</span>
+                <span className="[direction:ltr] [unicode-bidi:bidi-override]">{t('supportPhone')}</span>
+              </Link>
             </div>
           </div>
         </div>

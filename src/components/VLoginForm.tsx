@@ -13,8 +13,7 @@ const VLoginForm = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [loading, setLoading] = useState(false);
   const [formData, setFormData] = useState({
-    clinic_id: '',
-    username: '',
+    email: '',
     password: '',
   });
 
@@ -42,7 +41,6 @@ const VLoginForm = () => {
 
       if (res.status === 204) {
         toast.success(t('loginSuccess'), { description: t('redirecting') });
-
         setTimeout(() => router.replace('/veterinary/dashboard'), 1000);
       } else if (res.status === 401) {
         toast.error(t('loginFailedTitle'), { description: t('invalidCredentials') });
@@ -70,8 +68,12 @@ const VLoginForm = () => {
           <div className="bg-gradient-to-r from-pet-secondary to-green-600 px-8 py-6 text-center">
             <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
               <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
-                  d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"
+                />
               </svg>
             </div>
 
@@ -82,49 +84,21 @@ const VLoginForm = () => {
           {/* Form */}
           <form onSubmit={handleSubmit} className="px-8 py-8 space-y-6">
 
-            {/* Clinic ID */}
-            <div>
-              <label className="block text-sm font-semibold text-gray-700 mb-2">
-                {t('clinicId')}
-              </label>
-
-              <div className="relative">
-                <span className="absolute inset-y-0 start-3 flex items-center text-gray-400">
-                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
-                      d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
-                  </svg>
-                </span>
-
-                <input
-                  type="text"
-                  name="clinic_id"
-                  value={formData.clinic_id}
-                  onChange={handleInputChange}
-                  required
-                  placeholder={t('clinicIdPlaceholder')}
-                  className={baseInput}
-                />
-              </div>
-
-              <p className="text-xs text-gray-500 mt-1">{t('clinicIdNote')}</p>
-            </div>
-
             {/* Username */}
             <div>
               <label className="block text-sm font-semibold text-gray-700 mb-2">
-                {t('username')}
+                {t('email')}
               </label>
 
               <div className="relative">
                 <input
-                  type="text"
-                  name="username"
-                  value={formData.username}
+                  type="email"
+                  name="email"
+                  value={formData.email}
                   onChange={handleInputChange}
                   required
-                  placeholder={t('usernamePlaceholder')}
-                  className={`${baseInput}`}
+                  placeholder={t('emailPlaceholder')}
+                  className={baseInput}
                 />
               </div>
             </div>
@@ -154,14 +128,26 @@ const VLoginForm = () => {
                 >
                   <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     {showPassword ? (
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
-                        d="M13.875 18.825A10.05 10.05 0 0112 19c-4.478 0-8.268-2.943-9.543-7a9.97 9.97 0 011.563-3.029m5.666 5.667a2 2 0 10-2-2m2 2l-2-2m2-1.892L19.5 7.5l-2.613-2.613a4 4 0 00-5.308.283"/>
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M13.875 18.825A10.05 10.05 0 0112 19c-4.478 0-8.268-2.943-9.543-7a9.97 9.97 0 011.563-3.029m5.666 5.667a2 2 0 10-2-2m2 2l-2-2m2-1.892L19.5 7.5l-2.613-2.613a4 4 0 00-5.308.283"
+                      />
                     ) : (
                       <>
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
-                          d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
-                          d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/>
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
+                        />
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
+                        />
                       </>
                     )}
                   </svg>
@@ -169,43 +155,48 @@ const VLoginForm = () => {
               </div>
             </div>
 
-            {/* Remember + Links */}
-            <div className="flex items-center justify-between">
+{/* Remember + Links */}
+<div className="space-y-3">
+  {/* Row: remember + forgot */}
+  <div className="flex flex-wrap items-center justify-between gap-3">
+    <label className="flex items-center gap-2 text-sm text-gray-700">
+      <input
+        type="checkbox"
+        name="remember_me"
+        className="w-4 h-4 rounded border-gray-300 text-pet-secondary focus:ring-pet-secondary"
+      />
+      {t('rememberMe')}
+    </label>
 
-              <label className="flex items-center gap-2 text-sm text-gray-700">
-                <input
-                  type="checkbox"
-                  name="remember_me"
-                  className="w-4 h-4 rounded border-gray-300 text-pet-secondary focus:ring-pet-secondary"
-                />
-                {t('rememberMe')}
-              </label>
+    <Link
+      href="/forgot-password?role=veterinary"
+      className="text-sm text-gray-500 hover:text-green-600 transition"
+    >
+      {t('forgotPassword')}
+    </Link>
+  </div>
 
-              <div className="flex items-center gap-4">
-                <Link
-                  href="/forgot-password?role=veterinary"
-                  className="text-sm text-gray-500 hover:text-green-600 transition"
-                >
-                  {t('forgotPassword')}
-                </Link>
+  {/* Row: need support centered */}
+  <div className="flex justify-center">
+    <Link
+      href="/contact?subject=clinic"
+      className="text-sm text-pet-secondary hover:text-green-600 transition"
+    >
+      {t('needSupport')}
+    </Link>
+  </div>
+</div>
 
-                <Link
-                  href="/contact?subject=clinic"
-                  className="text-sm text-pet-secondary hover:text-green-600 transition"
-                >
-                  {t('needSupport')}
-                </Link>
-              </div>
-            </div>
+
 
             {/* Submit */}
             <button
               type="submit"
               disabled={loading}
               className="w-full bg-gradient-to-r from-pet-secondary to-green-600
-                         text-white py-3 rounded-xl text-lg font-semibold
-                         hover:shadow-lg transition-transform duration-300
-                         hover:scale-[1.02] disabled:opacity-50"
+                     text-white py-3 rounded-xl text-lg font-semibold
+                     hover:shadow-lg transition-transform duration-300
+                     hover:scale-[1.02] disabled:opacity-50"
             >
               {loading ? t('loggingIn') : t('accessDashboard')}
             </button>
@@ -229,14 +220,15 @@ const VLoginForm = () => {
                 {t('partnerWithUs')}
               </Link>
             </div>
-
           </form>
         </div>
 
         {/* Security Notice */}
         <div className="mt-8 text-center">
           <div className="bg-green-50 border border-green-200 rounded-xl p-4">
-            <h3 className="text-sm font-bold text-green-800 mb-2">{t('securityTitle')}</h3>
+            <h3 className="text-sm font-bold text-green-800 mb-2">
+              {t('securityTitle')}
+            </h3>
             <p className="text-xs text-green-700">{t('securityDesc')}</p>
           </div>
         </div>

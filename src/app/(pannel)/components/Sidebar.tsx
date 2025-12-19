@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+
 import { usePathname } from 'next/navigation';
 import Link from 'next/link';
 // Removed: Nav import from "react-bootstrap"
@@ -20,7 +21,7 @@ const Sidebar: React.FC = () => {
       // Replaced Bootstrap classes with Tailwind:
       // bg-light text-dark p-3 d-flex flex-column shadow-sm
       // width: 240px -> w-60 (Tailwind's utility for 240px)
-      className="bg-gray-50 text-gray-800 p-4 flex flex-col shadow-md w-60 min-h-screen"
+      className="bg-gray-50 text-gray-800 p-4 flex flex-col shadow-md w-60 min-h-[90vh]"
       initial={{ x: -240, opacity: 0 }}
       animate={{ x: 0, opacity: 1 }}
       transition={{ duration: 0.4, ease: 'easeOut' }}

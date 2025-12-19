@@ -1,3 +1,4 @@
+import type { ReportStatus } from "./types";
 export interface Report {
   id: string;
   pet_name?: string;
@@ -8,5 +9,5 @@ export interface Report {
   found_location?: string;
   created_at: string;
   pet_photo: string;
-  status: string;
+  status: ReportStatus;
 }

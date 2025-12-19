@@ -1,16 +1,8 @@
-
 import { NextResponse } from "next/server";
 import { supabaseServerClient } from "@/lib/supabaseServerClient";
-import { verifyTokenAndGetPayload } from "@/lib/auth"; // Correctly import the unified function
 
 export async function GET(req: Request) {
-  // 1. Use the new centralized verification function
-  const payload = await verifyTokenAndGetPayload();
-
-  // 2. Check for authorization
-  if (!payload || payload.role !== 'admin') {
-    return NextResponse.json({ message: "Unauthorized" }, { status: 401 });
-  }
+ 
 
   try {
     const { searchParams } = new URL(req.url);
