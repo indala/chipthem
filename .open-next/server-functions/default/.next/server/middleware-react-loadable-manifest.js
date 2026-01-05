@@ -1,1 +1,0 @@
-self.__REACT_LOADABLE_MANIFEST='{"app/(pannel)/veterinary/my-clinic/page.tsx -> @/components/ClinicMap":{"id":54287,"files":["static/chunks/ed48eaa7.fe8ff96988b534a9.js","static/chunks/4287.5014454c49e2db01.js"]},"components/FindMain.tsx -> ./FindMap":{"id":17544,"files":["static/chunks/ed48eaa7.fe8ff96988b534a9.js","static/chunks/7544.88c35beca7748ffa.js"]}}';
